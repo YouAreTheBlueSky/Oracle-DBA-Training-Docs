@@ -57,6 +57,7 @@ CHAPTER = {
                 "lines": [
                     "-- 1) 是否使用 SPFILE（值為空表示仍在用 PFILE）",
                     "SELECT name, value FROM v$parameter WHERE name = 'spfile';",
+                    "SHOW PARAMETER SPFILE",
                     "",
                     "-- 2) Tablespace 是否為本機管理 + ASSM",
                     "SELECT tablespace_name, extent_management,",
@@ -109,6 +110,7 @@ CHAPTER = {
                     ("資料檔集中 oradata", "/u01/oradata/prod1/control01.ctl 這類路徑，讓備份與搬遷有規則可循。"),
                 ],
                 "note": "OFA 不是強制規範，而是讓「多版本、多資料庫」同時存在時仍可預測的命名公約。",
+                "_note_why": "OFA 是 Oracle 資料庫架構中的 最佳靈活架構 (Optimal Flexible Architecture) 的縮寫。這是 Oracle 官方制定的一套檔案系統與目錄結構命名標準，目的是讓資料庫軟體、資料檔案與日誌檔更有條理地存放。\n\nOFA 的核心設計目的\n統一管理規範：為所有 Oracle 相關檔案提供一致的目錄命名規則。無論由哪位資料庫管理員（DBA）接手維護，都能快速定位檔案位置。\n多版本並存與升級：將不同版本的資料庫主程式與設定檔隔離開來。在同一台伺服器上可以同時執行多個版本的資料庫，讓系統升級或套用修補程式（Patch）更加安全。\n分散磁碟 I/O 效能：將執行檔、資料檔（Datafiles）與重做日誌（Redo Logs）分離到不同的掛載點或實體磁碟。這能有效避免讀寫衝突並降低硬碟損壞時的資料遺失風險。",
             },
             "code": {
                 "title": "建立 OFA 目錄與權限",
@@ -579,6 +581,7 @@ CHAPTER = {
                     ("Temp 與永久分開", "TEMP 用 tempfile，extent 大小建議 64KB 倍數，大型倉儲用 1MB。"),
                 ],
                 "note": "19c 預設就是 LOCAL ＋ ASSM，寫出來是為了讓學員看懂 DDL 的每一段。",
+                "_note_why": "ASSM 是 Oracle 資料庫中的 自動段空間管理 (Automatic Segment Space Management) 的縮寫\n。這項技術透過位元圖（Bitmap）自動追蹤並管理資料區塊（Data Block）內的可用空間，能大幅提升資料庫並發寫入的效能並減少空間碎片。\n\n核心運作原理與優勢\n位元圖管理 (Bitmap Management)：傳統的手動管理（MSSM）依賴「可用空間列表（Freelist）」來記錄可寫入的區塊，高並發時容易產生爭用瓶頸。ASSM 改用位元圖來標記每個區塊的空間使用狀態（例如：完全可用、部分可用或已滿），讓資料庫能更精準且快速地找到適合寫入資料的位置。\n減少並發競爭 (Reduce Contention)：當多個使用者或交易同時對同一張資料表進行新增（INSERT）或更新（UPDATE）時，位元圖機制能有效分散寫入熱點，降低緩衝區忙等待（Buffer Busy Waits）的發生率。\n簡化維護參數：啟用 ASSM 後，資料庫管理員（DBA）不再需要手動設定與調整繁瑣的儲存參數（如 PCTUSED、FREELISTS 和 FREELIST GROUPS），Oracle 會自動根據資料變化動態調整空間分配。",
             },
             "code": {
                 "title": "建立永久、bigfile 與暫時 tablespace",
@@ -597,6 +600,7 @@ CHAPTER = {
                     "  EXTENT MANAGEMENT LOCAL UNIFORM SIZE 16M;",
                 ],
                 "takeaway": "建立 tablespace 時就把 extent 與 segment 管理方式寫明，避免日後無法轉換。",
+                "_note_why": "在傳統的 Smallfile Tablespace（小檔案表空間） 中，單一資料檔容量受限（8K 區塊下最大 32 GB）。當資料庫達到數 TB 甚至數十 TB 時，DBA 必須管理成百上千個資料檔，這不僅增加維護複雜度，也會增加資料庫檢查點（Checkpoint）與控制檔（Control File）的更新負擔。\n\nBigfile Tablespace 的主要優勢\n大幅簡化空間管理：DBA 不再需要頻繁監控與手動新增資料檔，只需對表空間層級進行容量調整即可。\n減輕系統內部負擔：由於資料檔數量大幅減少，資料庫在執行 Checkpoint、開啟資料庫或更新控制檔（Control File）時的效能開銷更低。\n完美契合現代儲存技術：搭配 Oracle ASM 或企業級儲存陣列時，底層已經自動將資料分散到多顆實體硬碟上（Striping），無需在資料庫層級透過建立多個小檔案來分散 I/O。\n使用時的注意事項與限制\n不支援傳統單一本機硬碟：因為只有一個檔案，如果底層沒有使用 ASM、RAID 或 LVM 進行條帶化，單一檔案可能會受限於單顆實體磁碟的 I/O 吞吐量或檔案系統上限。\n備份還原策略需調整：若未開啟 RMAN 的多通道分段備份（SECTION SIZE），備份或還原一個數 TB 的單一檔案會耗時極長，且無法平行處理。\n必須搭配本地管理與 ASSM：Bigfile Tablespace 只能在 本地管理（Locally Managed） 且啟用 ASSM（自動段空間管理） 的環境下建立（SYSTEM、SYSAUX 與 UNDO 等特殊表空間除外）。",
                 "warning": "Bigfile tablespace 無法再分割為多個資料檔，容量規劃必須一次到位。",
             },
             "check": {

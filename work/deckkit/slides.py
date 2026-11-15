@@ -28,6 +28,22 @@ class Chapter:
     def _chrome(self, s, section):
         footer(s, section, f"{self.page:02d}", self.spec.get("chap_label", ""))
 
+    def _note_spec(self, topic, slide_spec):
+        """topic 提供 _note_why／_note_scope／_refs；單頁可覆寫。"""
+        merged = dict(topic)
+        for k in ("_note_why", "_note_scope", "_refs"):
+            extra = slide_spec.get(k)
+            if not extra:
+                continue
+            base = merged.get(k)
+            if not base:
+                merged[k] = extra
+            elif k == "_refs":
+                merged[k] = list(base) + [r for r in extra if r not in base]
+            else:
+                merged[k] = extra + "\n" + base   # 單頁補充放在主題備忘之前
+        return merged
+
     def _note(self, s, spec, src):
         try:
             notes(s, spec, self.spec.get("chap_label", ""), src)
@@ -143,10 +159,10 @@ class Chapter:
         if c.get("warning"):
             warning(s, c["warning"], y=7.86)
             self._chrome(s, t.get("section", ""))
-            self._note(s, t["concept"], t.get("src", ""))
+            self._note(s, self._note_spec(t, t["concept"]), t.get("src", ""))
             return
         self._chrome(s, t.get("section", ""))
-        self._note(s, t["concept"], t.get("src", ""))
+        self._note(s, self._note_spec(t, t["concept"]), t.get("src", ""))
 
     # ---------------------------------------------------------------- code
     def code(self, t, idx):
@@ -185,7 +201,7 @@ class Chapter:
         if c.get("warning"):
             warning(s, c["warning"], y=7.86)
         self._chrome(s, t.get("section", ""))
-        self._note(s, t["code"], t.get("src", ""))
+        self._note(s, self._note_spec(t, t["code"]), t.get("src", ""))
 
     # ---------------------------------------------------------------- check
     def check(self, t, idx):
@@ -199,7 +215,7 @@ class Chapter:
         if c.get("warning"):
             warning(s, c["warning"], y=7.86)
         self._chrome(s, t.get("section", ""))
-        self._note(s, c, t.get("src", ""))
+        self._note(s, self._note_spec(t, c), t.get("src", ""))
 
     def _check_verify(self, s, c):
         """Verification layout: runnable commands + pass conditions + pitfalls."""
@@ -345,7 +361,7 @@ class Chapter:
         if c.get("warning"):
             warning(s, c["warning"], y=7.86)
         self._chrome(s, t.get("section", ""))
-        self._note(s, t["table"], t.get("src", ""))
+        self._note(s, self._note_spec(t, t["table"]), t.get("src", ""))
 
     # ---------------------------------------------------------------- diagram
     def diagram(self, t, idx):
@@ -396,7 +412,7 @@ class Chapter:
         if c.get("warning"):
             warning(s, c["warning"], y=7.86)
         self._chrome(s, t.get("section", ""))
-        self._note(s, t["diagram"], t.get("src", ""))
+        self._note(s, self._note_spec(t, t["diagram"]), t.get("src", ""))
 
     # ---------------------------------------------------------------- refs
     def refs(self):
