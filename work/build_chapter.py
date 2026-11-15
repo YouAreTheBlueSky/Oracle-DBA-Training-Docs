@@ -34,7 +34,9 @@ def count_pages(spec):
         for key in ("concept", "code", "check", "table", "diagram"):
             if key in t:
                 n += 1
-    n += 2  # summary + refs
+    n += 1  # summary
+    if not spec.get("skip_refs"):
+        n += 1  # refs
     return n
 
 
@@ -65,7 +67,8 @@ def build(mod_name, out_path, template=TEMPLATE, force=False):
         if "check" in t:
             ch.check(t, i)
     ch.summary()
-    ch.refs()
+    if not spec.get("skip_refs"):
+        ch.refs()
 
     os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
     ch.prs.save(out_path)

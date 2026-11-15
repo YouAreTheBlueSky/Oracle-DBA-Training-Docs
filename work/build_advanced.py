@@ -63,7 +63,7 @@ def build_chapters():
         sp["no"] = no
         sp["chap_label"] = f"{no:02d}"
         slides, warns = build_chapter.build(mod, os.path.join(OUT, fn))
-        expect = 2 + 3 * len(sp["topics"]) + 2
+        expect = build_chapter.count_pages(sp)
         flag = "OK " if slides == expect else "BAD"
         print(f"  {flag} {no:02d} {mod} -> {fn} ({slides} slides, {len(warns)} warnings)")
 

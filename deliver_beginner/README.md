@@ -2,7 +2,7 @@
 
 完整教材共 14 章 301 頁，拆為兩套：**初階版（本資料夾，10 章）** 與 **進階課程（`deliver_advance/`，4 章 73 頁）**。本版收錄第 1–6、11–14 章並重新編號為 **01–10**；ASM、RAC、RAC One Node、資料倉儲移至進階課程。
 
-**共 10 章、228 頁。** 每章一個獨立 PPTX，內容與進階課程同一套體例。
+**共 10 章、227 頁。** 每章一個獨立 PPTX，內容與進階課程同一套體例。
 
 ## 章節總表
 
@@ -10,7 +10,7 @@
 |---|---|---|---|---:|---:|---|
 | 01 | 儲存、記憶體與程序架構 | Storage, Memory & Process | 架構自編 | — | 30 | `01_Oracle_DBA_儲存記憶體與程序架構.pptx` |
 | 02 | 資料庫建置與日常管理 | Oracle DBA Fundamentals | Part 1 p.36–237 | 14 | 46 | `02_Oracle_DBA_建置與日常管理.pptx` |
-| 03 | Oracle Net Services 與連線設定 | Oracle Net Services and Connectivity | Part 2 p.238–246 | 4 | 16 | `03_Oracle_DBA_Net_Services.pptx` |
+| 03 | Oracle Net Services 與連線設定 | Oracle Net Services and Connectivity | Part 2 p.238–246 | 4 | 15 | `03_Oracle_DBA_Net_Services.pptx` |
 | 04 | 備份與復原 | Oracle Database Backup and Recovery | Part 3 p.247–310 | 8 | 28 | `04_Oracle_DBA_備份與復原.pptx` |
 | 05 | 安全性管理 | Oracle Database Security Management | Part 4 p.311–339 | 4 | 16 | `05_Oracle_DBA_安全性管理.pptx` |
 | 06 | 效能診斷與調校 | Oracle Database Performance Tuning | Part 5 p.340–395 | 7 | 25 | `06_Oracle_DBA_效能診斷與調校.pptx` |
@@ -31,7 +31,7 @@
 
 | 項目 | 初階版（本資料夾） | 進階課程（`deliver_advance/`） |
 |---|---|---|
-| 章數 ／ 頁數 | 10 章 ／ 228 頁 | 4 章 ／ 73 頁 |
+| 章數 ／ 頁數 | 10 章 ／ 227 頁 | 4 章 ／ 73 頁 |
 | 收錄 PDF Part | Part 1–5、10–13（9 個） | Part 6–9（4 個） |
 | ASM ／ RAC ／ RAC One Node ／ 倉儲 | 未收錄 | 第 1–4 章 |
 
