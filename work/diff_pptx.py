@@ -9,6 +9,10 @@ usage:
 Exit codes: 0 = no differences, 1 = differences remain, 2 = usage error.
 """
 import os, sys, importlib
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "deckkit"))
@@ -152,11 +156,26 @@ def main():
     if as_no is not None:
         sp2["no"] = as_no
         sp2["chap_label"] = f"{as_no:02d}"
-    build_chapter.build(mod, fresh)
+    _, warns_build = build_chapter.build(mod, fresh)
     a2 = dump(fresh)
     changes2, warns2 = diff(a2, b)
     if not changes2 and not warns2:
-        print("重新驗證：模組重建後與你的檔案完全一致 ✔")
+        print("重新驗證：模組重建後與你的檔案完全一致 [OK]")
+        # length / format guard: the edit may push a field past the layout limits
+        import verify_check_format as fmt
+        issues = fmt.check_module(mod)
+        if issues:
+            print(f"\n體例提醒：有 {len(issues)} 項超出建議長度（版面可能變擠或自動縮字）")
+            for it in issues:
+                print("  ⚠ " + it)
+            print("  建議改寫精簡，或把一條拆成兩條（告訴我即可）")
+            return 3
+        print("體例檢查：指令與條件長度都在上限內 [OK]")
+        condensed = [w for w in warns_build if "condensed" in w]
+        if condensed:
+            print("\n版面警告：")
+            for w in condensed:
+                print("  ! " + w)
         return 0
     print(f"重新驗證：仍有 {len(changes2)} 處文字差異、{len(warns2)} 項警告")
     for c in changes2:
