@@ -7,6 +7,9 @@ REFS = [
     "https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/index.html",
 ]
 
+# 參考資料頁只列第一條（使用者 2026-11-15 手改）
+REFS_SLIDE = [REFS[0]]
+
 SCOPE = ("以 Oracle Database 19c 為敘述基準，指令取自來源文件 p.238–246 並以 19c 語法校對。"
          "共用伺服器與 DRCP 的細節、以及各平台服務名稱，仍以官方文件為準。")
 
@@ -28,6 +31,7 @@ CHAPTER = {
     "agenda_note": "本章是 Part 2 的入口：後續備份、效能與安全章節的連線前提，都在這裡建立。",
     "note_why": "來源文件 Part 2 是一堆零散的連線片段，本章收斂成「設定、解析、模式、診斷」四段動線。",
     "refs": REFS,
+    "refs_slide": REFS_SLIDE,
     "refs_note": "來源為 10g/11g 時代文件；19c 的參數名與動態效能檢視欄位，請以官方文件複核。",
 
     "topics": [
@@ -181,12 +185,13 @@ CHAPTER = {
                     "EXEC DBMS_CONNECTION_POOL.STOP_POOL();",
                 ],
                 "takeaway": "DRCP 重啟後要再 START_POOL；以 dba_cpool_info 的 status 確認。",
+                "_note_why": "DRCP 是 Oracle 資料庫中的 資料庫常駐連線池 (Database Resident Connection Pooling) 的縮寫。這項功能在資料庫伺服器端建立一個可重複使用的連線池，能大幅減少大量短連線（如 PHP、Python 等網頁應用程式）所消耗的記憶體與 CPU 資源。\n\n在傳統的「專用伺服器模式（Dedicated Server）」下，每一個客戶端連線都會在資料庫伺服器上產生一個獨立的伺服器程序（Server Process），每個程序都會佔用數 MB 的記憶體。當有成千上萬個網頁請求同時連入時，頻繁建立與斷開連線會瞬間耗盡主機記憶體。DRCP 透過在多個客戶端之間共享伺服器程序，完美解決了高並發下的資源瓶頸。\n\nOracle 19c（及更早版本）:\n僅限 1 個（整個 CDB 共享單一預設連線池 SYS_DEFAULT_CONNECTION_POOL）。\n\n只能在 CDB$ROOT 管理，所有底下的 PDB 共用這個連線池資源。不支援自訂池名稱或建立多個池。\n\n\nOracle 21c\n可為每個 PDB 獨立配置 1 個，或維持全 CDB 共享 1 個。\n\nCDB 共享 1 個。新增初始化參數 ENABLE_PER_PDB_DRCP。設為 TRUE 後，各個 PDB 擁有各自獨立的預設連線池，且必須連線到該 PDB 進行啟停與調整。\n\n\nOracle 23ai（含 26ai）\n\n23ai（含 26ai）可建立多個自訂名稱的連線池（Multi-pool DRCP）。\n\nDBMS_CONNECTION_POOL 新增 ADD_POOL 與 REMOVE_POOL 程序。無論在 CDB 層級或單一 PDB 內，都能依不同業務系統建立多個獨立命名池，避免單一應用佔滿所有資源。",
             },
             "check": {
                 "title": "檢核：模式與容量是否匹配",
                 "commands": [
-                    "SELECT server, COUNT(*) AS n FROM v$session",
-                    "WHERE  type = 'USER' GROUP BY server;",
+                    "SELECT server, type, COUNT(*) AS n FROM v$session",
+                    "WHERE  type = 'USER' GROUP BY server, type;",
                     "SELECT status, maxsize, minsize FROM dba_cpool_info;",
                     "SELECT num_open_servers, num_busy_servers, num_waits FROM v$cpool_stats;",
                     "SELECT resource_name, current_utilization, limit_value FROM v$resource_limit",
@@ -248,7 +253,7 @@ CHAPTER = {
                     "lsnrctl services      # service 與 handler 狀態",
                     "SELECT sid, username, machine, server, status",
                     "FROM   v$session WHERE type = 'USER';",
-                    "oerr ora 12541        # 12541＝無 listener；12514＝未註冊",
+                    "oerr ora 12541        # 可以查詳細錯誤原因；12541＝無 listener，12514＝未註冊",
                 ],
                 "conds": [
                     ("tnsping", "OK 且位址正確；ORA-12541＝listener 沒開或埠錯"),

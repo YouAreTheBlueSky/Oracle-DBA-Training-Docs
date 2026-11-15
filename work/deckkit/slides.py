@@ -423,7 +423,7 @@ class Chapter:
         tf = tb.text_frame
         psize = 17.0
         first = True
-        for u in sp["refs"]:
+        for u in (sp.get("refs_slide") or sp["refs"]):
             p = tf.paragraphs[0] if first else tf.add_paragraph()
             first = False
             p.line_spacing = 1.25
