@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 """Compare a hand-edited PPTX with what the content module produces, and optionally
-write the text changes back into the module.
+write the changes back into the module.
+
+Recognises text changes AND formatting changes (bold / underline) on otherwise
+identical text; formatting is written back as inline markup (**bold**, __underline__).
 
 usage:
   python work/diff_pptx.py ch05 <edited.pptx> [--as 5]          # 只列出差異
   python work/diff_pptx.py ch05 <edited.pptx> [--as 5] --apply  # 回寫模組並重新驗證
 
-Exit codes: 0 = no differences, 1 = differences remain, 2 = usage error.
+Exit codes: 0 = no differences, 1 = differences remain, 3 = applied but format warnings.
 """
 import os, sys, importlib
-try:
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-except Exception:
-    pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "deckkit"))
@@ -22,12 +21,57 @@ sys.path.insert(0, HERE)
 from pptx import Presentation
 import build_chapter
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 MAXLEN = 60
 
 
 def cut(s):
     s = s.replace("\n", "\\n")
     return s if len(s) <= MAXLEN else s[:MAXLEN] + "…"
+
+
+# ---------------------------------------------------------------- rich text
+def para_runs(p):
+    return [(r.text, bool(r.font.bold), bool(r.font.underline)) for r in p.runs]
+
+
+def plain(runs):
+    return "".join(t for t, _b, _u in runs)
+
+
+def default_style(runs):
+    total = sum(len(t) for t, _b, _u in runs) or 1
+    b = sum(len(t) for t, bb, _u in runs if bb) * 2 > total
+    u = sum(len(t) for t, _b, uu in runs if uu) * 2 > total
+    return b, u
+
+
+def markup(runs, def_b, def_u):
+    out = []
+    for t, b, u in runs:
+        if not t:
+            continue
+        mb, mu = (b != def_b), (u != def_u)
+        if mb and mu:
+            out.append("***%s***" % t)
+        elif mb:
+            out.append("**%s**" % t)
+        elif mu:
+            out.append("__%s__" % t)
+        else:
+            out.append(t)
+    return "".join(out)
+
+
+def strip_prefix(runs):
+    """Renderer prepends "× " to pitfalls; the module stores only the text."""
+    if runs and runs[0][0] == "× ":
+        return runs[1:], "× "
+    return runs, ""
 
 
 def dump(path):
@@ -37,8 +81,7 @@ def dump(path):
         shapes = []
         for sh in s.shapes:
             if sh.has_text_frame:
-                shapes.append(["".join(r.text for r in p.runs)
-                               for p in sh.text_frame.paragraphs])
+                shapes.append([para_runs(p) for p in sh.text_frame.paragraphs])
             else:
                 shapes.append(None)
         notes = s.notes_slide.notes_text_frame.text if s.has_notes_slide else ""
@@ -47,7 +90,6 @@ def dump(path):
 
 
 def diff(a, b):
-    """a = freshly built from module, b = user's edited file. Returns (changes, warnings)."""
     changes, warns = [], []
     if len(a) != len(b):
         warns.append(f"頁數不同：模組 {len(a)} 頁，你的檔案 {len(b)} 頁")
@@ -64,17 +106,25 @@ def diff(a, b):
                 warns.append(f"第 {n:02d} 頁形狀 {si} 段落數不同（{len(pa)} vs {len(pb)}）"
                              f"——結構被改動，需人工對應")
                 continue
-            for pi, (ta, tb) in enumerate(zip(pa, pb)):
+            for pi, (ra, rb) in enumerate(zip(pa, pb)):
+                ra2, _pre = strip_prefix(ra)
+                rb2, _pre2 = strip_prefix(rb)
+                ta, tb = plain(ra2), plain(rb2)
                 if ta != tb:
                     changes.append({"slide": n, "shape": si, "para": pi,
                                     "old": ta, "new": tb, "kind": "text"})
+                    continue
+                db, du = default_style(ra2)
+                ma, mb = markup(ra2, db, du), markup(rb2, db, du)
+                if ma != mb:
+                    changes.append({"slide": n, "shape": si, "para": pi,
+                                    "old": ta, "new": mb, "kind": "format"})
         if sa["notes"].strip() != sb["notes"].strip():
             warns.append(f"第 {n:02d} 頁講者備忘有差異（不回寫，請人工確認）")
     return changes, warns
 
 
 def _literals(s):
-    """Possible literal spellings of a string inside the module source."""
     return ['"' + s.replace('"', '\\"') + '"',
             "'" + s.replace("'", "\\'") + "'"]
 
@@ -131,9 +181,12 @@ def main():
         return 0
 
     if changes:
-        print(f"\n文字差異 {len(changes)} 處：")
+        txt_c = [c for c in changes if c["kind"] == "text"]
+        fmt_c = [c for c in changes if c["kind"] == "format"]
+        print(f"\n文字差異 {len(txt_c)} 處、格式差異（粗體／底線）{len(fmt_c)} 處：")
         for c in changes:
-            print(f"  第 {c['slide']:02d} 頁｜形狀 {c['shape']}｜段 {c['para']}"
+            tag = "文字" if c["kind"] == "text" else "格式"
+            print(f"  [{tag}] 第 {c['slide']:02d} 頁｜形狀 {c['shape']}｜段 {c['para']}"
                   f"\n    - {cut(c['old'])}\n    + {cut(c['new'])}")
     if warns:
         print("\n需要人工處理：")
@@ -141,7 +194,7 @@ def main():
             print("  ! " + w)
 
     if not do_apply:
-        print("\n（加 --apply 會把上述文字差異寫回模組並重新驗證）")
+        print("\n（加 --apply 會把上述差異寫回模組並重新驗證）")
         return 1
 
     applied, skipped = apply_changes(mod, changes)
@@ -149,7 +202,6 @@ def main():
     for c, why in skipped:
         print(f"  - 第 {c['slide']:02d} 頁「{cut(c['old'])[:24]}」：{why}")
 
-    # re-verify: reload the edited module, then rebuild and diff again
     importlib.invalidate_caches()
     mod_obj = importlib.reload(sys.modules[mod])
     sp2 = mod_obj.CHAPTER
@@ -161,7 +213,6 @@ def main():
     changes2, warns2 = diff(a2, b)
     if not changes2 and not warns2:
         print("重新驗證：模組重建後與你的檔案完全一致 [OK]")
-        # length / format guard: the edit may push a field past the layout limits
         import verify_check_format as fmt
         issues = fmt.check_module(mod)
         if issues:
@@ -177,9 +228,9 @@ def main():
             for w in condensed:
                 print("  ! " + w)
         return 0
-    print(f"重新驗證：仍有 {len(changes2)} 處文字差異、{len(warns2)} 項警告")
+    print(f"重新驗證：仍有 {len(changes2)} 處差異、{len(warns2)} 項警告")
     for c in changes2:
-        print(f"  - 第 {c['slide']:02d} 頁｜{cut(c['old'])} → {cut(c['new'])}")
+        print(f"  - [{c['kind']}] 第 {c['slide']:02d} 頁｜{cut(c['old'])} → {cut(c['new'])}")
     for w in warns2:
         print("  ! " + w)
     return 1

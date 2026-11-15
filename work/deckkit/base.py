@@ -105,9 +105,7 @@ def para(tf, text, size=21.0, color="16333D", bold=False, font=ZH,
         p.space_before = Pt(space_before)
     if space_after:
         p.space_after = Pt(space_after)
-    r = p.add_run()
-    r.text = text
-    _set_font(r, font, size, bold, color)
+    add_runs(p, text, size, color, bold, font)
     return p
 
 
@@ -155,7 +153,53 @@ def _char_w(ch):
     return 1.0
 
 
+
+# ---------------------------------------------------------------- rich text
+# **粗體**   __底線__   ***粗體＋底線***
+def parse_rich(text, bold=False, underline=False):
+    """Split text into [(chunk, bold, underline)] honouring inline markers."""
+    if "**" not in text and "__" not in text:
+        return [(text, bold, underline)]
+    segs, buf = [], []
+    b, u = bold, underline
+
+    def flush():
+        if buf:
+            segs.append(("".join(buf), b, u))
+            buf.clear()
+
+    i, n = 0, len(text)
+    while i < n:
+        if text.startswith("***", i):
+            flush(); b, u = not b, not u; i += 3
+        elif text.startswith("**", i):
+            flush(); b = not b; i += 2
+        elif text.startswith("__", i):
+            flush(); u = not u; i += 2
+        else:
+            buf.append(text[i]); i += 1
+    flush()
+    return segs or [("", bold, underline)]
+
+
+def strip_markup(text):
+    return "".join(c for c, _b, _u in parse_rich(text))
+
+
+def add_runs(p, text, size, color, bold=False, font=ZH, underline=False):
+    """Append one or more runs, honouring inline markup."""
+    for chunk, b, u in parse_rich(text, bold, underline):
+        if chunk == "":
+            continue
+        r = p.add_run()
+        r.text = chunk
+        _set_font(r, font, size, b, color)
+        if u:
+            r.font.underline = True
+    return p
+
 def text_w_pt(text, size, mono=False):
+    text = strip_markup(text)
     if mono:
         # Consolas advance is 0.55em, but CJK glyphs fall back to a full-width face
         return sum((size if ord(c) >= 0x2E80 else size * 0.55) for c in text)
@@ -288,9 +332,7 @@ def table(slide, header, rows, top=2.02, col_w=None, row_h=0.86, sizes=(19.0, 19
         tf.word_wrap = True
         p = tf.paragraphs[0]
         p.alignment = PP_ALIGN.CENTER if ci in align_center_cols else PP_ALIGN.LEFT
-        r = p.add_run()
-        r.text = text
-        _set_font(r, ZH, head_size, True, C["white"])
+        add_runs(p, text, head_size, C["white"], True, ZH)
         _cell_border(cell)
 
     for ri, row in enumerate(rows):
@@ -309,9 +351,7 @@ def table(slide, header, rows, top=2.02, col_w=None, row_h=0.86, sizes=(19.0, 19
             p = tf.paragraphs[0]
             p.alignment = PP_ALIGN.CENTER if ci in align_center_cols else PP_ALIGN.LEFT
             p.line_spacing = 1.1
-            r = p.add_run()
-            r.text = str(text)
-            _set_font(r, ZH, body_size, False, C["ink"])
+            add_runs(p, str(text), body_size, C["ink"], False, ZH)
             _cell_border(cell)
     # overflow estimate
     for ri, row in enumerate(rows):

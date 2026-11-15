@@ -7,7 +7,7 @@ from base import (C, ZH, MONO, LEFT, WIDTH, TITLE_TOP, BODY_TOP, BODY_BOTTOM,
                   LINE_BODY, LINE_CODE,
                   blank_deck, textbox, para, rect, hline, title, footer, takeaway,
                   warning, notes, table, fit_size, wrap_lines, text_w_pt, warn, _rgb,
-                  _set_font, _noline, add_bg, EMU)
+                  _set_font, _noline, add_bg, EMU, add_runs)
 
 
 PIT_BASE = 14.0    # 常見錯誤項目字級（原 13）
@@ -197,9 +197,7 @@ class Chapter:
         for i, ln in enumerate(lines):
             p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
             p.line_spacing = Pt(size * LINE_CODE)
-            r = p.add_run()
-            r.text = ln if ln else " "
-            _set_font(r, MONO, size, False, C["ink"])
+            add_runs(p, ln if ln else " ", size, C["ink"], False, MONO)
         if c.get("takeaway"):
             takeaway(s, c["takeaway"], y=max(6.86, min(7.02, BODY_TOP + panel_h + 0.36)))
         if c.get("warning"):
@@ -224,9 +222,11 @@ class Chapter:
     def _check_verify(self, s, c):
         """Verification layout: runnable commands + pass conditions + pitfalls."""
         k = float(c.get("style", {}).get("scale", 1.0))
+        k_cmd = k * float(c.get("style", {}).get("commands_scale", 1.0))
+        k_cond = k * float(c.get("style", {}).get("cond_scale", 1.0))
         lines = c["commands"][:7]
         inner_w = WIDTH - 0.5
-        size = fit_size(lines, inner_w, 17.0 * k, 11.5, mono=True, step=0.5)
+        size = fit_size(lines, inner_w, 17.0 * k_cmd, 11.5, mono=True, step=0.5)
         lh = size * LINE_CODE / 72.0
         panel_h = 0.20 + len(lines) * lh + 0.18
 
@@ -241,9 +241,7 @@ class Chapter:
         for i, ln in enumerate(lines):
             p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
             p.line_spacing = Pt(size * LINE_CODE)
-            r = p.add_run()
-            r.text = ln if ln else " "
-            _set_font(r, MONO, size, False, C["ink"])
+            add_runs(p, ln if ln else " ", size, C["ink"], False, MONO)
 
         y = panel_top + panel_h + 0.18
         lb2 = textbox(s, 0.85, y, 6.0, 0.32)
@@ -256,7 +254,7 @@ class Chapter:
         label_w, label_x = 2.55, 0.85
         expect_x, expect_w = 3.50, 7.10
 
-        size_l, size_e = 16.5 * k, 16.0 * k
+        size_l, size_e = 16.5 * k_cond, 16.0 * k_cond
         heights = []
         for look, expect in conds:
             hl = wrap_lines(look, label_w, size_l) * size_l * LINE_BODY / 72.0
@@ -316,9 +314,7 @@ class Chapter:
                 r1 = p.add_run()
                 r1.text = "× "
                 _set_font(r1, ZH, PIT_BASE * k * pk, True, C["warn"])
-                r2 = p.add_run()
-                r2.text = ptext
-                _set_font(r2, ZH, PIT_BASE * k * pk, False, C["ink"])
+                add_runs(p, ptext, PIT_BASE * k * pk, C["ink"], False, ZH)
             if abs(pk - float(c.get("style", {}).get("pitfall_scale", 1.0))) > 0.001:
                 warn(f"C{self.spec['no']} pitfall scaled to {PIT_BASE*k*pk:.1f}pt: {c['title']}")
 
@@ -363,9 +359,7 @@ class Chapter:
                 r1 = p.add_run()
                 r1.text = "× "
                 _set_font(r1, ZH, psize, True, C["warn"])
-                r2 = p.add_run()
-                r2.text = pt
-                _set_font(r2, ZH, psize, False, C["ink"])
+                add_runs(p, pt, psize, C["ink"], False, ZH)
 
     # ---------------------------------------------------------------- table
     def table_slide(self, t, idx):
@@ -414,10 +408,8 @@ class Chapter:
             for j, ln in enumerate(lines):
                 p = tf.paragraphs[0] if j == 0 else tf.add_paragraph()
                 p.alignment = PP_ALIGN.CENTER
-                r = p.add_run()
-                r.text = ln
-                _set_font(r, ZH, 19.0 if j == 0 else 16.0, j == 0,
-                          C["white"] if filled else C["ink"])
+                add_runs(p, ln, 19.0 if j == 0 else 16.0,
+                         C["white"] if filled else C["ink"], j == 0, ZH)
             if i < n - 1:
                 cx1 = x + bw
                 cx2 = x + bw + gap
