@@ -417,6 +417,7 @@ CHAPTER = {
                     "SHUTDOWN IMMEDIATE;",
                     "cp /u01/oradata/prod1/control01.ctl /u05/oradata/prod1/control02.ctl",
                     "STARTUP;",
+                    "",
                     "-- 備份：二進位副本與可重建腳本",
                     "ALTER DATABASE BACKUP CONTROLFILE TO '/backup/control.bkp';",
                     "ALTER DATABASE BACKUP CONTROLFILE TO TRACE;",
