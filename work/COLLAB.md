@@ -36,6 +36,23 @@
 已 commit 25ac802 並 push
 ```
 
+## 重建時只會動有變動的章節
+
+`build_beginner.py` 與 `build_advanced.py` 會比較「章節模組」與「簡報檔」的修改時間：
+
+- 模組比簡報新 → 重建該章
+- 否則跳過，印出 `SKIP (up-to-date)`
+- 全部都沒變 → 連索引與 README 都不重寫
+
+需要時可強制：
+
+```powershell
+python work/build_beginner.py --only ch05   # 只重建第 5 章
+python work/build_beginner.py --force       # 全量重建
+```
+
+這樣「只改一章」就不會讓 10 個檔案的時間戳全部變動。
+
 ## 你需要避免的三件事
 
 | 避免 | 原因 |

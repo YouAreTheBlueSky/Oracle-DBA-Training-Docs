@@ -24,8 +24,24 @@ import build_chapter
 TEMPLATE = os.path.join(ROOT, "Oracle_Storage_Memory_Process_zhTW.pptx")
 ADVANCED = os.path.join(ROOT, "deliver_advance")
 OUT = os.path.join(ROOT, "deliver_beginner")
+INDEX_PATH = os.path.join(OUT, "00_Oracle_DBA_初階課程總覽.pptx")
 
 # (beginner no, source module or None for chapter 1, output file name)
+FORCE = "--force" in sys.argv
+ONLY = set()
+if "--only" in sys.argv:
+    ONLY = {a for a in sys.argv[sys.argv.index("--only") + 1:] if not a.startswith("--")}
+
+
+def needs_build(dst, mod):
+    """簡報不存在，或模組比簡報新，才需要重建。"""
+    if FORCE or mod in ONLY:
+        return True
+    if not os.path.exists(dst):
+        return True
+    return os.path.getmtime(os.path.join(HERE, "content", mod + ".py")) > os.path.getmtime(dst) + 1
+
+
 CHAPTERS = [
     (1, None,   "01_Oracle_DBA_儲存記憶體與程序架構.pptx"),
     (2, "ch02", "02_Oracle_DBA_建置與日常管理.pptx"),
@@ -71,21 +87,31 @@ def chapters_meta():
 
 def build_chapters():
     os.makedirs(OUT, exist_ok=True)
+    rebuilt = []
     ch1_dst = os.path.join(OUT, CHAPTERS[0][2])
+    src1 = os.path.join(ROOT, "Oracle_Storage_Memory_Process_zhTW.pptx")
     if os.path.basename(ch1_dst) in build_chapter.frozen_names() and os.path.exists(ch1_dst):
-        print(f"  SKIP (frozen) {ch1_dst} — kept as-is")
+        print(f"  SKIP (frozen) {os.path.basename(ch1_dst)}")
+    elif os.path.exists(ch1_dst) and not FORCE and os.path.getmtime(ch1_dst) >= os.path.getmtime(src1) - 1:
+        print(f"  SKIP (up-to-date) 01 {os.path.basename(ch1_dst)}")
     else:
-        shutil.copyfile(os.path.join(ROOT, "Oracle_Storage_Memory_Process_zhTW.pptx"), ch1_dst)
-    print(f"  01 copied, sha matches original: "
-          f"{sha(os.path.join(OUT, CHAPTERS[0][2])) == sha(os.path.join(ROOT, 'Oracle_Storage_Memory_Process_zhTW.pptx'))}")
+        shutil.copyfile(src1, ch1_dst)
+        print(f"  01 copied, sha matches original: {sha(ch1_dst) == sha(src1)}")
     for no, mod, fn in CHAPTERS[1:]:
+        dst = os.path.join(OUT, fn)
         sp = importlib.import_module(mod).CHAPTER
         sp["no"] = no
         sp["chap_label"] = f"{no:02d}"
-        slides, warns = build_chapter.build(mod, os.path.join(OUT, fn))
+        if not needs_build(dst, mod):
+            print(f"  SKIP (up-to-date) {no:02d} {fn}")
+            continue
+        slides, warns = build_chapter.build(mod, dst)
         expect = build_chapter.count_pages(sp)
         flag = "OK " if slides == expect else "BAD"
+        rebuilt.append(fn)
         print(f"  {flag} {no:02d} {mod} -> {fn} ({slides} slides, {len(warns)} warnings)")
+    print(f"  重建 {len(rebuilt)} 章")
+    return rebuilt
 
 
 def slide_count(path):
@@ -347,7 +373,11 @@ def build_readme(chapters, total):
 if __name__ == "__main__":
     chapters = chapters_meta()
     print("[1/3] chapters")
-    build_chapters()
+    rebuilt = build_chapters()
+    if not rebuilt and not FORCE and os.path.exists(INDEX_PATH):
+        print("  沒有章節變動，索引與 README 不重寫")
+        print(f"DONE: edition in {OUT}")
+        raise SystemExit(0)
     print("[2/3] index")
     total = build_index(chapters)
     print("[3/3] readme")

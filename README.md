@@ -59,8 +59,10 @@ Oracle_Storage_Memory_Process_zhTW.pptx   視覺範本（第 1 章原檔）
 需要 Python 3 與 `python-pptx`：
 
 ```powershell
-# 初階版（10 章）
+# 初階版（10 章）——只重建有變動的章節
 python work/build_beginner.py
+python work/build_beginner.py --only ch05   # 只重建第 5 章
+python work/build_beginner.py --force       # 強制全量重建
 
 # 進階課程（4 章）
 python work/build_advanced.py

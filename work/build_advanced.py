@@ -24,9 +24,25 @@ import build_chapter
 
 TEMPLATE = os.path.join(ROOT, "Oracle_Storage_Memory_Process_zhTW.pptx")
 OUT = os.path.join(ROOT, "deliver_advance")
+INDEX_PATH = os.path.join(OUT, "00_Oracle_DBA_進階課程總覽.pptx")
 BEGINNER = os.path.join(ROOT, "deliver_beginner")
 
 # (advanced no, source module, output file, PDF part label, page range)
+FORCE = "--force" in sys.argv
+ONLY = set()
+if "--only" in sys.argv:
+    ONLY = {a for a in sys.argv[sys.argv.index("--only") + 1:] if not a.startswith("--")}
+
+
+def needs_build(dst, mod):
+    """簡報不存在，或模組比簡報新，才需要重建。"""
+    if FORCE or mod in ONLY:
+        return True
+    if not os.path.exists(dst):
+        return True
+    return os.path.getmtime(os.path.join(HERE, "content", mod + ".py")) > os.path.getmtime(dst) + 1
+
+
 CHAPTERS = [
     (1, "ch07", "01_Oracle_DBA_ASM.pptx", "Part 6", "p.396–409"),
     (2, "ch08", "02_Oracle_DBA_RAC.pptx", "Part 7", "p.410–528"),
@@ -58,14 +74,22 @@ def prune():
 
 def build_chapters():
     os.makedirs(OUT, exist_ok=True)
+    rebuilt = []
     for no, mod, fn, part, pages in CHAPTERS:
+        dst = os.path.join(OUT, fn)
         sp = importlib.import_module(mod).CHAPTER
         sp["no"] = no
         sp["chap_label"] = f"{no:02d}"
-        slides, warns = build_chapter.build(mod, os.path.join(OUT, fn))
+        if not needs_build(dst, mod):
+            print(f"  SKIP (up-to-date) {no:02d} {fn}")
+            continue
+        slides, warns = build_chapter.build(mod, dst)
         expect = build_chapter.count_pages(sp)
         flag = "OK " if slides == expect else "BAD"
+        rebuilt.append(fn)
         print(f"  {flag} {no:02d} {mod} -> {fn} ({slides} slides, {len(warns)} warnings)")
+    print(f"  重建 {len(rebuilt)} 章")
+    return rebuilt
 
 
 def slide_count(path):
@@ -309,7 +333,11 @@ if __name__ == "__main__":
     print("[0/4] prune")
     prune()
     print("[1/4] chapters")
-    build_chapters()
+    rebuilt = build_chapters()
+    if not rebuilt and not FORCE and os.path.exists(INDEX_PATH):
+        print("  沒有章節變動，索引與 README 不重寫")
+        print(f"DONE: advanced course in {OUT}")
+        raise SystemExit(0)
     print("[2/4] index")
     total = build_index(chapters)
     print("[3/4] readme")
