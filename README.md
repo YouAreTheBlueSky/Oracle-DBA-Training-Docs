@@ -4,6 +4,12 @@
 視覺規範取自 `Oracle_Storage_Memory_Process_zhTW.pptx`：底色 `#F7F5F0`、封面色 `#132E38`、
 青綠 `#147A7E`、程式碼面板 `#E6EDEB`、表頭 `#132E38`，字體 Microsoft JhengHei ＋ Consolas。
 
+## 協作模式：「第 X 章我改好了」
+
+若你在 PowerPoint 改了某一章的內文，只要說「第 X 章我改好了」，不必給路徑也不必描述改了什麼。
+我會自動找出該檔、以內容模組重建基準逐頁比對，把文字與講者備忘回寫模組，再重建、驗證、commit。
+完整規則（含你該避免的三件事）見 [`work/COLLAB.md`](work/COLLAB.md)。
+
 ## 兩套教材
 
 完整 14 章（301 頁）拆成兩套，章號各自從 01 起算：
