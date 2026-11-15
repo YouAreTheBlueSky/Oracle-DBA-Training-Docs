@@ -54,7 +54,7 @@ CHAPTER = {
                     "  (ADDRESS=(PROTOCOL=TCP)(HOST=myserver)(PORT=1521)(QUEUESIZE=10))",
                     "  (ADDRESS=(PROTOCOL=IPC)(KEY=EXTPROC1))))",
                     "",
-                    "-- 啟動、檢視、重新載入（改設定後用 reload）",
+                    "-- 啟動、檢視、重新載入（改設定後用 reload）;當名稱不是LISTENER時, 以下三行指令後面需要加名稱",
                     "lsnrctl start",
                     "lsnrctl status",
                     "lsnrctl reload",
@@ -76,7 +76,7 @@ CHAPTER = {
                 "conds": [
                     ("status", "READY 且列出正確 SERVICE_NAME；沒有＝未註冊"),
                     ("handler", "至少一個 READY；全 BLOCKED＝伺服程序或佇列滿"),
-                    ("listener.ora", "路徑在 $TNS_ADMIN 下；不同＝改錯檔"),
+                    ("listener.ora", "路徑在 $TNS_ADMIN 下；不同＝改錯檔; 如果未設定$TNS_ADMIN 時, 抓取 $ORACLE_HOME/…"),
                     ("LOCAL LISTENER", "空值＝註冊到預設 1521；非空須與 status 的 endpoint 相同"),
                 ],
                 "pitfalls": [
@@ -85,7 +85,7 @@ CHAPTER = {
                     "$TNS_ADMIN 不同，改到的不是載入檔",
                 ],
             },
-            "_note_why": "先讓學生看懂 listener 是獨立程序，才不會把「連不上」一律當成資料庫故障。",
+            "_note_why": "先讓學生看懂 listener 是獨立程序，才不會把「連不上」一律當成資料庫故障。\n\nOracle Database Listener（監聽器） 是負責接收客戶端連線請求並將其轉發給資料庫實例（Instance）的網路服務程序。資料庫服務向監聽器註冊的方式分為動態註冊（Dynamic Registration）與靜態註冊（Static Registration）兩種。\n1. 動態註冊 (Dynamic Registration)\n動態註冊是現代 Oracle 資料庫的預設機制。當資料庫實例啟動後，背景程序（12c 之後為 LREG，11g 及更早版本為 PMON）會自動向監聽器註冊服務資訊。\n運作條件：監聽器必須先啟動，資料庫實例啟動後會透過預設連接埠（1521）或初始化參數 LOCAL_LISTENER 指定的位址進行自動註冊。\n狀態顯示：在執行 lsnrctl status 指令時，動態註冊的服務狀態通常顯示為 READY。\n核心優勢：無需手動修改設定檔即可生效，且能動態向監聽器回報資料庫的負載狀態，支援連線負載平衡與故障轉移（Failover）。\n主要限制：資料庫實例必須處於啟動狀態（至少達到 NOMOUNT 或 MOUNT 階段）才能完成註冊。一旦資料庫關閉，監聽器就會移除該服務資訊，客戶端便無法透過網路遠端連線啟動資料庫。\n2. 靜態註冊 (Static Registration)\n靜態註冊是由 DBA 手動將資料庫實例資訊寫入監聽器設定檔（listener.ora）中。無論資料庫是否已經啟動，只要監聽器在運行，就會持續對外宣告該服務的存在。\n設定方式：在 $ORACLE_HOME/network/admin/listener.ora 檔案中，透過 SID_LIST_LISTENER 區塊明確指定 GLOBAL_DBNAME、ORACLE_HOME 與 SID_NAME。\n狀態顯示：在執行 lsnrctl status 指令時，靜態註冊的服務狀態會固定顯示為 UNKNOWN（代表監聽器僅依據設定檔宣告服務，並不確定資料庫當下是否真的在線）。\n主要用途：當資料庫處於關閉（SHUTDOWN）狀態時，管理員若需要從遠端透過網路連線並執行 STARTUP 指令，或在使用 Data Guard 進行 RMAN Duplicate 複製資料庫時，都必須依賴靜態註冊才能建立連線。",
             "_note_scope": SCOPE,
             "_refs": [REFS[1]],
         },
@@ -166,7 +166,7 @@ CHAPTER = {
                 "title": "啟動 DRCP 並調整池參數",
                 "lines": [
                     "-- 啟用 DRCP；資料庫重啟後池需重新啟動（p.240）",
-                    "EXEC DBMS_CONNECTION_POOL.START_POOL();",
+                    "EXEC DBMS_CONNECTION_POOL.START_POOL();     -- 預設 POOL Name:SYS_DEFAULT_CONNECTION_POOL",
                     "SELECT connection_pool, status, maxsize FROM dba_cpool_info;",
                     "",
                     "-- 閒置 3600 秒的伺服程序即回收（p.241）",
@@ -176,9 +176,11 @@ CHAPTER = {
                     "-- 監控：開啟數、忙碌數、命中與未命中（p.241）",
                     "SELECT num_open_servers, num_busy_servers, num_hits, num_misses",
                     "FROM   v$cpool_stats;",
+                    "",
+                    "-- 停用 DRCP",
+                    "EXEC DBMS_CONNECTION_POOL.STOP_POOL();",
                 ],
                 "takeaway": "DRCP 重啟後要再 START_POOL；以 dba_cpool_info 的 status 確認。",
-                "warning": "原文寫 MAX_SIZE／MIN_SZIE，實際參數名是 MAXSIZE／MINSIZE。",
             },
             "check": {
                 "title": "檢核：模式與容量是否匹配",
