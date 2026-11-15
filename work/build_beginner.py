@@ -33,13 +33,21 @@ if "--only" in sys.argv:
     ONLY = {a for a in sys.argv[sys.argv.index("--only") + 1:] if not a.startswith("--")}
 
 
+DECK_DEP = [os.path.join(HERE, "deckkit", f) for f in ("base.py", "slides.py")]
+
+
+def newest_dep():
+    return max(os.path.getmtime(f) for f in DECK_DEP if os.path.exists(f))
+
+
 def needs_build(dst, mod):
-    """簡報不存在，或模組比簡報新，才需要重建。"""
+    """簡報不存在，或內容模組／版面程式比簡報新，才需要重建。"""
     if FORCE or mod in ONLY:
         return True
     if not os.path.exists(dst):
         return True
-    return os.path.getmtime(os.path.join(HERE, "content", mod + ".py")) > os.path.getmtime(dst) + 1
+    src_newest = max(os.path.getmtime(os.path.join(HERE, "content", mod + ".py")), newest_dep())
+    return src_newest > os.path.getmtime(dst) + 1
 
 
 CHAPTERS = [

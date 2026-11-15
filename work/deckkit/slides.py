@@ -10,6 +10,10 @@ from base import (C, ZH, MONO, LEFT, WIDTH, TITLE_TOP, BODY_TOP, BODY_BOTTOM,
                   _set_font, _noline, add_bg, EMU)
 
 
+PIT_BASE = 14.0    # 常見錯誤項目字級（原 13）
+PIT_HEAD = 14.5    # 常見錯誤標題字級（原 13.5）
+
+
 class Chapter:
     """Renders one chapter file from a content dict."""
 
@@ -227,7 +231,7 @@ class Chapter:
         panel_h = 0.20 + len(lines) * lh + 0.18
 
         lb = textbox(s, 0.85, 1.82, 6.0, 0.32)
-        para(lb.text_frame, "怎麼驗", size=14.5 * k, color=C["teal"], bold=True, first=True)
+        para(lb.text_frame, "怎麼檢查", size=14.5 * k, color=C["teal"], bold=True, first=True)
 
         panel_top = 2.16
         rect(s, LEFT, panel_top, WIDTH, panel_h, fill=C["panel"])
@@ -285,10 +289,10 @@ class Chapter:
             pk = float(c.get("style", {}).get("pitfall_scale", 1.0))
 
             def panel_need(scale):
-                n = 0.52 * k * scale
+                n = 0.55 * k * scale
                 for pt in pits:
-                    n += (wrap_lines(pt, inner, 13.0 * k * scale)
-                          * 13.0 * k * scale * LINE_BODY / 72.0 + 0.10 * k * scale)
+                    n += (wrap_lines(pt, inner, PIT_BASE * k * scale)
+                          * PIT_BASE * k * scale * LINE_BODY / 72.0 + 0.10 * k * scale)
                 return n
 
             need = panel_need(pk)
@@ -300,23 +304,23 @@ class Chapter:
             ph = min(need, avail_p)
             rect(s, px, conds_top, pw, ph, fill=C["panel"])
             hb = textbox(s, px + 0.24, conds_top + 0.14, pw - 0.48, 0.32 * k * pk)
-            para(hb.text_frame, "常見錯誤", size=13.5 * k * pk, color=C["warn"],
+            para(hb.text_frame, "常見錯誤", size=PIT_HEAD * k * pk, color=C["warn"],
                  bold=True, first=True)
             pb = textbox(s, px + 0.24, conds_top + 0.52 * k * pk, pw - 0.48,
                          ph - 0.62 * k * pk)
             tf2 = pb.text_frame
             for j, ptext in enumerate(pits):
                 p = tf2.paragraphs[0] if j == 0 else tf2.add_paragraph()
-                p.line_spacing = Pt(13.0 * k * pk * LINE_BODY)
+                p.line_spacing = Pt(PIT_BASE * k * pk * LINE_BODY)
                 p.space_before = Pt(0 if j == 0 else 5)
                 r1 = p.add_run()
                 r1.text = "× "
-                _set_font(r1, ZH, 13.0 * k * pk, True, C["warn"])
+                _set_font(r1, ZH, PIT_BASE * k * pk, True, C["warn"])
                 r2 = p.add_run()
                 r2.text = ptext
-                _set_font(r2, ZH, 13.0 * k * pk, False, C["ink"])
+                _set_font(r2, ZH, PIT_BASE * k * pk, False, C["ink"])
             if abs(pk - float(c.get("style", {}).get("pitfall_scale", 1.0))) > 0.001:
-                warn(f"C{self.spec['no']} pitfall scaled to {13.0*k*pk:.1f}pt: {c['title']}")
+                warn(f"C{self.spec['no']} pitfall scaled to {PIT_BASE*k*pk:.1f}pt: {c['title']}")
 
     def _check_legacy(self, s, c):
         items = c["items"]
