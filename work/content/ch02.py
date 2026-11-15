@@ -251,6 +251,7 @@ CHAPTER = {
             },
             "check": {
                 "title": "檢核：能不能說出這台資料庫的現況",
+                "style": {"scale": 1.26},   # 使用者要求放大這頁（有效字級 20.2pt）
                 "commands": [
                     "SELECT * FROM v$version;",
                     "SELECT component, ROUND(current_size/1024/1024) mb",

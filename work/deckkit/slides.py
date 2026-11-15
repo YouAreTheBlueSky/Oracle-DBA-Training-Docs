@@ -219,14 +219,15 @@ class Chapter:
 
     def _check_verify(self, s, c):
         """Verification layout: runnable commands + pass conditions + pitfalls."""
+        k = float(c.get("style", {}).get("scale", 1.0))
         lines = c["commands"][:7]
         inner_w = WIDTH - 0.5
-        size = fit_size(lines, inner_w, 17.0, 11.5, mono=True, step=0.5)
+        size = fit_size(lines, inner_w, 17.0 * k, 11.5, mono=True, step=0.5)
         lh = size * LINE_CODE / 72.0
         panel_h = 0.20 + len(lines) * lh + 0.18
 
         lb = textbox(s, 0.85, 1.82, 6.0, 0.32)
-        para(lb.text_frame, "怎麼驗", size=14.5, color=C["teal"], bold=True, first=True)
+        para(lb.text_frame, "怎麼驗", size=14.5 * k, color=C["teal"], bold=True, first=True)
 
         panel_top = 2.16
         rect(s, LEFT, panel_top, WIDTH, panel_h, fill=C["panel"])
@@ -242,7 +243,7 @@ class Chapter:
 
         y = panel_top + panel_h + 0.18
         lb2 = textbox(s, 0.85, y, 6.0, 0.32)
-        para(lb2.text_frame, "通過條件", size=14.5, color=C["teal"], bold=True, first=True)
+        para(lb2.text_frame, "通過條件", size=14.5 * k, color=C["teal"], bold=True, first=True)
 
         conds = c["conds"][:4]
         pits = (c.get("pitfalls") or [])[:3]
@@ -251,7 +252,7 @@ class Chapter:
         label_w, label_x = 2.55, 0.85
         expect_x, expect_w = 3.50, 7.10
 
-        size_l, size_e = 16.5, 16.0
+        size_l, size_e = 16.5 * k, 16.0 * k
         heights = []
         for look, expect in conds:
             hl = wrap_lines(look, label_w, size_l) * size_l * LINE_BODY / 72.0
@@ -279,22 +280,27 @@ class Chapter:
 
         if pits:
             px, pw = 10.95, 4.75
-            ph = min(0.55 + len(pits) * 0.58, bottom - conds_top)
+            inner = pw - 0.48
+            need = 0.52 * k
+            for pt in pits:
+                need += (wrap_lines(pt, inner, 13.0 * k) * 13.0 * k * LINE_BODY / 72.0
+                         + 0.10 * k)
+            ph = min(need, bottom - conds_top)
             rect(s, px, conds_top, pw, ph, fill=C["panel"])
-            hb = textbox(s, px + 0.24, conds_top + 0.14, pw - 0.48, 0.32)
-            para(hb.text_frame, "常見錯誤", size=13.5, color=C["warn"], bold=True, first=True)
-            pb = textbox(s, px + 0.24, conds_top + 0.52, pw - 0.48, ph - 0.62)
+            hb = textbox(s, px + 0.24, conds_top + 0.14, pw - 0.48, 0.32 * k)
+            para(hb.text_frame, "常見錯誤", size=13.5 * k, color=C["warn"], bold=True, first=True)
+            pb = textbox(s, px + 0.24, conds_top + 0.52 * k, pw - 0.48, ph - 0.62 * k)
             tf2 = pb.text_frame
             for j, ptext in enumerate(pits):
                 p = tf2.paragraphs[0] if j == 0 else tf2.add_paragraph()
-                p.line_spacing = Pt(13.0 * LINE_BODY)
+                p.line_spacing = Pt(13.0 * k * LINE_BODY)
                 p.space_before = Pt(0 if j == 0 else 5)
                 r1 = p.add_run()
                 r1.text = "× "
-                _set_font(r1, ZH, 13.0, True, C["warn"])
+                _set_font(r1, ZH, 13.0 * k, True, C["warn"])
                 r2 = p.add_run()
                 r2.text = ptext
-                _set_font(r2, ZH, 13.0, False, C["ink"])
+                _set_font(r2, ZH, 13.0 * k, False, C["ink"])
 
     def _check_legacy(self, s, c):
         items = c["items"]
