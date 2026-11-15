@@ -31,7 +31,7 @@
 |---|---|
 | 概念頁 | 5 個「標籤＋說明」，講為什麼與判斷依據，不含 SQL |
 | 程式碼頁 | 以來源文件為依據、改寫成 19c 可執行語法，附重點句與警示句 |
-| 檢核頁 | 4–5 條可驗證的檢查項，加上 3 條常見錯誤 |
+| 檢核頁 | 3–6 行可執行的驗證指令 ＋ 4 條通過條件 ＋ 2–3 個常見錯誤（指令、通過條件、常見錯誤） |
 
 每頁講者備忘固定三段：**講解重點／適用範圍／資料來源（含官方連結）**。
 
@@ -71,6 +71,21 @@ python work/verify_content.py
 
 `work/pdf_pages.json` 與 `work/extract/` 是從 PDF 抽出的中間檔（已列入 .gitignore），
 需要時依序執行 `work/extract_pdf.py`、`work/make_extracts.py` 重新產生。
+
+## 手改簡報與重建的關係
+
+`deliver_*/*.pptx` 是**產生物**：每次重建都是從 `work/content/chNN.py` 重新畫一份，
+所以在 PowerPoint 裡直接改的內容、新增的頁面或圖片，重建後都會消失。
+
+若要手改並保留，請把該檔名加進 `work/FROZEN.txt`（一行一個）：
+
+```
+02_Oracle_DBA_建置與日常管理.pptx
+```
+
+之後 `build_chapter.py`、`build_beginner.py`、`build_advanced.py` 遇到清單中的檔案會印出
+`SKIP (frozen)` 並保留現有檔案。要恢復重建時把該行刪掉即可。
+凍結的章節不會再吃到版型更新，重建前請先 commit 手改版本。
 
 ## 資料來源與授權
 

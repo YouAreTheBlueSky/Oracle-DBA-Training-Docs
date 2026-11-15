@@ -192,6 +192,95 @@ class Chapter:
         s = self._new()
         c = t["check"]
         title(s, c["title"])
+        if c.get("commands") and c.get("conds"):
+            self._check_verify(s, c)
+        else:
+            self._check_legacy(s, c)
+        if c.get("warning"):
+            warning(s, c["warning"], y=7.86)
+        self._chrome(s, t.get("section", ""))
+        self._note(s, c, t.get("src", ""))
+
+    def _check_verify(self, s, c):
+        """Verification layout: runnable commands + pass conditions + pitfalls."""
+        lines = c["commands"][:7]
+        inner_w = WIDTH - 0.5
+        size = fit_size(lines, inner_w, 17.0, 11.5, mono=True, step=0.5)
+        lh = size * LINE_CODE / 72.0
+        panel_h = 0.20 + len(lines) * lh + 0.18
+
+        lb = textbox(s, 0.85, 1.82, 6.0, 0.32)
+        para(lb.text_frame, "怎麼驗", size=14.5, color=C["teal"], bold=True, first=True)
+
+        panel_top = 2.16
+        rect(s, LEFT, panel_top, WIDTH, panel_h, fill=C["panel"])
+        tb = textbox(s, LEFT + 0.24, panel_top + 0.18, inner_w, panel_h - 0.36)
+        tf = tb.text_frame
+        tf.word_wrap = False
+        for i, ln in enumerate(lines):
+            p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+            p.line_spacing = Pt(size * LINE_CODE)
+            r = p.add_run()
+            r.text = ln if ln else " "
+            _set_font(r, MONO, size, False, C["ink"])
+
+        y = panel_top + panel_h + 0.18
+        lb2 = textbox(s, 0.85, y, 6.0, 0.32)
+        para(lb2.text_frame, "通過條件", size=14.5, color=C["teal"], bold=True, first=True)
+
+        conds = c["conds"][:4]
+        pits = (c.get("pitfalls") or [])[:3]
+        conds_top = y + 0.36
+        bottom = 7.34 if c.get("warning") else 7.56
+        label_w, label_x = 2.55, 0.85
+        expect_x, expect_w = 3.50, 7.10
+
+        size_l, size_e = 16.5, 16.0
+        heights = []
+        for look, expect in conds:
+            hl = wrap_lines(look, label_w, size_l) * size_l * LINE_BODY / 72.0
+            he = wrap_lines(expect, expect_w, size_e) * size_e * LINE_BODY / 72.0
+            heights.append(max(0.50, max(hl, he) + 0.14))
+        total = sum(heights) + 0.08 * (len(conds) - 1)
+        avail = bottom - conds_top
+        if total > avail:
+            k = avail / total
+            heights = [h * k for h in heights]
+            size_l, size_e = max(12.5, size_l * k), max(12.0, size_e * k)
+            warn(f"C{self.spec['no']} check condensed to {size_e:.1f}pt: {c['title']}")
+        total = sum(heights)
+        gap = 0.08 if total >= avail else min(0.42, (avail - total) / max(1, len(conds) - 1))
+
+        yy = conds_top
+        for (look, expect), h in zip(conds, heights):
+            nb = textbox(s, label_x, yy + 0.01, label_w, h)
+            para(nb.text_frame, look, size=size_l, color=C["ink"], bold=True, first=True,
+                 line=LINE_BODY)
+            eb = textbox(s, expect_x, yy, expect_w, h)
+            para(eb.text_frame, expect, size=size_e, color=C["body"], first=True,
+                 line=LINE_BODY)
+            yy += h + gap
+
+        if pits:
+            px, pw = 10.95, 4.75
+            ph = min(0.55 + len(pits) * 0.58, bottom - conds_top)
+            rect(s, px, conds_top, pw, ph, fill=C["panel"])
+            hb = textbox(s, px + 0.24, conds_top + 0.14, pw - 0.48, 0.32)
+            para(hb.text_frame, "常見錯誤", size=13.5, color=C["warn"], bold=True, first=True)
+            pb = textbox(s, px + 0.24, conds_top + 0.52, pw - 0.48, ph - 0.62)
+            tf2 = pb.text_frame
+            for j, ptext in enumerate(pits):
+                p = tf2.paragraphs[0] if j == 0 else tf2.add_paragraph()
+                p.line_spacing = Pt(13.0 * LINE_BODY)
+                p.space_before = Pt(0 if j == 0 else 5)
+                r1 = p.add_run()
+                r1.text = "× "
+                _set_font(r1, ZH, 13.0, True, C["warn"])
+                r2 = p.add_run()
+                r2.text = ptext
+                _set_font(r2, ZH, 13.0, False, C["ink"])
+
+    def _check_legacy(self, s, c):
         items = c["items"]
         pits = c.get("pitfalls") or []
         left_w = 9.15 if pits else WIDTH
@@ -209,16 +298,15 @@ class Chapter:
         y = BODY_TOP + ((avail - total) / 2.0 if total < avail - 0.9 else 0.10)
         for i, it in enumerate(items):
             nb = textbox(s, 0.85, y + 0.02, 0.62, 0.5)
-            p = para(nb.text_frame, f"{i + 1:02d}", size=size - 3.5, color=C["teal"],
-                     bold=True, first=True)
+            para(nb.text_frame, f"{i + 1:02d}", size=size - 3.5, color=C["teal"],
+                 bold=True, first=True)
             tb = textbox(s, 1.58, y, left_w - 1.05, heights[i])
             para(tb.text_frame, it, size=size, color=C["ink"], first=True)
             y += heights[i] + 0.10
 
         if pits:
             px, pw = 10.55, 5.15
-            ph = max(2.2, total)
-            ph = min(ph, (6.60 if c.get("warning") else 7.55) - BODY_TOP)
+            ph = min(max(2.2, total), (6.60 if c.get("warning") else 7.55) - BODY_TOP)
             rect(s, px, BODY_TOP, pw, ph, fill=C["panel"])
             hb = textbox(s, px + 0.28, BODY_TOP + 0.20, pw - 0.56, 0.45)
             para(hb.text_frame, c.get("pitfall_title", "常見錯誤"), size=18.0,
@@ -236,10 +324,6 @@ class Chapter:
                 r2 = p.add_run()
                 r2.text = pt
                 _set_font(r2, ZH, psize, False, C["ink"])
-        if c.get("warning"):
-            warning(s, c["warning"], y=7.86)
-        self._chrome(s, t.get("section", ""))
-        self._note(s, t["check"], t.get("src", ""))
 
     # ---------------------------------------------------------------- table
     def table_slide(self, t, idx):

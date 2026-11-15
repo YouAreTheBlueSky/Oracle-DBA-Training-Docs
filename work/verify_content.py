@@ -49,10 +49,16 @@ for m in MODULES:
                     issues.append(f"{tag}: code line {len(ln)} chars")
         ck = t.get("check", {})
         if ck:
-            if not 4 <= len(ck.get("items", [])) <= 5:
+            if "commands" in ck:
+                if not 3 <= len(ck["commands"]) <= 6:
+                    issues.append(f"{tag}: {len(ck['commands'])} commands")
+                if not 3 <= len(ck.get("conds", [])) <= 4:
+                    issues.append(f"{tag}: {len(ck.get('conds', []))} conds")
+            elif not 4 <= len(ck.get("items", [])) <= 5:
                 issues.append(f"{tag}: check items={len(ck.get('items', []))}")
-            if "pitfalls" in ck and len(ck["pitfalls"]) != 3:
-                issues.append(f"{tag}: pitfalls={len(ck['pitfalls'])}")
+            pits = ck.get("pitfalls") or []
+            if ck.get("commands") and not 2 <= len(pits) <= 3:
+                issues.append(f"{tag}: pitfalls={len(pits)}")
         if not t.get("_note_why"):
             issues.append(f"{tag}: missing _note_why")
     if len(sp["topics"]) % 1:

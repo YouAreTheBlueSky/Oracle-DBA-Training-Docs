@@ -13,6 +13,19 @@ import base
 from slides import Chapter
 
 TEMPLATE = os.path.join(os.path.dirname(HERE), "Oracle_Storage_Memory_Process_zhTW.pptx")
+FROZEN_FILE = os.path.join(HERE, "FROZEN.txt")
+
+
+def frozen_names():
+    """Files the user has hand-edited; builds must not overwrite them."""
+    if not os.path.exists(FROZEN_FILE):
+        return set()
+    names = set()
+    for line in open(FROZEN_FILE, encoding="utf-8"):
+        line = line.strip()
+        if line and not line.startswith("#"):
+            names.add(line)
+    return names
 
 
 def count_pages(spec):
@@ -25,8 +38,13 @@ def count_pages(spec):
     return n
 
 
-def build(mod_name, out_path, template=TEMPLATE):
+def build(mod_name, out_path, template=TEMPLATE, force=False):
     base.WARNINGS.clear()
+    if not force and os.path.basename(out_path) in frozen_names() and os.path.exists(out_path):
+        from pptx import Presentation
+        n = len(Presentation(out_path).slides)
+        print(f"SKIP (frozen) {out_path} — kept as-is ({n} slides)")
+        return n, ["FROZEN: not rebuilt"]
     mod = importlib.import_module(mod_name)
     spec = mod.CHAPTER
     spec["page_count"] = count_pages(spec)

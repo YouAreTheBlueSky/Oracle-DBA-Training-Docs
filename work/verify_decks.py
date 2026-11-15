@@ -57,7 +57,8 @@ def check(path):
     report.append("\n".join(lines))
 
 
-files = sorted(glob.glob(os.path.join(DELIVER, "*.pptx")))
+files = sorted(f for f in glob.glob(os.path.join(DELIVER, "*.pptx"))
+                   if not os.path.basename(f).startswith("~$"))
 for f in files:
     try:
         check(f)

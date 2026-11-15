@@ -71,8 +71,11 @@ def chapters_meta():
 
 def build_chapters():
     os.makedirs(OUT, exist_ok=True)
-    shutil.copyfile(os.path.join(ROOT, "Oracle_Storage_Memory_Process_zhTW.pptx"),
-                    os.path.join(OUT, CHAPTERS[0][2]))
+    ch1_dst = os.path.join(OUT, CHAPTERS[0][2])
+    if os.path.basename(ch1_dst) in build_chapter.frozen_names() and os.path.exists(ch1_dst):
+        print(f"  SKIP (frozen) {ch1_dst} — kept as-is")
+    else:
+        shutil.copyfile(os.path.join(ROOT, "Oracle_Storage_Memory_Process_zhTW.pptx"), ch1_dst)
     print(f"  01 copied, sha matches original: "
           f"{sha(os.path.join(OUT, CHAPTERS[0][2])) == sha(os.path.join(ROOT, 'Oracle_Storage_Memory_Process_zhTW.pptx'))}")
     for no, mod, fn in CHAPTERS[1:]:
@@ -164,7 +167,7 @@ def build_index(chapters):
     items = [
         ("① 概念頁", "用 5 個「標籤＋說明」講清楚為什麼、以及判斷依據；不出現 SQL。"),
         ("② 程式碼頁", "以 PDF 原文為依據的指令，改成 19c 可執行語法，附重點句與警示句。"),
-        ("③ 檢核頁", "4–5 條可被查詢證明的檢查項，加上 3 條最常見的錯誤做法。"),
+        ("③ 檢核頁", "3–6 行驗證指令、4 條通過條件，加上 2–3 個最常見的錯誤。"),
     ]
     y = 2.10
     for lead, desc in items:
@@ -319,7 +322,7 @@ def build_readme(chapters, total):
         "|---|---|",
         "| 概念頁 | 5 個「標籤＋說明」，講為什麼與判斷依據，不含 SQL |",
         "| 程式碼頁 | 以 PDF 原文為依據、改寫成 19c 可執行語法，附重點句與警示句 |",
-        "| 檢核頁 | 4–5 條可驗證的檢查項，加上 3 條常見錯誤 |",
+        "| 檢核頁 | 3–6 行可執行的驗證指令 ＋ 4 條通過條件 ＋ 2–3 個常見錯誤 |",
         "",
         "## 兩個版本的關係",
         "",
