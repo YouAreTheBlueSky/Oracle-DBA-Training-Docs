@@ -1,0 +1,27 @@
+# Office 暫存／鎖定檔
+~$*
+*.tmp
+
+# DSH 沙箱預覽目錄
+.dsh-office-*
+
+# Python
+__pycache__/
+*.pyc
+
+# 可重建的中間檔（來源：work/extract_pdf.py、work/make_extracts.py）
+work/pdf_pages.json
+work/pdf_text.txt
+work/p1_core.txt
+work/extract/
+work/*.txt
+work/*.pptx
+work/*.json
+
+# 空的分期資料夾
+out/
+# 沙箱探測檔
+_probe_write.txt
+
+# 檢視用暫存 XML
+work/*.xml

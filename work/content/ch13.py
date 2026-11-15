@@ -1,0 +1,357 @@
+# -*- coding: utf-8 -*-
+"""Chapter 13 — Part 12 PL/SQL Samples (source PDF p.596-673)."""
+
+REFS = [
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpls/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/adfns/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/",
+]
+
+SCOPE = ("以 Oracle Database 19c 為敘述基準，程式碼取自來源文件 p.596–673 並以 19c 語法校對。"
+         "來源文件未收錄 DBMS_STATS／DBMS_SPACE／DBMS_ADVISOR，DBA 維運型 PL/SQL 改以 "
+         "DBMS_SHARED_POOL 與 DBMS_HPROF 為代表。")
+
+CHAPTER = {
+    "no": 13,
+    "part": "Part 12",
+    "title": "PL/SQL 範例",
+    "en": "PL/SQL Samples for Oracle DBAs",
+    "subtitle": "子程式 ／ 例外 ／ 動態 SQL ／ 大量處理 ／ 維運腳本",
+    "source": "oracle_dba_code_examples.pdf  p.596–673",
+    "chap_label": "13",
+    "agenda_title": "本章大綱",
+    "agenda": [
+        ("子程式與套件", "程序與函式的分工、AUTHID、套件封裝與自治交易。"),
+        ("例外與錯誤", "自訂例外、EXCEPTION_INIT、錯誤堆疊與自訂錯誤碼。"),
+        ("動態 SQL", "EXECUTE IMMEDIATE、綁定變數與 DBMS_SQL 的取捨。"),
+        ("大量處理", "BULK COLLECT、LIMIT 分批與 FORALL 的搭配。"),
+        ("維運與診斷", "shared pool 釘選、DBMS_HPROF 剖析與 V$ 授權。"),
+    ],
+    "agenda_note": "本章是教材中唯一的程式章；後續章節的維運腳本都建立在這裡的寫法上。",
+    "note_why": "本章把 Part 12 的七十餘頁條目收斂成 6 個主題，每個主題依序為概念、程式碼、檢核。",
+    "refs": REFS,
+    "refs_note": "來源文件為 10g／11g 版本；DBMS_HPROF 自 11g 起提供，10g 請改用 DBMS_PROFILER。",
+
+    "topics": [
+        # ---------------------------------------------------------------- 1
+        {
+            "title": "預存程序與函式：參數與回傳",
+            "section": "子程式與套件",
+            "src": "來源 p.597–603、p.626",
+            "concept": {
+                "items": [
+                    ("PROCEDURE", "以 IN／OUT／IN OUT 參數溝通，本身沒有回傳值。"),
+                    ("FUNCTION", "一定要 RETURN 單一值，可放進 SELECT 或 WHERE。"),
+                    ("參數模式", "IN 傳值、OUT 只帶回結果、IN OUT 兩者兼具。"),
+                    ("AUTHID", "DEFINER 用建立者權限，CURRENT_USER 用呼叫者權限。"),
+                    ("編譯狀態", "dba_objects.status 為 VALID 才算可用，警告要看。"),
+                ],
+                "note": "程序與函式的差別只有一個：能不能直接出現在 SQL 述句裡。",
+            },
+            "code": {
+                "lines": [
+                    "-- 函式回傳單一值；AUTHID 決定以建立者或呼叫者權限執行",
+                    "CREATE OR REPLACE FUNCTION get_cust_id (p_name VARCHAR2)",
+                    "  RETURN NUMBER AUTHID DEFINER IS v_id NUMBER;",
+                    "BEGIN",
+                    "  SELECT cust_id INTO v_id FROM customers WHERE id = p_name;",
+                    "  RETURN v_id;",
+                    "END get_cust_id;",
+                    "/",
+                    "-- 程序沒有回傳值，改用 IN OUT 的 REF CURSOR 交回結果集",
+                    "CREATE OR REPLACE PROCEDURE cust_sel (cv IN OUT SYS_REFCURSOR) IS",
+                    "BEGIN OPEN cv FOR SELECT customer_id, cust_last_name FROM customers; END;",
+                ],
+                "takeaway": "函式回傳值、程序帶出參數；AUTHID 決定權限來源。",
+                "warning": "REF CURSOR 由呼叫端 FETCH 與 CLOSE，程序內不要先關閉。",
+            },
+            "check": {
+                "title": "自我檢核：子程式能不能用",
+                "items": [
+                    "dba_objects.status 為 VALID，且編譯警告已處理。",
+                    "dba_procedures 查得到參數名稱、模式與型別。",
+                    "AUTHID 與實際授權方式一致，沒有依賴角色。",
+                    "呼叫端以具名參數呼叫，避免順序錯置。",
+                    "REF CURSOR 由呼叫端負責 FETCH 與 CLOSE。",
+                ],
+                "pitfalls": [
+                    "用角色授權，程序編譯時找不到物件。",
+                    "OUT 參數忘了給值，呼叫端拿到 NULL。",
+                    "程序內自行 COMMIT，破壞呼叫端交易。",
+                ],
+            },
+            "_note_why": "先分清楚程序與函式的用途，再談 AUTHID；學生最常把兩者混用，導致函式裡出現交易控制。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[1]],
+        },
+        # ---------------------------------------------------------------- 2
+        {
+            "title": "套件封裝與自治交易",
+            "section": "子程式與套件",
+            "src": "來源 p.624–626",
+            "concept": {
+                "items": [
+                    ("規格與本體", "spec 只宣告介面，body 放實作；改 body 不必重新授權。"),
+                    ("封裝好處", "相關子程式收在一起，一次編譯、一次授權、版本一致。"),
+                    ("狀態重置", "SERIALLY_REUSABLE 讓狀態放 shared pool，每次重置。"),
+                    ("自治交易", "由主交易啟動但獨立 commit，主交易 rollback 不影響它。"),
+                    ("ORA-06519", "自治交易結束前沒有 commit 或 rollback 就會擲回。"),
+                ],
+                "note": "套件是 DBA 與開發之間的介面契約；自治交易是它的逃生門。",
+            },
+            "code": {
+                "lines": [
+                    "-- spec 只宣告介面；body 換掉實作，呼叫端不必重編",
+                    "CREATE OR REPLACE PACKAGE BODY log_pkg IS",
+                    "  PROCEDURE logging_ins (p_user VARCHAR2, p_at TIMESTAMP) IS",
+                    "    PRAGMA AUTONOMOUS_TRANSACTION;",
+                    "  BEGIN",
+                    "    INSERT INTO logging (username, datetime) VALUES (p_user, p_at);",
+                    "    COMMIT;   -- 自治交易必須自行 commit，否則 ORA-06519",
+                    "  END logging_ins;",
+                    "END log_pkg;",
+                    "/",
+                    "-- 主交易 rollback 後，自治交易寫入的 log 仍然保留",
+                ],
+                "takeaway": "自治交易的 commit 只影響自己，主交易 rollback 也不牽連。",
+                "warning": "自治交易未 commit 就結束會擲回 ORA-06519；異常路徑也要 rollback。",
+            },
+            "check": {
+                "title": "自我檢核：套件與交易邊界",
+                "items": [
+                    "dba_objects 的 PACKAGE 與 BODY 狀態都是 VALID。",
+                    "spec 變更後 body 已重編，兩者版本一致。",
+                    "自治程序在異常路徑也有 commit 或 rollback。",
+                    "logging 資料表在主交易 rollback 後仍看得到紀錄。",
+                    "SERIALLY_REUSABLE 只用於狀態可重置的套件。",
+                ],
+                "pitfalls": [
+                    "spec 改了 body 沒重編，呼叫端拿到舊介面。",
+                    "自治程序漏 commit，結束時擲回 ORA-06519。",
+                    "把需要交易一致性的寫入放進自治交易。",
+                ],
+            },
+            "_note_why": "自治交易是本主題的核心：它讓 log 寫入不受主交易成敗影響，但也讓交易邊界變得看不見。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[1]],
+        },
+        # ---------------------------------------------------------------- 3
+        {
+            "title": "例外處理與自訂錯誤",
+            "section": "例外與錯誤",
+            "src": "來源 p.621–623",
+            "concept": {
+                "items": [
+                    ("自訂例外", "先宣告 EXCEPTION，再用 RAISE 主動拋出。"),
+                    ("EXCEPTION_INIT", "把自訂名綁到 ORA 編號，才能精準攔截特定錯誤。"),
+                    ("WHEN OTHERS", "一定放最後；它會吞掉錯誤，必須記錄堆疊。"),
+                    ("錯誤堆疊", "FORMAT_ERROR_STACK 保留完整堆疊，SQLERRM 只有一層。"),
+                    ("自訂錯誤碼", "RAISE_APPLICATION_ERROR 只用 -20000 到 -20999。"),
+                ],
+                "note": "例外處理的價值在「錯得清楚」：錯誤碼、訊息與堆疊都要留下。",
+            },
+            "code": {
+                "lines": [
+                    "DECLARE",
+                    "  e_dup  EXCEPTION;                        -- 自訂例外",
+                    "  e_null EXCEPTION;",
+                    "  PRAGMA EXCEPTION_INIT (e_null, -1400);    -- 綁定 ORA 編號",
+                    "BEGIN",
+                    "  IF v_dups > 0 THEN RAISE e_dup; END IF;   -- 主動拋出",
+                    "EXCEPTION",
+                    "  WHEN e_dup THEN RAISE_APPLICATION_ERROR (-20001, 'dup authors');",
+                    "  WHEN e_null THEN NULL;                    -- 由 INSERT 觸發",
+                    "  WHEN OTHERS THEN log_error (SQLCODE, DBMS_UTILITY.FORMAT_ERROR_STACK);",
+                    "END;",
+                ],
+                "takeaway": "自訂例外對內、自訂錯誤碼對外；堆疊一定要寫進 log。",
+                "warning": "WHEN OTHERS 不記錄就吞錯，事故現場只剩一句 unknown error。",
+            },
+            "check": {
+                "title": "自我檢核：錯誤留不留得住線索",
+                "items": [
+                    "每個自訂例外都有對應的 handler，沒有漏接。",
+                    "WHEN OTHERS 一定寫入 log_table 或 alert log。",
+                    "對外錯誤碼落在 -20000 到 -20999 之間。",
+                    "log 內容含 SQLCODE 與完整錯誤堆疊。",
+                    "例外名稱可讀，不是 e1、e2 這類編號。",
+                ],
+                "pitfalls": [
+                    "WHEN OTHERS THEN NULL，錯誤完全消失。",
+                    "自訂錯誤碼用了 -1 這種系統碼。",
+                    "handler 內再出錯，外層沒有保護。",
+                ],
+            },
+            "_note_why": "這一頁要建立「錯誤要留下證據」的習慣：自訂例外負責分類，自訂錯誤碼負責對外溝通。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[3]],
+        },
+        # ---------------------------------------------------------------- 4
+        {
+            "title": "動態 SQL：拼接與綁定",
+            "section": "動態 SQL",
+            "src": "來源 p.636–639、p.671",
+            "concept": {
+                "items": [
+                    ("何時需要", "物件名或述句在執行期才確定，才輪到動態 SQL。"),
+                    ("綁定變數", "值走 USING，SQL 文字固定，游標才能共享。"),
+                    ("拼接代價", "每次字串不同就是新 SQL，硬解析與注入風險一起來。"),
+                    ("INTO 與 BULK", "單列用 INTO；多列要在匿名區塊裡 BULK COLLECT。"),
+                    ("DBMS_SQL", "參數個數與型別事先未知時，只有它做得到。"),
+                ],
+                "note": "動態 SQL 的判斷題只有一題：這個值能不能用綁定變數？",
+            },
+            "code": {
+                "lines": [
+                    "CREATE OR REPLACE PROCEDURE dyn_demo (",
+                    "  p_seq VARCHAR2, p_table VARCHAR2, p_id NUMBER, p_name VARCHAR2) IS",
+                    "  v_sql   VARCHAR2(2000);   -- 值用綁定，SQL 文字固定才能重用",
+                    "  v_count NUMBER;",
+                    "BEGIN",
+                    "  -- DDL 與物件名只能拼接，無法使用綁定變數",
+                    "  EXECUTE IMMEDIATE 'CREATE SEQUENCE ' || p_seq || ' START WITH 1';",
+                    "  v_sql := 'INSERT INTO ' || p_table || ' VALUES (:1, :2)';",
+                    "  EXECUTE IMMEDIATE v_sql USING p_id, p_name;",
+                    "  EXECUTE IMMEDIATE 'SELECT COUNT(*) FROM ' || p_table INTO v_count;",
+                    "END dyn_demo;",
+                ],
+                "takeaway": "物件名只能拼接，值一定綁定；能綁定就不要拼字串。",
+                "warning": "拼接字串等於開放 SQL injection；權限與輸入檢查要一起做。",
+            },
+            "check": {
+                "title": "自我檢核：動態 SQL 是否安全",
+                "items": [
+                    "所有資料值都經 USING 綁定，沒有直接串進字串。",
+                    "table 名稱來自白名單，不是使用者自由輸入。",
+                    "v$sql 中同一述句可重複使用，shared pool 沒有爆量。",
+                    "多列查詢在匿名區塊內使用 BULK COLLECT。",
+                    "需要依型別動態處理時，已評估 DBMS_SQL。",
+                ],
+                "pitfalls": [
+                    "把使用者輸入直接拼進 WHERE 條件。",
+                    "每筆都拼一個新 SQL，shared pool 被塞滿。",
+                    "忘了 EXECUTE IMMEDIATE 不能直接回傳多列。",
+                ],
+            },
+            "_note_why": "把「物件名可以拼、值不能拼」講成一句口訣，學生就不會在 WHERE 條件裡串變數。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[2]],
+        },
+        # ---------------------------------------------------------------- 5
+        {
+            "title": "BULK COLLECT 與 FORALL",
+            "section": "大量處理",
+            "src": "來源 p.666–670",
+            "concept": {
+                "items": [
+                    ("兩種語法", "BULK COLLECT 收資料，FORALL 送 DML，方向相反。"),
+                    ("LIMIT 的必要", "SELECT 不能加 LIMIT；只有 FETCH 可以分批。"),
+                    ("批次大小", "500 到 1000 筆通常夠好；太大換 PGA，太小換次數。"),
+                    ("PGA 成本", "集合放 PGA，一次全載大表會讓每個 session 都吃記憶體。"),
+                    ("%BULK_ROWCOUNT", "可看出整批中每一筆影響幾列，除錯很有用。"),
+                ],
+                "note": "逐筆迴圈是 PL/SQL 最常見的效能陷阱；批次處理是解藥。",
+            },
+            "code": {
+                "lines": [
+                    "DECLARE",
+                    "  TYPE id_tab IS TABLE OF student.student_id%TYPE;",
+                    "  ids id_tab;",
+                    "BEGIN",
+                    "  -- 一次抓回全部；筆數超過數十萬請改用 FETCH ... LIMIT",
+                    "  SELECT student_id BULK COLLECT INTO ids FROM student;",
+                    "  FORALL i IN 1 .. ids.COUNT        -- 整批 DML，只切一次引擎",
+                    "    DELETE FROM student WHERE student_id = ids(i);",
+                    "  COMMIT;",
+                    "  DBMS_OUTPUT.PUT_LINE ('deleted ' || SQL%ROWCOUNT);",
+                    "END;",
+                ],
+                "takeaway": "整批進、整批出；批次大小決定 PGA 與切換次數的平衡。",
+                "warning": "一次 BULK COLLECT 整張大表可能耗盡 PGA；務必改用 FETCH ... LIMIT。",
+            },
+            "check": {
+                "title": "自我檢核：批次處理是否真的省",
+                "items": [
+                    "迴圈內沒有逐筆 DML，已改成 FORALL 或 BULK COLLECT。",
+                    "大量資料以 FETCH ... LIMIT 分批，批次大小有依據。",
+                    "v$sesstat 的 PGA 使用量沒有因批次而異常成長。",
+                    "FORALL 之後以 SQL%ROWCOUNT 核對筆數。",
+                    "集合變數在批次之間有 CLEAR 或重新初始化。",
+                ],
+                "pitfalls": [
+                    "用 SELECT BULK COLLECT 一次撈整張大表。",
+                    "FORALL 裡面又呼叫會 commit 的程序。",
+                    "批次太大，PGA 爆掉改用暫存區寫入。",
+                ],
+            },
+            "_note_why": "重點不是語法而是成本：批次大小同時決定 PGA 用量與 context switch 次數，兩邊都要顧。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[2]],
+        },
+        # ---------------------------------------------------------------- 6
+        {
+            "title": "DBA 維運型 PL/SQL",
+            "section": "維運與診斷",
+            "src": "來源 p.627、p.665–666、p.673",
+            "concept": {
+                "items": [
+                    ("為何自己寫", "巡檢、釘選、剖析都要固定化，不能每次手打。"),
+                    ("釘選 shared pool", "KEEP 讓常用套件常駐，flag 依物件型別給 P／Q／R。"),
+                    ("Profiler", "DBMS_HPROF 記錄每次呼叫耗時，用來找程式熱點。"),
+                    ("V$ 的授權", "V$ 檢視是 V_$ 物件；角色權限在程序中無效。"),
+                    ("先量再改", "沒有量測數據的調校都是猜測，profiler 是起點。"),
+                ],
+                "note": "DBA 寫的 PL/SQL 不必炫技，能固定化、能留下證據就夠。",
+            },
+            "code": {
+                "lines": [
+                    "-- 1) 釘住常用套件，避免 shared pool 老化時被置換",
+                    "EXEC DBMS_SHARED_POOL.KEEP ('SYS.STANDARD', 'P');",
+                    "-- 2) profiler：開始、跑目標程序、停止",
+                    "BEGIN",
+                    "  DBMS_HPROF.START_PROFILING ('PROFILER_DIR', 'profiler.txt');",
+                    "  proc3;",
+                    "  DBMS_HPROF.STOP_PROFILING;",
+                    "END;",
+                    "-- 3) 讀 V$ 要直接授權 V_$ 物件，角色授權在程序中無效",
+                    "GRANT SELECT ON v_$session TO dba_ops;",
+                    "GRANT SELECT ON v_$process TO dba_ops;",
+                ],
+                "takeaway": "釘選、剖析、授權：三件 DBA 例行工作都能用 PL/SQL 固定。",
+                "warning": "GRANT SELECT_CATALOG_ROLE 不能讓程序讀 V$；必須直接授權 V_$ 物件。",
+            },
+            "check": {
+                "title": "自我檢核：維運腳本可否交付",
+                "items": [
+                    "例行巡檢已有腳本，不必每次手動查 V$。",
+                    "關鍵套件以 DBMS_SHARED_POOL.KEEP 釘選並記錄清單。",
+                    "profiler 的 runid 與報表已保存，可追溯。",
+                    "V$ 相關授權直接給使用者，不是透過角色。",
+                    "腳本輸出可匯入監控或寄送告警。",
+                ],
+                "pitfalls": [
+                    "角色授權讀不到 V$，編譯就失敗。",
+                    "釘選清單從未檢視，shared pool 被舊物件佔滿。",
+                    "profiler 一直開著，檔案與負載都沒人管。",
+                ],
+            },
+            "_note_why": "這一頁把 PL/SQL 拉回 DBA 日常：釘選、剖析、授權，三件事都能腳本化，也都能留下證據。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[1], REFS[2]],
+        },
+    ],
+
+    "summary": {
+        "items": [
+            ("子程式", "函式回傳值、程序帶出參數；AUTHID 決定權限來源。"),
+            ("套件", "spec 宣告介面、body 藏實作；自治交易獨立 commit。"),
+            ("例外", "自訂例外對內、自訂錯誤碼對外，堆疊一定要留。"),
+            ("動態 SQL", "物件名拼接、值綁定；多列查詢走匿名區塊。"),
+            ("批次與維運", "BULK COLLECT 收、FORALL 送，搭配 LIMIT 控制 PGA。"),
+        ],
+        "section": "整合複習",
+        "note": "PL/SQL 章節的驗收標準：寫得出來、錯得清楚、跑得夠快。",
+    },
+}

@@ -1,0 +1,452 @@
+# -*- coding: utf-8 -*-
+"""Chapter 4 — Part 3 Oracle Database Backup and Recovery (source PDF p.247-310)."""
+
+REFS = [
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/rcmrn/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/",
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/",
+]
+
+SCOPE = ("以 Oracle Database 19c 為敘述基準，RMAN 指令取自來源文件 p.247–310 並以 19c 語法校對。"
+         "Flashback、Data Guard 與 Duplicate 僅在必要處提及，不在本章展開。")
+
+CHAPTER = {
+    "no": 4,
+    "part": "Part 3",
+    "title": "備份與復原",
+    "en": "Oracle Database Backup and Recovery",
+    "subtitle": "RMAN ／ 備份策略 ／ 復原情境",
+    "source": "oracle_dba_code_examples.pdf  p.247–310",
+    "chap_label": "04",
+    "agenda_title": "本章大綱",
+    "agenda": [
+        ("停機與策略", "從停機原因推出備份策略：歸檔模式、多工、FRA 與異地副本。"),
+        ("RMAN 設定", "SHOW ALL 起手，設定通道、格式、平行度與控制檔自動備份。"),
+        ("備份作業", "完整備份、增量 L0／L1、映像副本與歸檔日誌的搭配與取捨。"),
+        ("復原作業", "完整復原、不完全復原、控制檔與 SPFILE 的還原路徑。"),
+        ("維運與驗證", "驗證備份、CROSSCHECK 對帳、CATALOG 補登與保留政策。"),
+    ],
+    "agenda_note": "備份章節是所有事故處理的底層；後續 Flashback 與升級章節都預設這裡的備份可用。",
+    "note_why": "本章把來源文件 Part 3 的六十餘頁條目收斂成 8 個主題，每個主題依序為概念、證據頁、檢核。",
+    "refs": REFS,
+    "refs_note": "來源文件為 10g／11g 時代版本；19c 的 RMAN 語法、預設值與路徑請以官方文件為準。",
+
+    "topics": [
+        # ---------------------------------------------------------------- 1
+        {
+            "title": "停機原因決定備份策略",
+            "section": "停機與策略",
+            "src": "來源 p.248–250",
+            "concept": {
+                "items": [
+                    ("非計畫停機", "軟體、硬體、人為與災難四大類；真正需要復原的是資料毀損。"),
+                    ("計畫停機", "備份、效能與安全管理、批次作業都屬例行，可排程避開尖峰。"),
+                    ("歸檔模式", "生產庫必開 ARCHIVELOG，否則只能回到最後一次完整備份。"),
+                    ("多工與 RAID", "控制檔與 redo 分開放置；RAID 1+0 讓單顆磁碟故障不停機。"),
+                    ("備份要能讀", "有效性須定期驗證，且要含 SPFILE、tnsnames 等輔助檔。"),
+                ],
+                "note": "停機原因清單的用途是排優先順序，不是抄完條列放進文件。",
+            },
+            "code": {
+                "lines": [
+                    "-- 1) 歸檔模式：生產庫必須是 ARCHIVELOG",
+                    "ARCHIVE LOG LIST;",
+                    "-- 2) 控制檔與 redo 是否多工（分開的磁碟與控制器）",
+                    "SELECT name FROM v$controlfile;",
+                    "SELECT group#, member FROM v$logfile ORDER BY group#;",
+                    "-- 3) 備份落點與容量上限",
+                    "SHOW PARAMETER db_recovery_file_dest",
+                    "SHOW PARAMETER db_recovery_file_dest_size",
+                    "-- 4) 哪些檔案必須納入備份範圍",
+                    "SELECT file#, name FROM v$datafile;",
+                ],
+                "takeaway": "五個查詢就能證明備份策略不只是寫在文件裡。",
+                "warning": "FRA 滿載會讓歸檔停擺；db_recovery_file_dest_size 必須留餘裕並監控。",
+            },
+            "check": {
+                "title": "自我檢核：策略是否真的落地",
+                "items": [
+                    "v$database 為 ARCHIVELOG，歸檔目的地可寫入。",
+                    "控制檔至少兩份，redo 每組至少兩個成員。",
+                    "備份範圍含 datafile、控制檔、SPFILE 與網路設定檔。",
+                    "備份有一份離地保存，且已納入復原演練計畫。",
+                    "FRA 使用率低於 85%，有監控與清理機制。",
+                ],
+                "pitfalls": [
+                    "只備份 datafile，還原時才發現沒有控制檔。",
+                    "控制檔兩份放同一顆磁碟，故障時一起消失。",
+                    "備份從未實際還原過，有效性只是假設。",
+                ],
+            },
+            "_note_why": "先談停機分類，是要讓學員理解備份策略對應的是哪一種事故；策略不是備份頻率的選擇題。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[3]],
+        },
+        # ---------------------------------------------------------------- 2
+        {
+            "title": "RMAN 環境設定與通道配置",
+            "section": "RMAN 設定",
+            "src": "來源 p.266–268",
+            "concept": {
+                "items": [
+                    ("SHOW ALL 起手", "先看預設值再改；CONFIGURE 的每一項都寫進控制檔。"),
+                    ("通道即平行度", "PARALLELISM 決定磁碟通道數，也決定同時開啟的檔案數。"),
+                    ("FORMAT 用 %U", "%U 由 %u、%p、%c 組成，保證備份片段檔名唯一。"),
+                    ("控制檔自動備份", "AUTOBACKUP ON 讓控制檔與 SPFILE 跟著每次備份留一份。"),
+                    ("記錄保留期", "CONTROL_FILE_RECORD_KEEP_TIME 決定控制檔記得多久的備份。"),
+                ],
+                "note": "設定頁的價值在「一次做完、之後每次都對」，而不是每次備份重打參數。",
+            },
+            "code": {
+                "lines": [
+                    "-- 先看現況，再逐項調整",
+                    "SHOW ALL;",
+                    "-- 控制檔自動備份與格式（最常被漏掉的一項）",
+                    "CONFIGURE CONTROLFILE AUTOBACKUP ON;",
+                    "CONFIGURE CONTROLFILE AUTOBACKUP FORMAT FOR DEVICE TYPE DISK TO '/bk/cf_%F';",
+                    "-- 兩顆磁碟各一個通道，兼作備份檔分散",
+                    "CONFIGURE DEVICE TYPE DISK PARALLELISM 2;",
+                    "CONFIGURE CHANNEL 1 DEVICE TYPE DISK FORMAT '/u01/bk/%U';",
+                    "CONFIGURE CHANNEL 2 DEVICE TYPE DISK FORMAT '/u02/bk/%U';",
+                    "-- 備份記錄在控制檔保留 30 天",
+                    "ALTER SYSTEM SET control_file_record_keep_time=30;",
+                ],
+                "takeaway": "通道與格式決定效能，AUTOBACKUP 決定能不能救回來。",
+                "warning": "原文的 AUTOBAKCUP 是錯字；19c 正確拼法為 CONTROLFILE AUTOBACKUP。",
+            },
+            "check": {
+                "title": "自我檢核：設定是否生效且一致",
+                "items": [
+                    "SHOW ALL 的輸出已存檔，作為這一版資料庫的設定基線。",
+                    "控制檔自動備份為 ON，且格式含 %F。",
+                    "每個通道的 FORMAT 指向不同的實體磁碟。",
+                    "PARALLELISM 與實際通道數一致，沒有閒置通道。",
+                    "control_file_record_keep_time 大於保留政策的天數。",
+                ],
+                "pitfalls": [
+                    "改完 CONFIGURE 沒 SHOW ALL 確認，其實沒生效。",
+                    "所有通道 FORMAT 同一目錄，平行備份照樣卡在同一顆碟。",
+                    "保留政策 14 天，記錄只留 7 天，RMAN 認不得舊備份。",
+                ],
+            },
+            "_note_why": "這一頁要建立「設定先行」的習慣：先 SHOW ALL 看預設，再逐項覆寫，最後再 SHOW ALL 驗證。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[1], REFS[0]],
+        },
+        # ---------------------------------------------------------------- 3
+        {
+            "title": "完整備份、增量備份與映像副本",
+            "section": "備份作業",
+            "src": "來源 p.269–272",
+            "concept": {
+                "items": [
+                    ("完整備份", "BACKUP DATABASE 只備份使用過的 block，空的 block 不備份。"),
+                    ("Level 0 是基準", "增量策略的起點，內容等同完整備份，但可被 L1 疊加。"),
+                    ("差分 L1", "只備上次 L0 或 L1 之後的變更，備份小、還原要多片。"),
+                    ("累積 L1", "只備上次 L0 之後的全部變更，備份較大但還原快。"),
+                    ("映像副本", "BACKUP AS COPY 產生 1:1 檔案，可直接還原或切換使用。"),
+                ],
+                "note": "選差分或累積，本質上是在「備份時間」與「還原時間」之間取捨。",
+            },
+            "table": {
+                "header": ["類型", "備份內容", "還原成本", "適用時機"],
+                "rows": [
+                    ["完整備份", "所有使用過的 block", "低：單份可還原", "每週基準"],
+                    ["增量 L0", "所有 block，可疊 L1", "低：等同完整", "增量策略起點"],
+                    ["增量 L1 差分", "上次備份後的變更", "高：需逐片套用", "每日備份"],
+                    ["增量 L1 累積", "上次 L0 後全部變更", "中：L0 加一片", "要求短還原"],
+                    ["映像副本", "與資料檔 1:1 的檔案", "最低：可直接開啟", "快速復原"],
+                    ["歸檔日誌", "歸檔 redo，供前滾", "必要：缺片即中斷", "ARCHIVELOG 必備"],
+                ],
+                "widths": [3.4, 5.1, 3.6, 3.0],
+                "small": True,
+                "note": "差分省備份時間，累積省還原時間；兩者都建立在同一份 Level 0 之上。",
+            },
+            "check": {
+                "title": "自我檢核：備份層級是否搭配得當",
+                "items": [
+                    "至少有一份 Level 0，且沒有被後續增量覆蓋掉。",
+                    "LIST BACKUP SUMMARY 可看出 L0 與 L1 的層級關係。",
+                    "歸檔日誌備份與資料檔備份的時間點沒有斷層。",
+                    "每日增量、每週完整的排程已寫入文件並有人監控。",
+                    "知道差分與累積各需要幾片備份才能還原到最新。",
+                ],
+                "pitfalls": [
+                    "只有 L1 沒有 L0，等於沒有基準。",
+                    "備份策略改了，還原步驟沒跟著改。",
+                    "以為增量備份會自動包含歸檔日誌。",
+                ],
+            },
+            "_note_why": "用一張表把六種備份型式的內容、成本與時機排在一起，讓學員一眼看出取捨，而不是背指令。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[1]],
+        },
+        # ---------------------------------------------------------------- 4
+        {
+            "title": "映像副本與完整復原",
+            "section": "復原作業",
+            "src": "來源 p.271–275",
+            "concept": {
+                "items": [
+                    ("BACKUP AS COPY", "直接複製檔案、不打包成備份集，檔案本身即備份。"),
+                    ("可直接切換", "SWITCH DATAFILE 把控制檔的檔名指向副本，省一次搬移。"),
+                    ("先 RESTORE 後 RECOVER", "RESTORE 搬回檔案，RECOVER 套用歸檔與 redo 才一致。"),
+                    ("還原到新路徑", "SET NEWNAME 指定新檔名，SWITCH 之後控制檔才更新。"),
+                    ("開啟前先確認", "media recovery 未完成就 OPEN，只會被拒絕。"),
+                ],
+                "note": "完整復原的前提是歸檔齊全；缺一片歸檔，就得改用不完全復原。",
+            },
+            "code": {
+                "lines": [
+                    "-- 映像副本：檔案即備份，RMAN 會追蹤它",
+                    "BACKUP AS COPY DATABASE FORMAT '/backup/%U';",
+                    "-- 完整復原：先 RESTORE 再 RECOVER，最後才開庫",
+                    "STARTUP MOUNT;",
+                    "RESTORE DATABASE;",
+                    "RECOVER DATABASE;",
+                    "ALTER DATABASE OPEN;",
+                    "RUN {  -- 換路徑：SWITCH 讓控制檔改指新檔",
+                    "  SET NEWNAME FOR DATAFILE 1 TO '/newdir/system01.dbf';",
+                    "  RESTORE DATABASE;",
+                    "  SWITCH DATAFILE ALL; }",
+                ],
+                "takeaway": "RESTORE 搬檔案、RECOVER 補 redo；SWITCH 省掉一次搬移。",
+                "warning": "SWITCH 會改寫控制檔；切換前先確認副本完整，必要時先備份控制檔。",
+            },
+            "check": {
+                "title": "自我檢核：完整復原的順序與結果",
+                "items": [
+                    "先 RESTORE 再 RECOVER，且 RECOVER 完成才 OPEN。",
+                    "LIST COPY 看得到副本，且檔大小與來源資料檔相符。",
+                    "SWITCH 之後 v$datafile 的 name 已指向新路徑。",
+                    "還原到新路徑時，控制檔記錄的檔名與實際檔案一致。",
+                    "映像副本所在磁碟與線上資料檔分開。",
+                ],
+                "pitfalls": [
+                    "只 RESTORE 沒 RECOVER，OPEN 被拒絕。",
+                    "SWITCH 後才發現副本損壞，已沒有回頭路。",
+                    "把映像副本放在與資料檔同一顆磁碟。",
+                ],
+            },
+            "_note_why": "把 RESTORE／RECOVER／SWITCH 三件事的職責講清楚，學員才不會把三段合成一段亂打。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[1]],
+        },
+        # ---------------------------------------------------------------- 5
+        {
+            "title": "不完全復原與時間點復原",
+            "section": "復原作業",
+            "src": "來源 p.277–279",
+            "concept": {
+                "items": [
+                    ("什麼時候用", "遺失歸檔、遺失 redo、使用者誤刪資料，只能回到過去某一點。"),
+                    ("三種停止點", "UNTIL TIME、UNTIL SCN、UNTIL SEQUENCE，只能選一個。"),
+                    ("全庫一起回", "所有 datafile 都要還原，不能只還原受損的那一個。"),
+                    ("RESETLOGS 開庫", "開啟後產生新 incarnation，備份與歸檔要重新對應。"),
+                    ("開庫後立刻備份", "RESETLOGS 之後馬上做一次完整備份，重建基準。"),
+                ],
+                "note": "不完全復原的難點不是指令，而是選一個「剛好之前」的停止點。",
+            },
+            "code": {
+                "lines": [
+                    "-- 掛載後設定停止點，三選一",
+                    "STARTUP MOUNT;",
+                    "RUN {",
+                    "  SET UNTIL TIME \"TO_DATE('2024-05-01 09:00:00','YYYY-MM-DD HH24:MI:SS')\";",
+                    "  -- 或 SET UNTIL SCN 1234567;  或 SET UNTIL SEQUENCE 120 THREAD 1;",
+                    "  RESTORE DATABASE;",
+                    "  RECOVER DATABASE;",
+                    "  ALTER DATABASE OPEN RESETLOGS;",
+                    "}",
+                    "-- RESETLOGS 之後立刻重建基準",
+                    "BACKUP INCREMENTAL LEVEL 0 DATABASE PLUS ARCHIVELOG;",
+                ],
+                "takeaway": "停止點決定回到哪裡，全庫還原決定能不能開得起來。",
+                "warning": "OPEN RESETLOGS 會產生新 incarnation，之後務必立刻做一次完整備份。",
+            },
+            "check": {
+                "title": "自我檢核：時間點是否選對、過程是否完整",
+                "items": [
+                    "停止點依事故時間決定，並在動手前寫下來。",
+                    "所有 datafile 都來自同一份備份，沒有混用不同時間點。",
+                    "RECOVER 過程沒有出現缺少歸檔的訊息。",
+                    "OPEN RESETLOGS 之後完成一次 Level 0 備份。",
+                    "使用 catalog 時，已登錄新的 incarnation。",
+                ],
+                "pitfalls": [
+                    "只還原受損資料檔就 RECOVER，結果不一致。",
+                    "停止點設在事故之後，把錯誤資料也帶回來。",
+                    "RESETLOGS 後沒備份，下一次事故沒有基準。",
+                ],
+            },
+            "_note_why": "強調「全庫一起回到同一點」與「停止點要早於事故」，這兩點是考試與現場最常出錯的地方。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[1]],
+        },
+        # ---------------------------------------------------------------- 6
+        {
+            "title": "控制檔與 SPFILE 的還原",
+            "section": "復原作業",
+            "src": "來源 p.254、p.269、p.274、p.279",
+            "concept": {
+                "items": [
+                    ("先還原控制檔", "控制檔掌握所有檔案清單，沒有它 RESTORE 無從開始。"),
+                    ("AUTOBACKUP 是保命符", "控制檔自動備份含 SPFILE，落點在 FRA 或自訂格式路徑。"),
+                    ("NOMOUNT 起手", "RESTORE CONTROLFILE 只需要 instance，不需要 mount。"),
+                    ("SPFILE 可重建", "CREATE PFILE FROM MEMORY 反向也能從 PFILE 建回 SPFILE。"),
+                    ("文字追蹤檔", "BACKUP CONTROLFILE TO TRACE 產生可重建控制檔的 SQL。"),
+                ],
+                "note": "控制檔是還原的門票；AUTOBACKUP 沒開，等於把門票丟了。",
+            },
+            "code": {
+                "lines": [
+                    "-- 1) 只起 instance，還原控制檔後再 mount",
+                    "STARTUP NOMOUNT;",
+                    "RESTORE CONTROLFILE FROM AUTOBACKUP;",
+                    "ALTER DATABASE MOUNT;",
+                    "-- 2) 必要時一併還原 SPFILE，再重啟 instance",
+                    "RESTORE SPFILE FROM AUTOBACKUP;",
+                    "-- 3) 沒有備份時的兩條路：追蹤檔或記憶展現值",
+                    "ALTER DATABASE BACKUP CONTROLFILE TO TRACE;",
+                    "CREATE PFILE='/tmp/init_prod.ora' FROM MEMORY;",
+                    "CREATE SPFILE FROM PFILE='/tmp/init_prod.ora';",
+                ],
+                "takeaway": "控制檔回來，資料庫才開始有救；SPFILE 回來，參數才不會漂移。",
+                "warning": "RESTORE SPFILE 需重啟才生效；用追蹤檔重建控制檔會失去 RMAN 記錄。",
+            },
+            "check": {
+                "title": "自我檢核：控制檔這條退路是否可用",
+                "items": [
+                    "控制檔自動備份為 ON，且格式路徑已知。",
+                    "知道 AUTOBACKUP 實際落在 FRA 還是自訂路徑。",
+                    "RESTORE CONTROLFILE 執行時資料庫處於 NOMOUNT。",
+                    "SPFILE 還原後已重啟，參數與備份當下一致。",
+                    "追蹤檔可由 alert log 找到路徑，且副本已異地保存。",
+                ],
+                "pitfalls": [
+                    "控制檔全毀又沒 AUTOBACKUP，只剩追蹤檔可試。",
+                    "在 MOUNT 狀態下才想 RESTORE CONTROLFILE。",
+                    "還原 SPFILE 後沒重啟，以為參數已生效。",
+                ],
+            },
+            "_note_why": "控制檔與 SPFILE 是最常被忽略的兩份檔案；這一頁要讓學員背下 NOMOUNT 到 MOUNT 的三步。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[0], REFS[1]],
+        },
+        # ---------------------------------------------------------------- 7
+        {
+            "title": "備份驗證、CROSSCHECK 與 CATALOG",
+            "section": "維運與驗證",
+            "src": "來源 p.272–274、p.282–284",
+            "concept": {
+                "items": [
+                    ("VALIDATE 不產生備份", "只讀取並檢查 block，用來證明備份真的可還原。"),
+                    ("RESTORE ... VALIDATE", "模擬還原流程，確認 RMAN 找得到所需片段。"),
+                    ("CROSSCHECK 對帳", "比對記錄與磁碟實際檔案，找不到就標成 EXPIRED。"),
+                    ("CATALOG 補登", "手動複製或還原控制檔後，讓 RMAN 重新認識這些檔案。"),
+                    ("EXPIRED 不等於無用", "EXPIRED 是找不到，OBSOLETE 是不合政策，處置方式不同。"),
+                ],
+                "note": "備份的價值只有在驗證過之後才成立；沒驗證過的備份只是檔案。",
+            },
+            "code": {
+                "lines": [
+                    "-- 1) 驗證備份可讀，不會產生新備份",
+                    "BACKUP VALIDATE DATABASE ARCHIVELOG ALL;",
+                    "RESTORE DATABASE VALIDATE;",
+                    "-- 2) 與磁碟上的實際檔案對帳",
+                    "CROSSCHECK BACKUP;",
+                    "CROSSCHECK ARCHIVELOG ALL;",
+                    "LIST EXPIRED BACKUP;",
+                    "-- 3) 補登 RMAN 不認得的檔案（換機或還原控制檔後）",
+                    "CATALOG START WITH '/backup/prod/';",
+                    "CATALOG ARCHIVELOG '/arch/arch_12.arc';",
+                ],
+                "takeaway": "先驗證、再對帳、最後才補登；順序顛倒會把記錄弄亂。",
+                "warning": "CROSSCHECK 只改記錄不動檔案；要真的刪檔請用 DELETE，兩者不可混用。",
+            },
+            "check": {
+                "title": "自我檢核：備份真的能還原嗎",
+                "items": [
+                    "每月至少執行一次 RESTORE ... VALIDATE。",
+                    "CROSSCHECK 後 LIST EXPIRED 的結果都已處理。",
+                    "換機或還原控制檔後，已用 CATALOG 補登備份片段。",
+                    "V$DATABASE_BLOCK_CORRUPTION 沒有未處理的區塊。",
+                    "驗證結果寫進維運記錄，不是只看畫面就結束。",
+                ],
+                "pitfalls": [
+                    "看到 EXPIRED 就 DELETE，其實檔案只是沒掛上。",
+                    "換機後沒 CATALOG，RESTORE 說找不到備份。",
+                    "把 VALIDATE 當成備份，以為跑完就有新備份。",
+                ],
+            },
+            "_note_why": "驗證與對帳是最容易被跳過的維運動作；這一頁用三個步驟建立可稽核的習慣。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[1], REFS[0]],
+        },
+        # ---------------------------------------------------------------- 8
+        {
+            "title": "備份排程與保留政策",
+            "section": "維運與驗證",
+            "src": "來源 p.251、p.267、p.283",
+            "concept": {
+                "items": [
+                    ("兩種保留政策", "REDUNDANCY 看份數，RECOVERY WINDOW 看能回到幾天前。"),
+                    ("OBSOLETE 由政策決定", "REPORT OBSOLETE 只列出清單，DELETE 才真的刪檔。"),
+                    ("增量更新映像副本", "先把 L1 套回副本，再產生新 L1，永遠只有一份全量。"),
+                    ("歸檔刪除政策", "ARCHIVELOG DELETION POLICY 決定歸檔何時可被回收。"),
+                    ("固定成腳本", "CREATE SCRIPT 把整段排程存進 catalog，避免手打漏參數。"),
+                ],
+                "note": "保留政策決定什麼可以刪，排程決定什麼時候有東西可還原。",
+            },
+            "code": {
+                "lines": [
+                    "-- 保留政策：可回到 14 天前（或改用 REDUNDANCY 2）",
+                    "CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 14 DAYS;",
+                    "-- 每日排程：先把 L1 套回映像副本，再產生新的 L1",
+                    "RUN {",
+                    "  RECOVER COPY OF DATABASE WITH TAG 'incr_update';",
+                    "  BACKUP INCREMENTAL LEVEL 1 FOR RECOVER OF COPY WITH TAG",
+                    "    'incr_update' DATABASE;",
+                    "}",
+                    "-- 依政策回收：先報告，再刪除",
+                    "REPORT OBSOLETE;",
+                    "DELETE NOPROMPT OBSOLETE;",
+                ],
+                "takeaway": "先用 REPORT 看清楚，再讓 DELETE 動手；順序錯了就沒得還原。",
+                "warning": "DELETE OBSOLETE 會真的刪檔；執行前務必核對 REPORT 的範圍與 FRA 容量。",
+            },
+            "check": {
+                "title": "自我檢核：排程與保留政策是否互相配合",
+                "items": [
+                    "RETENTION POLICY 與 SLA 的復原點目標一致。",
+                    "REPORT 與 DELETE OBSOLETE 的結果都有記錄。",
+                    "每日排程連續執行後，映像副本仍只有一份全量。",
+                    "歸檔刪除政策與備份政策不互相矛盾。",
+                    "排程以 stored script 或外部排程固定，且有失敗告警。",
+                ],
+                "pitfalls": [
+                    "保留政策設 14 天，FRA 只夠放 3 天。",
+                    "只看 REPORT 就以為已刪，磁碟空間沒釋放。",
+                    "排程失敗沒告警，一週後才發現沒有備份。",
+                ],
+            },
+            "_note_why": "把保留政策、增量更新策略與排程綁在一起講，學員才會理解「能還原到哪一天」是被設定決定的。",
+            "_note_scope": SCOPE,
+            "_refs": [REFS[1], REFS[0]],
+        },
+    ],
+
+    "summary": {
+        "items": [
+            ("策略", "停機原因決定備份範圍；ARCHIVELOG、多工控制檔與 FRA 是三個不可省的前提。"),
+            ("設定", "SHOW ALL 起手，通道、FORMAT 與 CONTROLFILE AUTOBACKUP 一次設定、長期受益。"),
+            ("備份型式", "完整與 Level 0 立基準，差分省時間、累積省還原，映像副本最快可直接切換。"),
+            ("復原", "完整復原靠歸檔齊全；不完全復原靠選對停止點；控制檔與 SPFILE 是門票。"),
+            ("維運", "驗證、CROSSCHECK、CATALOG 與保留政策四件事，決定備份是不是真的可用。"),
+        ],
+        "section": "整合複習",
+        "note": "備份章節只有一個驗收標準：出事那天，能不能在時限內把資料庫開起來。",
+    },
+}
