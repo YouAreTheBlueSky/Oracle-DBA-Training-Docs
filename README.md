@@ -77,7 +77,27 @@ python work/verify_content.py
 `deliver_*/*.pptx` 是**產生物**：每次重建都是從 `work/content/chNN.py` 重新畫一份，
 所以在 PowerPoint 裡直接改的內容、新增的頁面或圖片，重建後都會消失。
 
-若要手改並保留，請把該檔名加進 `work/FROZEN.txt`（一行一個）：
+### 建議流程：先在 PowerPoint 改，再回寫模組
+
+若你只改**文字**（句子、指令、通過條件、講者備忘），不必自己動 Python：
+
+```powershell
+# 1. 看你改了什麼（不會寫入任何東西）
+python work/diff_pptx.py ch05 "path\to\你改過的檔案.pptx" --as 5
+
+# 2. 確認無誤後回寫模組，並自動重新驗證
+python work/diff_pptx.py ch05 "path\to\你改過的檔案.pptx" --as 5 --apply
+```
+
+`diff_pptx.py` 會先用模組重建一份「應該長這樣」的簡報，再與你的檔案逐頁、逐形狀、逐段落比對；
+`--apply` 只會回寫在模組中**唯一出現**的字串，遇到重複或結構改動（多一個 bullet、少一行）會停手並列出，
+最後再重建一次確認「兩者完全一致」。
+
+`--as` 是該章在你的教材中的章號（初階版與進階課程的編號不同，例如模組 `ch07` 在進階課程是第 1 章）。
+
+### 若改的是版面
+
+改字級、顏色、位置、插圖、新增頁面這類改動無法回寫模組，請把該檔名加進 `work/FROZEN.txt`（一行一個）：
 
 ```
 02_Oracle_DBA_建置與日常管理.pptx

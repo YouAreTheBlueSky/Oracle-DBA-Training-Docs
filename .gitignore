@@ -25,3 +25,6 @@ _probe_write.txt
 
 # 檢視用暫存 XML
 work/*.xml
+
+# 建置過程的暫存產物（含 diff 用的重建檔）
+work/proto/*.pptx
