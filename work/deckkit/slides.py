@@ -281,26 +281,42 @@ class Chapter:
         if pits:
             px, pw = 10.95, 4.75
             inner = pw - 0.48
-            need = 0.52 * k
-            for pt in pits:
-                need += (wrap_lines(pt, inner, 13.0 * k) * 13.0 * k * LINE_BODY / 72.0
-                         + 0.10 * k)
-            ph = min(need, bottom - conds_top)
+            avail_p = bottom - conds_top
+            pk = float(c.get("style", {}).get("pitfall_scale", 1.0))
+
+            def panel_need(scale):
+                n = 0.52 * k * scale
+                for pt in pits:
+                    n += (wrap_lines(pt, inner, 13.0 * k * scale)
+                          * 13.0 * k * scale * LINE_BODY / 72.0 + 0.10 * k * scale)
+                return n
+
+            need = panel_need(pk)
+            while need > avail_p and pk > 0.85:
+                pk -= 0.05
+                need = panel_need(pk)
+            if need > avail_p:
+                warn(f"C{self.spec['no']} pitfall panel overflow: {c['title']}")
+            ph = min(need, avail_p)
             rect(s, px, conds_top, pw, ph, fill=C["panel"])
-            hb = textbox(s, px + 0.24, conds_top + 0.14, pw - 0.48, 0.32 * k)
-            para(hb.text_frame, "常見錯誤", size=13.5 * k, color=C["warn"], bold=True, first=True)
-            pb = textbox(s, px + 0.24, conds_top + 0.52 * k, pw - 0.48, ph - 0.62 * k)
+            hb = textbox(s, px + 0.24, conds_top + 0.14, pw - 0.48, 0.32 * k * pk)
+            para(hb.text_frame, "常見錯誤", size=13.5 * k * pk, color=C["warn"],
+                 bold=True, first=True)
+            pb = textbox(s, px + 0.24, conds_top + 0.52 * k * pk, pw - 0.48,
+                         ph - 0.62 * k * pk)
             tf2 = pb.text_frame
             for j, ptext in enumerate(pits):
                 p = tf2.paragraphs[0] if j == 0 else tf2.add_paragraph()
-                p.line_spacing = Pt(13.0 * k * LINE_BODY)
+                p.line_spacing = Pt(13.0 * k * pk * LINE_BODY)
                 p.space_before = Pt(0 if j == 0 else 5)
                 r1 = p.add_run()
                 r1.text = "× "
-                _set_font(r1, ZH, 13.0 * k, True, C["warn"])
+                _set_font(r1, ZH, 13.0 * k * pk, True, C["warn"])
                 r2 = p.add_run()
                 r2.text = ptext
-                _set_font(r2, ZH, 13.0 * k, False, C["ink"])
+                _set_font(r2, ZH, 13.0 * k * pk, False, C["ink"])
+            if abs(pk - float(c.get("style", {}).get("pitfall_scale", 1.0))) > 0.001:
+                warn(f"C{self.spec['no']} pitfall scaled to {13.0*k*pk:.1f}pt: {c['title']}")
 
     def _check_legacy(self, s, c):
         items = c["items"]
