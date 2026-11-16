@@ -86,7 +86,7 @@ CHAPTER = {
                     "控制檔兩份放同一顆磁碟，壞一顆全毀",
                     "FRA 滿了才發現歸檔早已停擺",
                 ],
-                "warning": "策略檢查每季做一次，輸出貼進維運記錄才算完成。",
+                "warning": "策略檢查每周做一次，輸出貼進維運記錄才算完成。",
             },
             "_note_why": "先談停機分類，是要讓學員理解備份策略對應的是哪一種事故；策略不是備份頻率的選擇題。",
             "_note_scope": SCOPE,
@@ -127,8 +127,8 @@ CHAPTER = {
             "check": {
                 "title": "檢核：設定是否生效且一致",
                 "commands": [
-                    "RMAN> SHOW ALL;",
-                    "SELECT name, value FROM v$rman_configuration;",
+                    "RMAN> SHOW ALL;  -- 當下 rman 的完整設定參數",
+                    "SELECT name, value FROM v$rman_configuration;    -- 只有記錄修改過的設定參數",
                     "SELECT value FROM v$parameter WHERE name = 'control_file_record_keep_time';",
                 ],
                 "conds": [
@@ -155,11 +155,11 @@ CHAPTER = {
             "src": "來源 p.269–272",
             "concept": {
                 "items": [
-                    ("完整備份", "BACKUP DATABASE 只備份使用過的 block，空的 block 不備份。"),
-                    ("Level 0 是基準", "增量策略的起點，內容等同完整備份，但可被 L1 疊加。"),
-                    ("差分 L1", "只備上次 L0 或 L1 之後的變更，備份小、還原要多片。"),
-                    ("累積 L1", "只備上次 L0 之後的全部變更，備份較大但還原快。"),
-                    ("映像副本", "BACKUP AS COPY 產生 1:1 檔案，可直接還原或切換使用。"),
+                    ("完整備份", "只備份使用過的 block，空的 block 不備份。\nBACKUP DATABASE;"),
+                    ("Level 0 完整備份", "增量策略的起點，內容等同完整備份，但可被 L1 疊加。\nBACKUP INCREMENTAL LEVEL 0 DATABASE PLUS ARCHIVELOG DELETE ALL INPUT;\n"),
+                    ("增量 L1", "只備上次 L0 或 L1 之後的變更，備份小、還原要多片。\nBACKUP INCREMENTAL LEVEL 1 DATABASE PLUS ARCHIVELOG DELETE ALL INPUT;\n"),
+                    ("增量累積 L1", "只備上次 L0 之後的全部變更，備份較大但還原快。\nBACKUP INCREMENTAL LEVEL 1 CUMULATIVE DATABASE PLUS ARCHIVELOG DELETE ALL INPUT;\n"),
+                    ("映像副本", "產生 1:1 檔案，可直接還原或切換使用。(如果未啟動ARCHIVELOG, 需先關閉DB)\nBACKUP AS COPY DATABASE;"),
                 ],
                 "note": "選差分或累積，本質上是在「備份時間」與「還原時間」之間取捨。",
             },
@@ -175,7 +175,7 @@ CHAPTER = {
                 ],
                 "widths": [3.4, 5.1, 3.6, 3.0],
                 "small": True,
-                "note": "差分省備份時間，累積省還原時間；兩者都建立在同一份 Level 0 之上。",
+                "note": "差分省**備份時間**，累積省**還原時間**；兩者都建立在同一份 Level 0 之上。",
             },
             "check": {
                 "title": "檢核：備份層級是否搭配得當",
@@ -188,7 +188,7 @@ CHAPTER = {
                 "conds": [
                     ("SUMMARY 日期", "L0 與 L1 依序出現、日期連續，沒有整週空窗"),
                     ("L1 時間", "晚於對應的 L0。找不到 L0＝基準已斷"),
-                    ("backup_type", "要有 D 或 I，且一定要有 L。缺 L＝歸檔沒備份"),
+                    ("backup_type", "要有 D(Full backup) 或 I(Incremental)，且一定要有 L。缺 L＝歸檔沒備份"),
                     ("l0 筆數", ">0。為 0＝從沒做過 Level 0，L1 疊不上去"),
                 ],
                 "pitfalls": [
@@ -220,25 +220,23 @@ CHAPTER = {
             "code": {
                 "lines": [
                     "-- 映像副本：檔案即備份，RMAN 會追蹤它",
-                    "BACKUP AS COPY DATABASE FORMAT '/backup/%U';",
+                    "BACKUP AS COPY",
+                    "  DB_FILE_NAME_CONVERT = ('/opt/oracle/oradata/FREE/', '/opt/oracle/oradata2/')",
+                    "  DATABASE;   -- 特別注意: 必須在 oradata2 先建立 FREE 的下階目錄",
+                    "",
                     "-- 完整復原：先 RESTORE 再 RECOVER，最後才開庫",
                     "STARTUP MOUNT;",
-                    "RESTORE DATABASE;",
+                    "SWITCH DATABASE TO BACKUP;",
                     "RECOVER DATABASE;",
-                    "ALTER DATABASE OPEN;",
-                    "RUN {  -- 換路徑：SWITCH 讓控制檔改指新檔",
-                    "  SET NEWNAME FOR DATAFILE 1 TO '/newdir/system01.dbf';",
-                    "  RESTORE DATABASE;",
-                    "  SWITCH DATAFILE ALL; }",
                 ],
-                "takeaway": "RESTORE 搬檔案、RECOVER 補 redo；SWITCH 省掉一次搬移。",
+                "takeaway": "RECOVER 補 redo；SWITCH 省掉一次搬移 (RESTORE DATABASE)。",
                 "warning": "SWITCH 會改寫控制檔；切換前先確認副本完整，必要時先備份控制檔。",
             },
             "check": {
                 "title": "檢核：完整復原的順序與結果",
                 "commands": [
                     "RMAN> RESTORE DATABASE PREVIEW SUMMARY;",
-                    "SELECT COUNT(*) avail FROM v$datafile_copy WHERE status = 'A';",
+                    "SELECT name FROM v$datafile_copy WHERE status = 'A';",
                     "SELECT file#, error, recover FROM v$datafile_header WHERE error IS NOT NULL;",
                     "SELECT file#, name FROM v$datafile ORDER BY file#;",
                 ],
@@ -294,6 +292,7 @@ CHAPTER = {
             "check": {
                 "title": "檢核：停止點是否選對、歸檔是否齊",
                 "commands": [
+                    "STARTUP MOUNT;",
                     "SELECT thread#, MAX(sequence#) FROM v$archived_log GROUP BY thread#;",
                     "SELECT group#, sequence#, archived, status FROM v$log;",
                     "SELECT sequence#, first_time FROM v$archived_log",
@@ -396,7 +395,7 @@ CHAPTER = {
                     "-- 2) 與磁碟上的實際檔案對帳",
                     "CROSSCHECK BACKUP;",
                     "CROSSCHECK ARCHIVELOG ALL;",
-                    "LIST EXPIRED BACKUP;",
+                    "LIST EXPIRED BACKUP;   LIST EXPIRED ARCHIVELOG ALL;",
                     "-- 3) 補登 RMAN 不認得的檔案（換機或還原控制檔後）",
                     "CATALOG START WITH '/backup/prod/';",
                     "CATALOG ARCHIVELOG '/arch/arch_12.arc';",
@@ -414,7 +413,7 @@ CHAPTER = {
                     "SELECT file#, block#, corruption_type FROM v$database_block_corruption;",
                 ],
                 "conds": [
-                    ("RESTORE VALIDATE", "無 RMAN-06023 或 ORA- 錯誤。有錯＝該片不可還原"),
+                    ("RESTORE VALIDATE", "無 RMAN-06023 或 ORA- 錯誤。有錯＝該 backpiece 不可還原"),
                     ("status = 'X'", "應為 0。X 只是找不到，不一定壞，別急著刪"),
                     ("EXPIRED 清單", "每筆都要有處置：重新掛載或 CATALOG 補登"),
                     ("block_corruption", "無資料列。有列＝有壞塊，先修再驗"),
@@ -502,4 +501,14 @@ CHAPTER = {
         "section": "整合複習",
         "note": "備份章節只有一個驗收標準：出事那天，能不能在時限內把資料庫開起來。",
     },
+}
+
+
+# 使用者手改的講者備忘（依 (主題索引, 頁型) 指定，會取代該頁原本的講解重點）
+NOTE_OVERRIDES = {
+    (1, 'concept'): "特別注意: 26ai 連接 RMAN, 的語法為: rman target=sys/oracle  (26ai 以前可以使用 rman target=/)\n\n\nSQL> show parameter CONTROL_FILE_RECORD_KEEP_TIME   -- 預設 7 days\n\n官方建議: CONTROL_FILE_RECORD_KEEP_TIME ＝ RMAN 備份保留天數(RECOVERY WINDOW OF 14 DAYS) ＋ 完整備份（Level 0）的間隔天數 ＋ 1 \n--\n-- 查詢 Control File 中 各類型 Record Type 的使用情形:\n--\nSELECT TYPE,\n       RECORD_SIZE,\n       RECORDS_TOTAL,\n       RECORDS_USED,\n       ROUND(RECORDS_USED / NULLIF(RECORDS_TOTAL, 0) * 100, 1) AS USED_PCT\n  FROM V$CONTROLFILE_RECORD_SECTION\n ORDER BY TYPE;\n\nRMAN - format identified\n========================\n%a\tDatabase Activition ID\n%b\tBase name - only vaied for SET NEWNAME and image copies\n%c\tBackup piece copy number\n%d\tDatabase name\n%D\tDay of month (DD)\n%e\tArchive log sequence number\n%f\tAbsolute file number\n%F\tSystem-generated name. See below\n%h\tArchived redo log thread number\n%I\tDBID\n%M\tMonth (MM)\n%N\tTablespace name\n%n\tDatabase name - Right padded with 'x' character e.g. TESTxxxx\n%p\tPiece number within backup set\n%s\tBackup set number\n%t\tBackup set timestamp. Use with %s to provide unique name\n%T\tDate (YYYYMMDD)\n%u\tShort system generated file name. See below\n%U\tLong System generated file name. See below\n%Y\tYear (YYYY)\n%%\tPercent (%) character\n\n\nThe following section describes the system-generated names in more detail:\n\n%F - Generates a name in the format c-IIIIIIIIII-YYYYMMDD-QQ where:\n\tIIIIIIIIII is the DBID\n\tYYYYMMDD is a timestamp\n\tQQ is the sequence number in hexadecimal\n\t\n%u - Generates an 8-character name using compressed versions of:\n\tBackup set or image copy number\n\tTime name was generated\n%U - System-generated unique filename. Differs for backup pieces and image copies For backup pieces equivalent to %u%p%c where:\n\t%u is the short generated name\n\t%p is the piece number\n\t%c is the copy number\nFor image copies depends on file type:\n\tFor datafiles format is data-D-%d_id-%I_TS-%N_FNO-%f%u_\n\tFor archived redo log format is arch-D-%d_id-%I_S-%e_T-%h_A-%a%u_\n\tFor control files format is cf-D%d-id-%I%u\n\n【官方來源】\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/rcmrn/\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/",
+    (1, 'check'): "CONFIGURE RMAN OUTPUT TO KEEP FOR 7 DAYS;          --  這裡的 RMAN OUTPUT 指的是 RMAN 執行過程的輸出紀錄, 不含產出的 backupset\nCONFIGURE RETENTION POLICY TO REDUNDANCY 3;    -- 這裡 3 是指最近 3 次完整備份, 實體的備份檔必須透過 delete obsolete 進行刪除\nCONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 7 DAYS;   -- 設定保留可以回復到最近 7 內的任何時間點的備份資料\n\n\n這一頁要建立「設定先行」的習慣：先 SHOW ALL 看預設，再逐項覆寫，最後再 SHOW ALL 驗證。",
+    (2, 'concept'): "備份指令:\nBACKUP DATABASE;\nBACKUP INCREMENTAL LEVEL 0 DATABASE PLUS ARCHIVELOG DELETE ALL INPUT;\nBACKUP INCREMENTAL LEVEL 1 DATABASE PLUS ARCHIVELOG DELETE ALL INPUT;\nBACKUP INCREMENTAL LEVEL 1 CUMULATIVE DATABASE PLUS ARCHIVELOG DELETE ALL INPUT;\nBACKUP AS COPY DATABASE;\n\n\n\n用一張表把六種備份型式的內容、成本與時機排在一起，讓學員一眼看出取捨，而不是背指令。",
+    (2, 'check'): "Backup Type:\nL (Archived Redo Log)：表示该备份集包含的是归档重做日。\nD (Full Backup)：表示这是一个数据文件的全量备份。\nI (Incremental Backup)：表示这是一个增量备份（通常指 Level 1 或更高级别的增量 )。\n\n\n用一張表把六種備份型式的內容、成本與時機排在一起，讓學員一眼看出取捨，而不是背指令。",
+    (6, 'concept'): "EXPIRED (失效)：名存實亡\u000b這通常是因為有人直接在作業系統層面用 rm 指令刪除了備份檔案，或者在搬移/遷移儲存設備時弄丟了檔案。RMAN 的控制檔裡還留著這些備份的「名字」，但當你執行 CROSSCHECK 指令去核對時，RMAN 發現「帳上記著有名，倉庫裡找不到」，就會把它們標記為 EXPIRED。\n處理方式：執行 DELETE EXPIRED BACKUP;，這僅僅是清理 RMAN 資料庫裡的無效紀錄，並不會釋放磁碟空間（因為檔案早就沒了）。\n\nOBSOLETE (廢棄)：合規的多餘\u000b這完全取決於你的備份保留策略（例如「保留最近 7 天的備份」或「保留 3 份全備」）。如果一份備份雖然完好無損，但已經超出了這個保留窗口，且有了更新的備份可以覆蓋它，RMAN 就會認為它 OBSOLETE 了。\n處理方式：執行 DELETE OBSOLETE;，這才是真正把實體檔案從磁碟上刪掉，進而騰出空間\n\n\n驗證與對帳是最容易被跳過的維運動作；這一頁用三個步驟建立可稽核的習慣。",
 }

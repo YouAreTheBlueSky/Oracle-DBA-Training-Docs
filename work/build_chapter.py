@@ -49,6 +49,10 @@ def build(mod_name, out_path, template=TEMPLATE, force=False):
         return n, ["FROZEN: not rebuilt"]
     mod = importlib.import_module(mod_name)
     spec = mod.CHAPTER
+    overrides = getattr(mod, "NOTE_OVERRIDES", {})
+    for (ti, kind), text in overrides.items():
+        if 0 <= ti < len(spec["topics"]) and kind in spec["topics"][ti]:
+            spec["topics"][ti][kind]["_note_replace"] = text
     spec["page_count"] = count_pages(spec)
     ch = Chapter(spec, template)
 

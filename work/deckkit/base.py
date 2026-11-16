@@ -105,7 +105,15 @@ def para(tf, text, size=21.0, color="16333D", bold=False, font=ZH,
         p.space_before = Pt(space_before)
     if space_after:
         p.space_after = Pt(space_after)
-    add_runs(p, text, size, color, bold, font)
+    parts = text.split("\n")
+    add_runs(p, parts[0], size, color, bold, font)
+    for extra_line in parts[1:]:
+        p2 = tf.add_paragraph()
+        p2.alignment = align
+        p2.line_spacing = Pt(exact if exact else size * line)
+        if space_before:
+            p2.space_before = Pt(space_before)
+        add_runs(p2, extra_line, size, color, bold, font)
     return p
 
 
