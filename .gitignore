@@ -28,3 +28,4 @@ work/*.xml
 
 # 建置過程的暫存產物（含 diff 用的重建檔）
 work/proto/*.pptx
+*.sig

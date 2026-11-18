@@ -91,7 +91,7 @@ def build_chapters():
         if not needs_build(dst, mod):
             print(f"  SKIP (up-to-date) {no:02d} {fn}")
             continue
-        slides, warns = build_chapter.build(mod, dst)
+        slides, warns = build_chapter.build(mod, dst, force=FORCE)
         expect = build_chapter.count_pages(sp)
         flag = "OK " if slides == expect else "BAD"
         rebuilt.append(fn)

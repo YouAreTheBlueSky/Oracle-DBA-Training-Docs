@@ -171,7 +171,7 @@ def main():
     os.makedirs(os.path.join(HERE, "proto"), exist_ok=True)
     fresh = os.path.join(HERE, "proto", "_diff_fresh.pptx")
 
-    build_chapter.build(mod, fresh)
+    build_chapter.build(mod, fresh, force=True)
     a, b = dump(fresh), dump(edited)
     changes, warns = diff(a, b)
 
@@ -208,7 +208,7 @@ def main():
     if as_no is not None:
         sp2["no"] = as_no
         sp2["chap_label"] = f"{as_no:02d}"
-    _, warns_build = build_chapter.build(mod, fresh)
+    _, warns_build = build_chapter.build(mod, fresh, force=True)
     a2 = dump(fresh)
     changes2, warns2 = diff(a2, b)
     if not changes2 and not warns2:
