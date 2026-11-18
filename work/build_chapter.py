@@ -41,6 +41,22 @@ def count_pages(spec):
 
 
 
+
+def _matches_head(path):
+    """檔案內容與 git HEAD 相同 → 代表你的手改已提交，可以安全重建。"""
+    import subprocess
+    try:
+        root = os.path.dirname(HERE)
+        rel = os.path.relpath(os.path.abspath(path), root).replace("\\", "/")
+        out = subprocess.run(["git", "show", f"HEAD:{rel}"], capture_output=True)
+        if out.returncode != 0:
+            return False
+        with open(path, "rb") as f:
+            return f.read() == out.stdout
+    except Exception:
+        return False
+
+
 def _signature(path):
     """指紋：每頁的文字與備忘，用來偵測檔案在上次建置後是否被改過。"""
     import hashlib
@@ -65,7 +81,7 @@ def _write_sig(path):
 
 def build(mod_name, out_path, template=TEMPLATE, force=False):
     base.WARNINGS.clear()
-    if not force and os.path.exists(out_path):
+    if not force and os.path.exists(out_path) and not _matches_head(out_path):
         sig_file = out_path + ".sig"
         if os.path.exists(sig_file):
             import json
