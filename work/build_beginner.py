@@ -40,6 +40,27 @@ def newest_dep():
     return max(os.path.getmtime(f) for f in DECK_DEP if os.path.exists(f))
 
 
+
+def strip_note_label(path):
+    """移除備忘中的「【講解重點】」單行標籤（第 1 章沿用原始範本）。"""
+    from pptx import Presentation
+    prs = Presentation(path)
+    changed = 0
+    for s in prs.slides:
+        if not s.has_notes_slide:
+            continue
+        tf = s.notes_slide.notes_text_frame
+        text = tf.text
+        if "【講解重點】" not in text:
+            continue
+        lines = [ln for ln in text.split("\n") if ln.strip() != "【講解重點】"]
+        tf.text = "\n".join(lines).lstrip("\n")
+        changed += 1
+    if changed:
+        prs.save(path)
+    return changed
+
+
 def needs_build(dst, mod):
     """簡報不存在，或內容模組／版面程式比簡報新，才需要重建。"""
     if FORCE or mod in ONLY:
@@ -118,6 +139,9 @@ def build_chapters():
         flag = "OK " if slides == expect else "BAD"
         rebuilt.append(fn)
         print(f"  {flag} {no:02d} {mod} -> {fn} ({slides} slides, {len(warns)} warnings)")
+    n = strip_note_label(ch1_dst)
+    if n:
+        print(f"  第 1 章：已移除 {n} 頁備忘的標籤")
     print(f"  重建 {len(rebuilt)} 章")
     return rebuilt
 
@@ -192,7 +216,7 @@ def build_index(chapters):
     takeaway(s, f"初階版共 10 章、{total} 頁；ASM、RAC、RAC One Node 與資料倉儲另收錄於進階課程。")
     footer(s, "課程總覽", "02", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n初階版保留「架構 → 建置 → 連線 → 備份 → 安全 → 效能 → 工具」的主線，"
+        "初階版保留「架構 → 建置 → 連線 → 備份 → 安全 → 效能 → 工具」的主線，"
         "把需要多節點或額外授權的 ASM／RAC 移到進階課程，避免初學者同時面對叢集與磁碟群概念。")
 
     # 3 structure
@@ -212,11 +236,11 @@ def build_index(chapters):
         y += 1.28
     hline(s, 0.85, 6.02, 15.7, 6.02, color=C["rule"], width=0.75)
     tb = textbox(s, 0.85, 6.18, WIDTH - 0.2, 0.75)
-    para(tb.text_frame, "每頁講者備忘固定三段：講解重點／適用範圍／資料來源，可直接列印為講師手冊。",
+    para(tb.text_frame, "每頁講者備忘含重點說明、適用範圍與資料來源，可直接列印為講師手冊。",
          size=19.0, color=C["body"], first=True)
     footer(s, "課程總覽", "03", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n三頁一組的節奏，讓學員每 15 分鐘完成一次「理解 → 看指令 → 自我驗證」的循環。")
+        "三頁一組的節奏，讓學員每 15 分鐘完成一次「理解 → 看指令 → 自我驗證」的循環。")
 
     # 4-5 source tables
     for idx, (lo, hi) in enumerate(((0, 5), (5, 10)), start=4):
@@ -232,7 +256,7 @@ def build_index(chapters):
               row_h=row_h, sizes=(18.0, 18.0), align_center_cols=(0, 2, 3, 4))
         footer(s, "課程總覽", f"{idx:02d}", "")
         s.notes_slide.notes_text_frame.text = (
-            "【講解重點】\n每一章的 PDF 頁碼可直接回查原文。第 1 章為自編架構教材，不對應 PDF Part；"
+            "每一章的 PDF 頁碼可直接回查原文。第 1 章為自編架構教材，不對應 PDF Part；"
             "Part 6–9 未收錄於初階版。")
 
     # 6 learning path
@@ -253,7 +277,7 @@ def build_index(chapters):
         y += 1.24
     footer(s, "課程總覽", "06", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n四輪的順序對應「先能開庫、再能維運、最後才談調校與高可用」。"
+        "四輪的順序對應「先能開庫、再能維運、最後才談調校與高可用」。"
         "初學者若一開始就學 RAC，會同時面對叢集、共享儲存與全域快取三個新概念，學習負荷過重。")
 
     # 7 edition comparison
@@ -275,7 +299,7 @@ def build_index(chapters):
     warning(s, "兩版差異僅在收錄範圍；同一章的文字、程式碼與檢核頁完全相同。")
     footer(s, "課程總覽", "07", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n初階版不是簡化版，而是「範圍較小、深度不變」。若學員已有單機維運經驗，"
+        "初階版不是簡化版，而是「範圍較小、深度不變」。若學員已有單機維運經驗，"
         "可直接上進階課程；若完全沒有 Oracle 經驗，建議先完成初階版。")
 
     # 8 editorial notes
@@ -297,7 +321,7 @@ def build_index(chapters):
     warning(s, "所有 DDL／DML 範例請先在測試環境驗證；生產環境執行前務必確認備份與回復計畫。")
     footer(s, "課程總覽", "08", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n這一頁是教材的技術邊界：來源授權屬原作者，程式碼由學員自行承擔風險，"
+        "這一頁是教材的技術邊界：來源授權屬原作者，程式碼由學員自行承擔風險，"
         "版本差異由講師在課堂上補充。")
 
     # 9 file list

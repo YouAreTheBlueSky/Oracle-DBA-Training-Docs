@@ -283,7 +283,7 @@ def notes(slide, spec, chap_label, source_ref):
     if spec.get("_note_pre"):
         parts.append(spec["_note_pre"].strip())
     if spec.get("_note_why"):
-        parts.append("【講解重點】\n" + spec["_note_why"].strip())
+        parts.append(spec["_note_why"].strip())
     if spec.get("_note_scope"):
         parts.append("【適用範圍】\n" + spec["_note_scope"].strip())
     if source_ref:

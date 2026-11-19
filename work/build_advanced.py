@@ -172,7 +172,7 @@ def build_index(chapters):
     takeaway(s, f"4 章、{total} 頁；每章皆為「概念 → 程式碼 → 檢核」三段式。")
     footer(s, "課程總覽", "02", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n章序依「儲存層 → 叢集 → 叢集特例 → 應用型態」排列。"
+        "章序依「儲存層 → 叢集 → 叢集特例 → 應用型態」排列。"
         "ASM 先學，因為 RAC 的叢集檔案多半放在 ASM 磁碟群上；RAC One Node 是 RAC 的單節點特例，"
         "排在 RAC 之後；資料倉儲與前兩者無依賴關係，可獨立選修。")
 
@@ -195,7 +195,7 @@ def build_index(chapters):
     warning(s, "RAC 與 RAC One Node 的指令會實際變更叢集資源，請在練習叢集操作，勿在生產環境試錯。")
     footer(s, "課程總覽", "03", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n初學者常跳過 ASM 直接學 RAC，結果在建立磁碟群與 voting disk 時卡住。"
+        "初學者常跳過 ASM 直接學 RAC，結果在建立磁碟群與 voting disk 時卡住。"
         "本課程刻意把 ASM 放第 1 章，就是為了讓 RAC 的儲存前提先到位。")
 
     # 4 source table
@@ -211,7 +211,7 @@ def build_index(chapters):
           row_h=row_h, sizes=(18.5, 18.5), align_center_cols=(0, 2, 3, 4, 5))
     footer(s, "課程總覽", "04", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n四章分別對應 PDF 的 Part 6–9，頁碼可直接回查原文。"
+        "四章分別對應 PDF 的 Part 6–9，頁碼可直接回查原文。"
         "Part 1–5 與 Part 10–13 屬於初階版範圍。")
 
     # 5 relation to beginner
@@ -233,7 +233,7 @@ def build_index(chapters):
     warning(s, "兩套教材採同一版面與三段式體例，學員可無痛接續；章號各自從 01 起算。")
     footer(s, "課程總覽", "05", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n初階與進階是「同一套教材的兩半」，不是難易兩版。"
+        "初階與進階是「同一套教材的兩半」，不是難易兩版。"
         "若學員已有單機維運經驗、只想補高可用與儲存，可直接上進階課程。")
 
     # 6 editorial notes
@@ -255,7 +255,7 @@ def build_index(chapters):
     warning(s, "ASM 磁碟群、voting disk 與 OCR 的操作具不可逆性，執行前務必確認備份與回復計畫。")
     footer(s, "課程總覽", "06", "")
     s.notes_slide.notes_text_frame.text = (
-        "【講解重點】\n進階章節的風險高於初階：磁碟群重建、節點增減、voting disk 置換都可能導致"
+        "進階章節的風險高於初階：磁碟群重建、節點增減、voting disk 置換都可能導致"
         "叢集無法啟動，因此每章都保留「常見錯誤」與「檢核」兩頁。")
 
     # 7 file list
