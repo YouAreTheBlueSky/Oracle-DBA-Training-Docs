@@ -102,9 +102,19 @@ def build(mod_name, out_path, template=TEMPLATE, force=False):
     mod = importlib.import_module(mod_name)
     spec = mod.CHAPTER
     overrides = getattr(mod, "NOTE_OVERRIDES", {})
-    for (ti, kind), text in overrides.items():
-        if 0 <= ti < len(spec["topics"]) and kind in spec["topics"][ti]:
-            spec["topics"][ti][kind]["_note_replace"] = text
+    for (ti, kind), val in overrides.items():
+        if not (0 <= ti < len(spec["topics"]) and kind in spec["topics"][ti]):
+            continue
+        target = spec["topics"][ti][kind]
+        if isinstance(val, dict):
+            mode, text = val.get("mode", "replace"), val.get("text", "")
+        else:
+            mode, text = "replace", val
+        if mode == "prepend":
+            target["_note_pre"] = text          # 放在【講解重點】之前
+        else:
+            target["_note_replace"] = text      # 整段取代
+
     spec["page_count"] = count_pages(spec)
     ch = Chapter(spec, template)
 

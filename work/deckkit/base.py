@@ -280,6 +280,8 @@ def notes(slide, spec, chap_label, source_ref):
     """Three-part speaker note, matching the template's convention."""
     topic = spec.get("_topic", "")
     parts = []
+    if spec.get("_note_pre"):
+        parts.append(spec["_note_pre"].strip())
     if spec.get("_note_why"):
         parts.append("【講解重點】\n" + spec["_note_why"].strip())
     if spec.get("_note_scope"):

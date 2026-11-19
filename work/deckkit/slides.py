@@ -35,6 +35,8 @@ class Chapter:
     def _note_spec(self, topic, slide_spec):
         """topic 提供 _note_why／_note_scope／_refs；單頁可覆寫。"""
         merged = dict(topic)
+        if slide_spec.get("_note_pre"):
+            merged["_note_pre"] = slide_spec["_note_pre"]
         if slide_spec.get("_note_replace"):
             merged["_note_why"] = slide_spec["_note_replace"]
         for k in ("_note_why", "_note_scope", "_refs"):

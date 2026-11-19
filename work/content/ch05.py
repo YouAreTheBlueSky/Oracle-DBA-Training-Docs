@@ -89,7 +89,7 @@ CHAPTER = {
                 "pitfalls": [
                     "改了 profile 沒 ALTER USER 套用",
                     "用 CONNECT 建帳號，權限來源說不清",
-                    "配額 -1 等於無上限，別當成已設限",
+                    "配額 -1 等於無上限",
                 ],
                 "warning": "19c 預設密碼區分大小寫；該參數已 deprecated",
             },
@@ -117,14 +117,19 @@ CHAPTER = {
                 "lines": [
                     "-- 19c：密碼檔預設 12.2 格式，套用 profile 密碼政策",
                     "orapwd file=$ORACLE_HOME/dbs/orapw$ORACLE_SID",
-                    "SELECT * FROM v$pwfile_users;",
+                    "-- v$pwfile_users 只有權限欄位；帳號狀態要 join dba_users",
+                    "SELECT p.username, p.sysdba, p.sysoper, p.sysasm,",
+                    "       u.account_status, u.authentication_type, u.password_versions,",
+                    "       u.last_login, u.lock_date",
+                    "FROM   v$pwfile_users p JOIN dba_users u ON u.username = p.username;",
+                    "",
                     "-- REMOTE_OS_AUTHENT 已 deprecated，OS 驗證僅限本機",
-                    "SHOW PARAMETER os_authent_prefix",
+                    "SHOW PARAMETER os_authent_prefix      -- 預設 ops$",
                     "CREATE USER ops$alice IDENTIFIED EXTERNALLY;",
                     "GRANT CREATE SESSION TO ops$alice;",
+                    "",
                     "-- 代理連線：appserv 代表 app_user，需帶密碼",
                     "ALTER USER app_user GRANT CONNECT THROUGH appserv",
-                    "  AUTHENTICATED USING PASSWORD;",
                 ],
                 "takeaway": "特權連線靠 password file；一般使用者用密碼或代理，不用 OS 驗證。",
                 "warning": "REMOTE_OS_AUTHENT 已 deprecated；orapwd 不要把密碼寫在指令列。",
@@ -141,7 +146,7 @@ CHAPTER = {
                 ],
                 "conds": [
                     ("v$pwfile_users", "只列真正需要 SYSDBA 的帳號；多一個就多一把鑰匙"),
-                    ("驗證方式", "ops$ 帳號為 EXTERNAL；一般使用者應為 PASSWORD"),
+                    ("驗證方式", "ops$ 帳號為 EXTERNAL；一般使用者應為 PASSWORD\nNONE:通常保留給特定系統內部角色、叢集或背景管理用途。"),
                     ("proxy_users", "proxy 與 client 成對；查不到代表代理授權未生效"),
                     ("遠端 OS 驗證", "FALSE；19c 已 deprecated，遠端 OS 驗證不可用"),
                 ],
@@ -226,7 +231,7 @@ CHAPTER = {
                     ("Resource Limit", "CONNECT_TIME、IDLE_TIME、SESSIONS_PER_USER 以 profile 套用。"),
                     ("要生效的開關", "RESOURCE_LIMIT 為 TRUE 才會強制執行，否則只是記錄。"),
                     ("連線清理", "KILL SESSION 由資料庫收回資源；OS 砍程序會留下孤兒交易。"),
-                    ("稽核三問", "誰、做了什麼、什麼時候；答案分別落在不同稽核視圖。"),
+                    ("稽核三問", "誰、什麼時候、做了什麼；答案分別落在不同稽核視圖。"),
                     ("統一稽核", "19c 預設啟用統一稽核；政策與結果都查 unified trail。"),
                 ],
                 "note": "連線控制管用多少，稽核管做過什麼，兩者都靠事後查詢驗證。",
@@ -262,7 +267,7 @@ CHAPTER = {
                 "conds": [
                     ("limit", "非 UNLIMITED，且 IDLE_TIME 有具體值"),
                     ("value", "TRUE；FALSE 時 profile 只記錄、不真的中斷"),
-                    ("稽核政策", "查得到 policy 即已啟用；success／failure : YES | NO"),
+                    ("稽核政策", "查得到 policy 即已啟用；success／failure : YES: 要記錄 | NO: 不要紀錄"),
                     ("kill session", "查不到或 status＝KILLED；仍 ACTIVE 就是沒斷"),
                 ],
                 "pitfalls": [
@@ -289,4 +294,13 @@ CHAPTER = {
         "section": "整合複習",
         "note": "每一個安全性設定，都要能在資料字典或稽核視圖裡被查出來，才算真的生效。",
     },
+}
+
+
+# 使用者手改的講者備忘（(主題索引, 頁型) → 內容；prepend 補在前面、replace 整段取代）
+NOTE_OVERRIDES = {
+    (0, 'code'): {"mode": 'prepend', "text": "密碼管理的預設腳本 $ORACLE_HOME/rdbms/admin/utlpwdmg.sql\n\nALTER PROFILE DEFAULT LIMIT\n      PASSWORD_LIFE_TIME 180\n      PASSWORD_GRACE_TIME 7\n      PASSWORD_REUSE_TIME UNLIMITED        -- 限制密碼都長時間內不可以重複\n      PASSWORD_REUSE_MAX  UNLIMITED       -- 限制相同密碼最近幾次不可以重複\n      FAILED_LOGIN_ATTEMPTS 10                       --容許連續登入失敗的次數上限為 10 次\n      PASSWORD_LOCK_TIME 1                             --當帳號因連續輸錯密碼而被鎖定後，其自動鎖定時間為 1 天\n      INACTIVE_ACCOUNT_TIME UNLIMITED     --針對長期未登入的閒置帳號，不設定自動鎖定\n      PASSWORD_ROLLOVER_TIME 0                   --新/舊密碼過渡期（Rollover Time）設為 0, 過渡期內密碼可以共用\n      PASSWORD_VERIFY_FUNCTION ora12c_verify_function;"},
+    (0, 'check'): {"mode": 'prepend', "text": "常見的 PASSWORD_VERSIONS 代碼含義\n不同版本的 Oracle 資料庫在驗證密碼時，會使用不同的雜湊演算法：\n10G：舊版不區分大小寫的雜湊演算法（基於 DES）。安全性較低，在現代資料庫中已不建議使用，甚至可能受限於 SQLNET.ALLOWED_LOGON_VERSION_SERVER 參數而被拒絕連線。\n11G：Oracle 11g 引入的區分大小寫雜湊演算法（基於 SHA-1 加上隨機 Salt）。\n12C：Oracle 12c 引入的更強大雜湊演算法（基於 PBKDF2 與 SHA-512，迭代次數更高）。在 Oracle 12c 及更新版本（如 19c、26ai）中，這是預設且推薦使用的強密碼雜湊版本。"},
+    (2, 'check'): {"mode": 'prepend', "text": "ADMIN_OPTION 欄位用來表示被授予該角色(Role)的使用者或角色，是否擁有將此角色「再轉授」給其他使用者或角色的權限，以及是否擁有修改或撤銷該角色的相關管理能力。"},
+    (3, 'code'): {"mode": 'prepend', "text": "CREATE PROFILE app_prof LIMIT\n  -- 系統資源限制\n  SESSIONS_PER_USER          3          -- 每個使用者最多同時建立 3 個連線\n  CONNECT_TIME               480        -- 單次連線最長 480 分鐘（8 小時）\n  IDLE_TIME                  30         -- 閒置超過 30 分鐘自動斷線 \n  -- 密碼安全規則\n  FAILED_LOGIN_ATTEMPTS      5          -- 連續登入失敗 5 次鎖定帳號\n  PASSWORD_LIFE_TIME         90         -- 密碼有效期限為 90 天\n  PASSWORD_LOCK_TIME         1          -- 帳號鎖定 1 天後自動解鎖\n  PASSWORD_GRACE_TIME        7;         -- 密碼過期後的寬限期為 7 天\n/\n\nSelect os_username, userhost, terminal, dbusername, action_name, sql_text, sql_binds from unified_audit_trail\nWhere object_schema='HR' AND object_name='EMPLOYEES'"},
 }

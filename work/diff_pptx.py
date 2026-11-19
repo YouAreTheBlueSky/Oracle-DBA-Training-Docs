@@ -74,6 +74,21 @@ def strip_prefix(runs):
     return runs, ""
 
 
+def norm_notes(text):
+    """備忘比對時忽略多餘空行與行尾空白（內容相同即可）。"""
+    out, blank = [], False
+    for line in text.splitlines():
+        line = line.rstrip()
+        if line == "":
+            if not blank:
+                out.append("")
+            blank = True
+        else:
+            out.append(line)
+            blank = False
+    return "\n".join(out).strip()
+
+
 def dump(path):
     prs = Presentation(path)
     slides = []
@@ -119,7 +134,7 @@ def diff(a, b):
                 if ma != mb:
                     changes.append({"slide": n, "shape": si, "para": pi,
                                     "old": ta, "new": mb, "kind": "format"})
-        if sa["notes"].strip() != sb["notes"].strip():
+        if norm_notes(sa["notes"]) != norm_notes(sb["notes"]):
             warns.append(f"第 {n:02d} 頁講者備忘有差異（不回寫，請人工確認）")
     return changes, warns
 
