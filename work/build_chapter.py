@@ -57,43 +57,13 @@ def _matches_head(path):
         return False
 
 
-def _signature(path):
-    """指紋：每頁的文字與備忘，用來偵測檔案在上次建置後是否被改過。"""
-    import hashlib
-    from pptx import Presentation
-    prs = Presentation(path)
-    out = []
-    for sl in prs.slides:
-        txt = "|".join(sh.text_frame.text for sh in sl.shapes if sh.has_text_frame)
-        notes = sl.notes_slide.notes_text_frame.text if sl.has_notes_slide else ""
-        out.append(hashlib.md5((txt + "##" + notes).encode("utf-8")).hexdigest())
-    return out
-
-
-def _write_sig(path):
-    import json
-    try:
-        with open(path + ".sig", "w", encoding="utf-8") as f:
-            json.dump(_signature(path), f)
-    except Exception:
-        pass
-
 
 def build(mod_name, out_path, template=TEMPLATE, force=False):
     base.WARNINGS.clear()
     if not force and os.path.exists(out_path) and not _matches_head(out_path):
-        sig_file = out_path + ".sig"
-        if os.path.exists(sig_file):
-            import json
-            old_sig = json.load(open(sig_file, encoding="utf-8"))
-            try:
-                cur_sig = _signature(out_path)
-            except Exception:
-                cur_sig = None
-            if cur_sig is not None and cur_sig != old_sig:
-                raise SystemExit(
-                    f"拒絕覆蓋：{os.path.basename(out_path)} 在上次建置後被改過（可能是手改）。\n"
-                    f"  請先執行 work/diff_pptx.py 比對並 --apply，或加 --force 強制覆蓋。")
+        raise SystemExit(
+            f"拒絕覆蓋：{os.path.basename(out_path)} 與最後一次 commit 不同（可能有未提交的手改）。\n"
+            f"  請先執行 work/diff_pptx.py 比對並 --apply、或把檔案 commit，或加 --force 強制覆蓋。")
     if not force and os.path.basename(out_path) in frozen_names() and os.path.exists(out_path):
         from pptx import Presentation
         n = len(Presentation(out_path).slides)
@@ -138,7 +108,6 @@ def build(mod_name, out_path, template=TEMPLATE, force=False):
 
     os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
     ch.prs.save(out_path)
-    _write_sig(out_path)
 
     actual = len(ch.prs.slides)
     status = "OK " if actual == spec["page_count"] else "MISMATCH"
