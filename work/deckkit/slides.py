@@ -248,8 +248,8 @@ class Chapter:
             add_runs(p, ln if ln else " ", size, C["ink"], False, MONO)
 
         y = panel_top + panel_h + 0.18
-        lb2 = textbox(s, 0.85, y, 6.0, 0.32)
-        para(lb2.text_frame, "通過條件", size=14.5 * k, color=C["teal"], bold=True, first=True)
+        lb2 = textbox(s, 0.85, y - 0.02, 6.0, 0.38)
+        para(lb2.text_frame, "通過條件", size=16.5 * k, color=C["teal"], bold=True, first=True)
 
         conds = c["conds"][:4]
         pits = (c.get("pitfalls") or [])[:3]
