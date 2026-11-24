@@ -258,7 +258,7 @@ class Chapter:
         label_w, label_x = 2.55, 0.85
         expect_x, expect_w = 3.50, 7.10
 
-        size_l, size_e = 16.5 * k_cond, 16.0 * k_cond
+        size_l = size_e = 16.5 * k_cond   # 標籤與內容同字級
         heights = []
         for look, expect in conds:
             hl = wrap_lines(look, label_w, size_l) * size_l * LINE_BODY / 72.0
