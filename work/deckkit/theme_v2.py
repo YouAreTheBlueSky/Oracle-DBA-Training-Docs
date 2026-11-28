@@ -17,7 +17,7 @@ from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.dml.color import RGBColor
 
-from base import C, ZH, MONO, SLIDE_W, SLIDE_H, text_w_pt, wrap_lines, _set_font, add_runs, warn
+from base import C, ZH, MONO, SLIDE_W, SLIDE_H, text_w_pt, wrap_lines, _set_font, add_runs, warn, notes as base_notes
 
 # ---------------------------------------------------------------- tokens
 BG      = "F1F5F9"
@@ -108,6 +108,27 @@ def slide_box(slide, x, y, w, h):
     tf.margin_top = 0
     tf.margin_bottom = 0
     return tb
+
+
+
+def topic_spec(topic, kind):
+    """合併主題層級與該頁專屬的備忘設定（與 slides._note_spec 同邏輯）。"""
+    merged = dict(topic)
+    page = topic.get(kind) or {}
+    if page.get("_note_pre"):
+        merged["_note_pre"] = page["_note_pre"]
+    if page.get("_note_replace"):
+        merged["_note_why"] = page["_note_replace"]
+    return merged
+
+
+def put_notes(slide, spec, chap_label, src):
+    base_notes(slide, spec, chap_label, src)
+
+
+def simple_note(slide, text):
+    if text and text.strip():
+        slide.notes_slide.notes_text_frame.text = text.strip()
 
 
 # ---------------------------------------------------------------- chrome
@@ -221,6 +242,7 @@ def cover(prs, ch):
         box(s, x, 7.30, cw, 0.72, fill=TERM_H, radius=0.16)
         text(s, x + 0.1, 7.30, cw - 0.2, 0.72, name, 16.0, WHITE, True,
              align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    simple_note(s, ch.get("note_why", ""))
 
 
 def outline(prs, ch, page_no, total):
@@ -235,6 +257,7 @@ def outline(prs, ch, page_no, total):
         text(s, RIGHT - 1.55, y + 0.16, 1.3, 0.32, "P%d–P%d" % (3 + i * 3, 5 + i * 3),
              13.0, MUTED, align=PP_ALIGN.RIGHT)
         y += h + 0.20
+    simple_note(s, ch.get("agenda_note", ""))
 
 
 def concept(prs, ch, ti, page_no, total):
@@ -253,6 +276,7 @@ def concept(prs, ch, ti, page_no, total):
              lsize=17.5, dsize=14.5)
     dark_panel(s, 11.30, top, RIGHT - 11.30, bot - top, "這一頁的重點",
                t["concept"].get("note", ""), color, hsize=17.0, bsize=15.0)
+    put_notes(s, topic_spec(t, "concept"), ch.get("chap_label", ""), t.get("src", ""))
 
 
 def code_page(prs, ch, ti, page_no, total):
@@ -271,6 +295,7 @@ def code_page(prs, ch, ti, page_no, total):
         body.append("⚠ " + c["warning"])
     dark_panel(s, 11.30, BODY_TOP, RIGHT - 11.30, BODY_BOT - BODY_TOP,
                "判讀重點", "\n\n".join(body), color, hsize=17.0, bsize=14.5)
+    put_notes(s, topic_spec(t, "code"), ch.get("chap_label", ""), t.get("src", ""))
 
 
 def check_page(prs, ch, ti, page_no, total):
@@ -308,6 +333,7 @@ def check_page(prs, ch, ti, page_no, total):
     para(tf, "常見錯誤", 14.0, "FCA5A5", True, first=True, line=1.20)
     for p_text in c.get("pitfalls", [])[:3]:
         para(tf, "× " + p_text, 12.0, "CBD5E1", line=1.24, space=3)
+    put_notes(s, topic_spec(t, "check"), ch.get("chap_label", ""), t.get("src", ""))
 
 
 def summary(prs, ch, page_no, total):
@@ -326,6 +352,7 @@ def summary(prs, ch, page_no, total):
              TOPIC_COLORS[i % 4], lead, desc, lsize=17.0, dsize=14.0, pad=0.26)
     if sm.get("note"):
         text(s, LEFT, 8.00, CW, 0.34, sm["note"], 13.0, MUTED, line=1.30)
+    simple_note(s, sm.get("note", ""))
 
 
 def refs_page(prs, ch, page_no, total):
@@ -340,6 +367,7 @@ def refs_page(prs, ch, page_no, total):
     for i, r in enumerate(refs):
         text(s, LEFT + 0.30, y, CW - 0.6, 0.34, "%d.  %s" % (i + 1, r), 13.5, INK)
         y += 0.52
+    simple_note(s, ch.get("refs_note", ""))
 
 
 def build_v2(ch, out_path):
