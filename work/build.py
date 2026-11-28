@@ -29,7 +29,7 @@ import importlib
 CHAPTERS = {
     "01": ("json", "snap01"),
     "02": ("json", "snap02"),
-    "03": ("theme", "ch03"),
+    "03": ("json", "snap03"),
     "04": ("theme", "ch04"),
     "05": ("theme", "ch05"),
     "06": ("json", "snap06"),
