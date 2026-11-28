@@ -36,8 +36,13 @@ def spread(paras):
     for p in paras:
         t = text_of(p)
         fresh = bool(t.strip())
-        if (fresh and is_start(t) and last is not None and is_end(last)
-                and (not out or text_of(out[-1]).strip())):
+        is_cmt = bool(re.match(r"--(?!-)", t.strip()))
+        gap = False
+        if fresh and is_start(t) and last is not None and is_end(last):
+            gap = True
+        if fresh and is_cmt and last is not None and not re.match(r"--(?!-)", last.strip()):
+            gap = True
+        if gap and (not out or text_of(out[-1]).strip()):
             out.append({"a": "l", "runs": []})
         out.append(p)
         if fresh:
@@ -67,7 +72,7 @@ def main():
             need = len(out) * size * 1.36 / 72.0 + 0.12
             below = [o["y"] for o in sl["shapes"]
                      if o is not sh and o["y"] > sh["y"] + 0.5]
-            limit = min(below, default=9.0) - sh["y"] - 0.06
+            limit = min(below, default=9.0) - sh["y"] - 0.03
             if need > limit:
                 print("p%-2d 跳過（需要 %.2f、上限 %.2f）" % (si, need, limit))
                 continue

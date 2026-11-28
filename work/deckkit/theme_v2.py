@@ -246,11 +246,21 @@ def spread_statements(lines, size, avail_in):
             return True
         return bool(_re.match(r"^(SHOW|EXIT|HOST|SET|SPOOL|DESC|DESCRIBE)\b", u, _re.I))
 
+    def is_comment(t):
+        import re as _re
+        return bool(_re.match(r"--(?!-)", (t or "").strip()))
+
     last = None
     for ln in lines:
         fresh = bool(ln.strip())
-        if (fresh and is_start(ln) and last is not None
-                and is_end(last) and (not out or out[-1].strip())):
+        gap = False
+        # (a) 上一句已結束，這一行是新的語句
+        if fresh and is_start(ln) and last is not None and is_end(last):
+            gap = True
+        # (b) 這一行是新的註解區塊（前面不是註解）
+        if fresh and is_comment(ln) and last is not None and not is_comment(last):
+            gap = True
+        if gap and (not out or out[-1].strip()):
             out.append("")
         out.append(ln)
         if fresh:

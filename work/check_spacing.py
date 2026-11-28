@@ -37,9 +37,13 @@ for f in sorted(glob.glob("deliver_beginner/*_v2.pptx")):
                 continue
             texts = ["".join(r.text for r in q.runs) for q in paras]
             for a, b in zip(range(len(texts) - 1), range(1, len(texts))):
-                if is_start(texts[b]) and is_end(texts[a]) and texts[a].strip():
-                    hits.append((os.path.basename(f)[:22], i,
-                                 texts[a][:26], texts[b][:26]))
+                prev, cur = texts[a], texts[b]
+                if not cur.strip():
+                    continue
+                if is_start(cur) and is_end(prev) and prev.strip():
+                    hits.append((os.path.basename(f)[:22], i, prev[:26], cur[:26]))
+                elif re.match(r"--(?!-)", cur.strip()) and prev.strip() and not re.match(r"--(?!-)", prev.strip()):
+                    hits.append((os.path.basename(f)[:22], i, prev[:26], cur[:26]))
 
 print("緊鄰未分開的語句:", len(hits), "處")
 for h in hits[:12]:
