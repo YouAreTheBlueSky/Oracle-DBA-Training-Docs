@@ -11,6 +11,8 @@ REFS = [
 SCOPE = ("附錄章收錄來源文件提供的小工具與作業系統排程做法，適用於 Linux 平台；"
          "Oracle Scheduler 為 19c 建議的排程方式，cron 適合 OS 層工作。")
 
+BODY_SIZE = 20.0    # 標題以下內容的字級
+
 CHAPTER = {
     "no": 14,
     "part": "Part 13",

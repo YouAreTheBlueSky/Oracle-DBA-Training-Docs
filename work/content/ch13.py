@@ -13,6 +13,8 @@ SCOPE = ("以 Oracle Database 19c 為敘述基準，程式碼取自來源文件 
          "來源文件未收錄 DBMS_STATS／DBMS_SPACE／DBMS_ADVISOR，DBA 維運型 PL/SQL 改以 "
          "DBMS_SHARED_POOL 與 DBMS_HPROF 為代表。")
 
+BODY_SIZE = 20.0    # 標題以下內容的字級
+
 CHAPTER = {
     "no": 13,
     "part": "Part 12",

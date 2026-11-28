@@ -32,6 +32,7 @@ LINE    = "CBD5E1"
 ACCENT  = "C74634"
 SKY     = "38BDF8"
 
+BODY_PT = 18.0       # 標題以下主要內容的字級（可由章節覆寫）
 BLUE, TEAL, AMBER, VIOLET = "2563EB", "0D9488", "D97706", "7C3AED"
 RED, GREEN, GREY = "DC2626", "10B981", "64748B"
 TOPIC_COLORS = [BLUE, TEAL, AMBER, VIOLET]
@@ -189,10 +190,12 @@ def card(slide, x, y, w, h, accent, label, desc, lsize=17.0, dsize=15.0,
         para(tf, desc, dsize, BODY, line=1.28, space=4)
 
 
-def dark_panel(slide, x, y, w, h, heading, body, accent=ACCENT, hsize=17.0,
-               bsize=15.0):
+def dark_panel(slide, x, y, w, h, heading, body, accent=ACCENT, hsize=None,
+               bsize=None):
     box(slide, x, y, w, h, fill=DARK, radius=0.06)
     box(slide, x, y, w, 0.08, fill=accent)
+    hsize = hsize or max(16.0, BODY_PT - 2)
+    bsize = bsize or max(15.0, BODY_PT - 2)
     yy = y + 0.30
     if heading:
         text(slide, x + 0.26, yy, w - 0.5, 0.36, heading, hsize, WHITE, True)
@@ -207,7 +210,7 @@ def terminal(slide, x, y, w, h, label, lines, size=None, dots=True):
     # 先插入語句間空行（不加高度上限），再依可用空間縮字級
     lines = spread_lines(lines)
     if size is None:
-        best = 18.0
+        best = BODY_PT
         longest = max((text_w_pt(l, 1.0, True) for l in lines), default=0)
         avail = (h - 0.78) * 72.0
         while best > 12.0 and (longest * best > inner_w * 0.98
@@ -375,7 +378,7 @@ def concept(prs, ch, ti, page_no, total):
     h = (bot - top - gap * (n - 1)) / n
     for i, (lead, desc) in enumerate(items):
         card(s, LEFT, top + i * (h + gap), 10.30, h, color, lead, desc,
-             lsize=17.5, dsize=14.5)
+             lsize=BODY_PT, dsize=max(14.0, BODY_PT - 3))
     dark_panel(s, 11.30, top, RIGHT - 11.30, bot - top, "這一頁的重點",
                t["concept"].get("note", ""), color, hsize=17.0, bsize=15.0)
     put_notes(s, topic_spec(t, "concept"), ch.get("chap_label", ""), t.get("src", ""))
@@ -425,14 +428,14 @@ def check_page(prs, ch, ti, page_no, total):
         tf = tb.text_frame
         tf.vertical_anchor = MSO_ANCHOR.MIDDLE
         # 依卡片高度自動調整說明字級，避免文字被裁掉
-        esize = 12.5
+        esize = BODY_PT
         while esize > 11.0:
             lines_needed = wrap_lines(expect, w - 0.46, esize) + 1   # 保守估計
-            need_h = (16.0 * 1.18 + lines_needed * esize * 1.20 + 2) / 72.0 + 0.10
+            need_h = (BODY_PT * 1.18 + lines_needed * esize * 1.20 + 2) / 72.0 + 0.10
             if need_h <= ch_h:
                 break
             esize -= 0.5
-        para(tf, label, 16.0, INK, True, first=True, line=1.18)
+        para(tf, label, BODY_PT, INK, True, first=True, line=1.18)
         para(tf, expect, esize, BODY, line=1.20, space=2)
 
     py = BODY_BOT - pit_h
@@ -441,7 +444,7 @@ def check_page(prs, ch, ti, page_no, total):
     tf = tb.text_frame
     para(tf, "常見錯誤", 14.0, "FCA5A5", True, first=True, line=1.20)
     for p_text in c.get("pitfalls", [])[:3]:
-        para(tf, "× " + p_text, 12.0, "CBD5E1", line=1.24, space=3)
+        para(tf, "× " + p_text, max(14.0, BODY_PT - 4), "CBD5E1", line=1.24, space=3)
     put_notes(s, topic_spec(t, "check"), ch.get("chap_label", ""), t.get("src", ""))
 
 
@@ -534,6 +537,8 @@ def refs_page(prs, ch, page_no, total):
 
 
 def build_v2(ch, out_path):
+    global BODY_PT
+    BODY_PT = float(ch.get("body_size") or 18.0)
     prs = Presentation()
     prs.slide_width = Inches(WIDTH)
     prs.slide_height = Inches(9.375)

@@ -54,6 +54,9 @@ def main(argv):
         no, out = OUT.get(name, (sp.get("no"), "deliver_beginner/%s_v2.pptx" % name))
         sp["no"] = no
         sp["chap_label"] = "%02d" % no
+        body = getattr(mod, "BODY_SIZE", None)
+        if body:
+            sp["body_size"] = body
         apply_overrides(mod, sp)
 
         os.makedirs(os.path.dirname(TMP), exist_ok=True)
