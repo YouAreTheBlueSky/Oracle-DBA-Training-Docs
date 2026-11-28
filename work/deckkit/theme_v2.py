@@ -138,7 +138,7 @@ def new_slide(prs, bg=BG):
     return s
 
 
-def chrome(slide, badge, badge_color, title, subtitle, page_no, total):
+def chrome(slide, badge, badge_color, title, subtitle, page_no, total, course=""):
     box(slide, 0, 0, WIDTH, TOP_BAR, fill=ACCENT)
     # 徽章
     w = 0.55 + text_w_pt(badge, 15.0) / 72.0
@@ -161,8 +161,8 @@ def chrome(slide, badge, badge_color, title, subtitle, page_no, total):
         text(slide, LEFT, 1.58, CW, 0.40, subtitle, 16.5, BODY)
     box(slide, LEFT, 2.08, CW, 0.025, fill=LINE)
     # 頁尾
-    text(slide, LEFT, FOOTER_Y, 10.0, 0.30,
-         "Oracle Database 安全性管理實戰 ｜ 初級 DBA 訓練課程", 12.5, MUTED)
+    text(slide, LEFT, FOOTER_Y, 11.0, 0.30,
+         "Oracle Database %s ｜ 初級 DBA 訓練課程" % (course or "實戰"), 12.5, MUTED)
     text(slide, RIGHT - 2.2, FOOTER_Y, 2.2, 0.30,
          "Slide %d / %d" % (page_no, total), 12.5, MUTED, align=PP_ALIGN.RIGHT)
 
@@ -248,7 +248,7 @@ def cover(prs, ch):
 def outline(prs, ch, page_no, total):
     s = new_slide(prs)
     chrome(s, "CHAPTER %02d ｜ 課程地圖" % ch["no"], ACCENT,
-           ch.get("agenda_title", "本章大綱"), "", page_no, total)
+           ch.get("agenda_title", "本章大綱"), "", page_no, total, ch.get("title", ""))
     y = BODY_TOP
     for i, (name, desc) in enumerate(ch.get("agenda", [])[:4]):
         h = 1.28
@@ -265,7 +265,7 @@ def concept(prs, ch, ti, page_no, total):
     color = TOPIC_COLORS[ti % 4]
     s = new_slide(prs)
     chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
-           t["title"], "", page_no, total)
+           t["title"], "", page_no, total, ch.get("title", ""))
     items = t["concept"]["items"][:5]
     n = len(items)
     top, bot = BODY_TOP + 0.06, BODY_BOT
@@ -285,7 +285,7 @@ def code_page(prs, ch, ti, page_no, total):
     c = t["code"]
     s = new_slide(prs)
     chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
-           c.get("title", t["title"]), "", page_no, total)
+           c.get("title", t["title"]), "", page_no, total, ch.get("title", ""))
     terminal(s, LEFT, BODY_TOP, 10.30, BODY_BOT - BODY_TOP,
              "$ sqlplus ／ 實作步驟", c["lines"], size=14.0)
     body = []
@@ -336,10 +336,64 @@ def check_page(prs, ch, ti, page_no, total):
     put_notes(s, topic_spec(t, "check"), ch.get("chap_label", ""), t.get("src", ""))
 
 
+
+def table_page(prs, ch, ti, page_no, total):
+    """表格頁（取代程式頁的主題）。"""
+    from pptx.util import Inches as In
+    t = ch["topics"][ti]
+    color = TOPIC_COLORS[ti % 4]
+    tb = t["table"]
+    s = new_slide(prs)
+    chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
+           t["title"], "", page_no, total)
+
+    hdr = tb["header"]
+    rows = tb["rows"]
+    widths = tb.get("widths") or [CW / len(hdr)] * len(hdr)
+    note = tb.get("note") or ""
+    top = BODY_TOP
+    note_h = 0.92 if note else 0.0
+    avail = BODY_BOT - top - note_h - (0.18 if note else 0)
+    nrow = len(rows) + 1
+    row_h = avail / nrow
+    size_h, size_b = (14.5, 13.0) if tb.get("small") else (15.5, 14.0)
+
+    frame = s.shapes.add_table(nrow, len(hdr), In(LEFT), In(top),
+                               In(sum(widths)), In(row_h * nrow))
+    tbl = frame.table
+    for j, w in enumerate(widths):
+        tbl.columns[j].width = In(w)
+    for i in range(nrow):
+        tbl.rows[i].height = In(row_h)
+    for j, h in enumerate(hdr):
+        cell = tbl.cell(0, j)
+        cell.fill.solid()
+        cell.fill.fore_color.rgb = rgb(color)
+        tf = cell.text_frame
+        tf.word_wrap = True
+        tf.margin_left = tf.margin_right = In(0.14)
+        tf.margin_top = tf.margin_bottom = In(0.06)
+        para(tf, h, size_h, WHITE, True, first=True, line=1.16)
+    for i, row in enumerate(rows, start=1):
+        for j, val in enumerate(row):
+            cell = tbl.cell(i, j)
+            cell.fill.solid()
+            cell.fill.fore_color.rgb = rgb(WHITE if i % 2 else "F8FAFC")
+            tf = cell.text_frame
+            tf.word_wrap = True
+            tf.margin_left = tf.margin_right = In(0.14)
+            tf.margin_top = tf.margin_bottom = In(0.06)
+            para(tf, str(val), size_b, INK if j == 0 else BODY,
+                 j == 0, first=True, line=1.18)
+    if note:
+        text(s, LEFT, BODY_BOT - note_h, CW, note_h, note, 14.0, INK, line=1.36)
+    put_notes(s, topic_spec(t, "table"), ch.get("chap_label", ""), t.get("src", ""))
+
+
 def summary(prs, ch, page_no, total):
     s = new_slide(prs)
     sm = ch.get("summary", {})
-    chrome(s, "整合複習", ACCENT, "本章重點回顧", "", page_no, total)
+    chrome(s, "整合複習", ACCENT, "本章重點回顧", "", page_no, total, ch.get("title", ""))
     items = sm.get("items", [])[:6]
     n = len(items)
     cols = 2
@@ -357,7 +411,7 @@ def summary(prs, ch, page_no, total):
 
 def refs_page(prs, ch, page_no, total):
     s = new_slide(prs)
-    chrome(s, "資料來源", ACCENT, "官方參考資料與版本說明", "", page_no, total)
+    chrome(s, "資料來源", ACCENT, "官方參考資料與版本說明", "", page_no, total, ch.get("title", ""))
     note = ch.get("refs_note") or "以 Oracle Database 19c 官方文件為準；頁碼對應原始教材 PDF。"
     text(s, LEFT, BODY_TOP, CW, 0.62, note, 15.0, BODY, line=1.40)
     refs = ch.get("refs", [])[:6]
@@ -374,15 +428,21 @@ def build_v2(ch, out_path):
     prs = Presentation()
     prs.slide_width = Inches(WIDTH)
     prs.slide_height = Inches(9.375)
-    total = 1 + 1 + len(ch["topics"]) * 3 + 1 + 1
+    skip_refs = bool(ch.get("skip_refs"))
+    total = 2 + len(ch["topics"]) * 3 + 1 + (0 if skip_refs else 1)
     cover(prs, ch)
     outline(prs, ch, 2, total)
     page = 3
     for ti in range(len(ch["topics"])):
         concept(prs, ch, ti, page, total); page += 1
-        code_page(prs, ch, ti, page, total); page += 1
+        if "table" in ch["topics"][ti] and "code" not in ch["topics"][ti]:
+            table_page(prs, ch, ti, page, total)
+        else:
+            code_page(prs, ch, ti, page, total)
+        page += 1
         check_page(prs, ch, ti, page, total); page += 1
     summary(prs, ch, page, total); page += 1
-    refs_page(prs, ch, page, total)
+    if not skip_refs:
+        refs_page(prs, ch, page, total)
     prs.save(out_path)
     return page
