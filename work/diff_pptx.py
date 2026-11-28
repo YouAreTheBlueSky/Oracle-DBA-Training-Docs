@@ -92,7 +92,7 @@ def norm_notes(text):
 
 
 def geometry(path):
-    """每頁、每個形狀的位置尺寸（供「只移動方塊」的偵測）。"""
+    """每頁、每個形狀的位置尺寸（吋），供「只移動方塊」的偵測。"""
     from pptx import Presentation
     prs = Presentation(path)
     out = []
@@ -101,8 +101,8 @@ def geometry(path):
         for sh in sl.shapes:
             if sh.left is None:
                 continue
-            row.append((round(sh.left / 91440), round(sh.top / 91440),
-                        round(sh.width / 91440), round(sh.height / 91440)))
+            row.append((sh.left / 914400.0, sh.top / 914400.0,
+                        sh.width / 914400.0, sh.height / 914400.0))
         out.append(row)
     return out
 
@@ -110,9 +110,12 @@ def geometry(path):
 def layout_changed(a_path, b_path):
     """回傳版面差異的頁碼清單（空清單＝版面相同）。"""
     ga, gb = geometry(a_path), geometry(b_path)
+    tol = 0.06          # 吋；小於此視為相同（避免四捨五入誤判）
     pages = []
     for i, (ra, rb) in enumerate(zip(ga, gb), 1):
-        if ra != rb:
+        same = len(ra) == len(rb) and all(
+            abs(x - y) <= tol for sa, sb in zip(ra, rb) for x, y in zip(sa, sb))
+        if not same:
             pages.append(i)
     if len(ga) != len(gb):
         pages.append(0)
