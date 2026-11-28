@@ -136,7 +136,7 @@ python work/build.py all --force # 必要時強制覆蓋手改檔
 | 章節 | 來源 | 說明 |
 |---|---|---|
 | 02–05、07–10 | `work/content/chNN.py` | 依 v2 版型重新排版 |
-| 01、06 | `work/spec/NN.json` | 依 JSON 的座標與文字重播 |
+| 01、06、07 | `work/spec/NN.json` | 依 JSON 的座標與文字重播（這幾章有手調版面） |
 
 手改後的回收方式不變：說「第 X 章我改好了」，工具會自動選對比對方式
 （模組章用 `diff_pptx.py --theme v2`、JSON 章用 `snap_diff.py`）。

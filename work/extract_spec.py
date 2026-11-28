@@ -139,11 +139,17 @@ def extract(path):
                                          "bold": bool(r.font.bold),
                                          "color": c,
                                          "font": r.font.name})
+                        ln = None
+                        _pPr = p._p.find("{http://schemas.openxmlformats.org/drawingml/2006/main}pPr")
+                        if _pPr is not None:
+                            _sp = _pPr.find(".//{http://schemas.openxmlformats.org/drawingml/2006/main}spcPts")
+                            if _sp is not None and _sp.get("val"):
+                                ln = int(_sp.get("val")) / 100.0
                         dflt = default_run_props(p)
                         paras.append({"a": align_of(p), "runs": runs,
                                       "dsz": dflt.get("size"),
                                       "db": dflt.get("bold"),
-                                      "dc": dflt.get("color")})
+                                      "dc": dflt.get("color"), "ln": ln})
                     item["paras"] = paras
                     da = shape_default_align(sh)
                     if da:

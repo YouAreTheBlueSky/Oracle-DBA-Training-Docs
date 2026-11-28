@@ -113,6 +113,8 @@ def render(spec, out_path):
                 para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
                 al = p.get("a") or it.get("da") or "l"
                 para.alignment = ALIGN.get(al, PP_ALIGN.LEFT)
+                if p.get("ln"):
+                    para.line_spacing = Pt(p["ln"])
                 for r in p["runs"]:
                     run = para.add_run()
                     run.text = r["t"]
