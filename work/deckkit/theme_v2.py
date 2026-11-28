@@ -242,7 +242,7 @@ def spread_statements(lines, size, avail_in):
     def is_end(t):
         import re as _re
         u = (t or "").strip()
-        if u.endswith(";"):
+        if _re.search(r";\s*(--.*)?$", u):          # 分號後可能接註解
             return True
         return bool(_re.match(r"^(SHOW|EXIT|HOST|SET|SPOOL|DESC|DESCRIBE)\b", u, _re.I))
 

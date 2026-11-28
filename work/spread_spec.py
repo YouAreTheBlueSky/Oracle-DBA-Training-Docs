@@ -9,6 +9,14 @@ START = ("SELECT", "WITH ", "INSERT", "UPDATE ", "DELETE ", "MERGE", "CREATE ",
          "SHOW ", "RMAN>", "SQL>", "orapwd", "srvctl", "crsctl", "asmcmd", "sqlplus")
 
 
+def is_end(t):
+    import re
+    u = (t or "").strip()
+    if re.search(r";\s*(--.*)?$", u):
+        return True
+    return bool(re.match(r"^(SHOW|EXIT|HOST|SET|SPOOL|DESC|DESCRIBE)\b", u, re.I))
+
+
 def is_start(t):
     u = (t or "").strip().upper()
     return any(u.startswith(k.upper()) for k in START)
@@ -34,7 +42,7 @@ def process(path):
             for p, t in zip(paras, texts):
                 fresh = bool(t.strip())
                 if (fresh and is_start(t) and last is not None
-                        and last.strip().endswith(";")
+                        and is_end(last)
                         and (not out or para_text(out[-1]).strip())):
                     out.append({"a": "l", "runs": []})
                 out.append(p)
