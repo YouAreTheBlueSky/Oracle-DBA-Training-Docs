@@ -215,10 +215,42 @@ def terminal(slide, x, y, w, h, label, lines, size=14.5, dots=True):
     tf = tb.text_frame
     tf.word_wrap = False
     tf.margin_left = 0; tf.margin_right = 0; tf.margin_top = 0; tf.margin_bottom = 0
+    lines = spread_statements(lines, size, h - 0.85)
     for i, ln in enumerate(lines):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.line_spacing = Pt(size * 1.38)
         add_runs(p, ln if ln else " ", size, "E2E8F0", False, MONO)
+
+
+
+STMT_START = ("SELECT", "WITH ", "INSERT", "UPDATE ", "DELETE ", "MERGE",
+              "CREATE ", "ALTER ", "DROP ", "GRANT ", "REVOKE ", "BACKUP ",
+              "RESTORE ", "RECOVER ", "SHOW ", "RMAN>", "SQL>", "orapwd", "srvctl",
+              "crsctl", "asmcmd", "sqlplus")
+
+
+def spread_statements(lines, size, avail_in):
+    """在「兩個 SELECT（或語句）緊鄰」之處插入空行；空間不足則不插。"""
+    if not lines:
+        return lines
+    out = []
+
+    def is_start(t):
+        u = t.strip().upper()
+        return any(u.startswith(k.upper()) for k in STMT_START)
+
+    last = None
+    for ln in lines:
+        fresh = bool(ln.strip())
+        if (fresh and is_start(ln) and last is not None
+                and last.strip().endswith(";") and (not out or out[-1].strip())):
+            out.append("")
+        out.append(ln)
+        if fresh:
+            last = ln
+    # 只在「兩個 SELECT 直接相鄰」時才算數（避免動到連續參數列）
+    need = len(out) * size * 1.38 / 72.0
+    return out if need <= avail_in else lines
 
 
 # ---------------------------------------------------------------- pages
