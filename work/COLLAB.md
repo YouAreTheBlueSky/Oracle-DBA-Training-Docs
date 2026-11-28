@@ -121,3 +121,22 @@ PowerPoint 開著檔案時我仍可讀取，但重建寫入會失敗；若要重
 | `work/build_beginner.py` / `build_advanced.py` | 重建整套 |
 | `work/FROZEN.txt` | 凍結手改過的檔案，避免被覆蓋 |
 | `work/verify_decks.py` / `verify_check_format.py` | 結構與體例檢查 |
+
+## 重建指令（單一入口）
+
+```powershell
+python work/build.py 05          # 只重建第 5 章
+python work/build.py 02 03 04    # 一次重建多章
+python work/build.py all         # 全部 01–10
+python work/build.py all --force # 必要時強制覆蓋手改檔
+```
+
+內部自動分流：
+
+| 章節 | 來源 | 說明 |
+|---|---|---|
+| 02–05、07–10 | `work/content/chNN.py` | 依 v2 版型重新排版 |
+| 01、06 | `work/spec/NN.json` | 依 JSON 的座標與文字重播 |
+
+手改後的回收方式不變：說「第 X 章我改好了」，工具會自動選對比對方式
+（模組章用 `diff_pptx.py --theme v2`、JSON 章用 `snap_diff.py`）。
