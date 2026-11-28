@@ -236,7 +236,7 @@ def terminal(slide, x, y, w, h, label, lines, size=None, dots=True):
     for i, ln in enumerate(lines):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.line_spacing = Pt(size * 1.05)
-        add_runs(p, ln if ln else " ", size, "E2E8F0", False, MONO)
+        add_runs(p, ln if ln else "", size, "E2E8F0", False, MONO)
 
 
 
