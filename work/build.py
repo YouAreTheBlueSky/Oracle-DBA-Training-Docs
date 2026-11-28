@@ -34,7 +34,7 @@ CHAPTERS = {
     "05": ("theme", "ch05"),
     "06": ("json", "snap06"),
     "07": ("json", "snap07"),
-    "08": ("theme", "ch12"),
+    "08": ("json", "snap08"),
     "09": ("theme", "ch13"),
     "10": ("theme", "ch14"),
 }

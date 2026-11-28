@@ -1,0 +1,8038 @@
+{
+ "w": 16.667,
+ "h": 9.375,
+ "slides": [
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "0F172A",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 0.3,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.12,
+     "y": 1.62,
+     "w": 3.1,
+     "h": 0.5,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.3,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.12,
+     "y": 1.62,
+     "w": 3.1,
+     "h": 0.5,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "CHAPTER 08 ｜ Part 11",
+         "size": 17.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 22.44
+      }
+     ]
+    },
+    {
+     "x": 1.12,
+     "y": 2.38,
+     "w": 14.0,
+     "h": 1.05,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "作業系統前置與 EM 管理工具",
+         "size": 52.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 57.2
+      }
+     ]
+    },
+    {
+     "x": 1.12,
+     "y": 3.62,
+     "w": 14.0,
+     "h": 0.75,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Kernel 參數 ／ Shell Limits ／ DB Control 到 EM Express",
+         "size": 28.0,
+         "bold": true,
+         "color": "38BDF8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 36.96
+      }
+     ]
+    },
+    {
+     "x": 1.12,
+     "y": 4.92,
+     "w": 8.2,
+     "h": 0.035,
+     "kind": "shape",
+     "fill": "334155",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.12,
+     "y": 5.22,
+     "w": 13.6,
+     "h": 1.0,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "本章是選修章，適合負責裝機與平台維運的學員；內容偏作業系統與工具，非資料庫內部機制。",
+         "size": 18.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 26.1
+      }
+     ]
+    },
+    {
+     "x": 1.12,
+     "y": 7.3,
+     "w": 3.31,
+     "h": 0.72,
+     "kind": "shape",
+     "fill": "1E293B",
+     "radius": 0.16,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.22,
+     "y": 7.3,
+     "w": 3.11,
+     "h": 0.72,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "作業系統前置",
+         "size": 16.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.12
+      }
+     ]
+    },
+    {
+     "x": 4.79,
+     "y": 7.3,
+     "w": 3.31,
+     "h": 0.72,
+     "kind": "shape",
+     "fill": "1E293B",
+     "radius": 0.16,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 4.89,
+     "y": 7.3,
+     "w": 3.11,
+     "h": 0.72,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "EM 管理工具",
+         "size": 16.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.12
+      }
+     ]
+    },
+    {
+     "x": 8.46,
+     "y": 7.3,
+     "w": 3.31,
+     "h": 0.72,
+     "kind": "shape",
+     "fill": "1E293B",
+     "radius": 0.16,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 8.56,
+     "y": 7.3,
+     "w": 3.11,
+     "h": 0.72,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "安裝前檢查",
+         "size": 16.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.12
+      }
+     ]
+    },
+    {
+     "x": 12.13,
+     "y": 7.3,
+     "w": 3.31,
+     "h": 0.72,
+     "kind": "shape",
+     "fill": "1E293B",
+     "radius": 0.16,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 12.23,
+     "y": 7.3,
+     "w": 3.11,
+     "h": 0.72,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "工具取捨",
+         "size": 16.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.12
+      }
+     ]
+    }
+   ],
+   "notes": "Part 11 原文以 10g/11g 的 Enterprise Manager 安裝為主，19c 已移除 dbconsole；本章保留作業系統前置知識，工具章節改以「演進與替代方案」呈現。"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 2.81,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "F8E8E6",
+     "radius": 0.45,
+     "line": {
+      "color": "C74634",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "CHAPTER 08 ｜ 課程地圖",
+         "size": 15.0,
+         "bold": true,
+         "color": "C74634",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "本章大綱",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 2 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 15.167,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 0.15,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.05,
+     "y": 2.4,
+     "w": 14.727,
+     "h": 1.08,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "01  作業系統前置",
+         "size": 20.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 24.8
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "核心參數、shell limits、SELinux 與帳號群組，決定資料庫跑不跑得穩。",
+         "size": 15.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.84
+      }
+     ]
+    },
+    {
+     "x": 14.367,
+     "y": 2.46,
+     "w": 1.3,
+     "h": 0.32,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "P3–P5",
+         "size": 13.0,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.16
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 3.78,
+     "w": 15.167,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 3.78,
+     "w": 0.15,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.05,
+     "y": 3.88,
+     "w": 14.727,
+     "h": 1.08,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "02  EM 管理工具",
+         "size": 20.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 24.8
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "DB Control、Grid Control 到 EM Express 的演進，以及 19c 該用什麼。",
+         "size": 15.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.84
+      }
+     ]
+    },
+    {
+     "x": 14.367,
+     "y": 3.94,
+     "w": 1.3,
+     "h": 0.32,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "P6–P8",
+         "size": 13.0,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.16
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 5.26,
+     "w": 15.167,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 5.26,
+     "w": 0.15,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "D97706",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.05,
+     "y": 5.36,
+     "w": 14.727,
+     "h": 1.08,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "03  安裝前檢查",
+         "size": 20.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 24.8
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "記憶體、swap、套件與網路名稱解析，一次到位避免重工。",
+         "size": 15.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.84
+      }
+     ]
+    },
+    {
+     "x": 14.367,
+     "y": 5.42,
+     "w": 1.3,
+     "h": 0.32,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "P9–P11",
+         "size": 13.0,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.16
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.74,
+     "w": 15.167,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.74,
+     "w": 0.15,
+     "h": 1.28,
+     "kind": "shape",
+     "fill": "7C3AED",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.05,
+     "y": 6.84,
+     "w": 14.727,
+     "h": 1.08,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "04  工具取捨",
+         "size": 20.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 24.8
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "圖形工具與 SQLcl／指令碼的分工，哪些工作不該只靠 GUI。",
+         "size": 15.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.84
+      }
+     ]
+    },
+    {
+     "x": 14.367,
+     "y": 6.9,
+     "w": 1.3,
+     "h": 0.32,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "P12–P14",
+         "size": 13.0,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.16
+      }
+     ]
+    }
+   ],
+   "notes": "本章是選修章，適合負責裝機與平台維運的學員；內容偏作業系統與工具，非資料庫內部機制。"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 2.362,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "E4ECFC",
+     "radius": 0.45,
+     "line": {
+      "color": "2563EB",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "T1 ｜ 作業系統前置",
+         "size": 15.0,
+         "bold": true,
+         "color": "2563EB",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "作業系統前置：核心參數與資源限制",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 3 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.36,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.36,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 2.46,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "共用記憶體",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "kernel.shmmax 要大於 SGA 目標值，否則 instance 起不來。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 3.624,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 3.624,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 3.724,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "號誌量 sem",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "semmsl、semmns、semopm、semmni 四項決定並行連線數上限。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 4.888,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 4.888,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 4.988,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "檔案與程序數",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "limits.conf 的 nofile 與 nproc，決定單一帳號能開多少檔案與程序。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.152,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.152,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 6.252,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "安全性設定",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "SELinux 需關閉或設定為 permissive，避免 Oracle 檔案被阻擋。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 7.416,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 7.416,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 7.516,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "套件與連結",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "libaio、compat-libstdc++ 等套件缺失時，安裝程式會在連結階段失敗。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 11.3,
+     "y": 2.36,
+     "w": 4.617,
+     "h": 6.19,
+     "kind": "shape",
+     "fill": "0F172A",
+     "radius": 0.06,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 11.3,
+     "y": 2.36,
+     "w": 4.617,
+     "h": 0.08,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 11.56,
+     "y": 2.66,
+     "w": 4.117,
+     "h": 0.36,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "這一頁的重點",
+         "size": 17.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 22.44
+      }
+     ]
+    },
+    {
+     "x": 11.56,
+     "y": 3.16,
+     "w": 4.117,
+     "h": 5.19,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "這些數值都在 OS 層，資料庫參數調得再好也補不回來。",
+         "size": 15.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.29
+      }
+     ]
+    }
+   ],
+   "notes": "作業系統前置是最容易「低估」的一段：參數不對，後面所有 DBA 工作都無法開始。\n\n【適用範圍】\n作業系統章節以 Oracle Linux／RHEL 為例；Enterprise Manager 章節以 19c 的 EM Express 為基準，說明 DB Control 已被移除後的管理替代方案。\n\n【資料來源】\n來源 p.586–587\n\n【官方來源】\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/operating-system-checklist-for-installing-oracle-database.html"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 2.362,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "E4ECFC",
+     "radius": 0.45,
+     "line": {
+      "color": "2563EB",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "T1 ｜ 作業系統前置",
+         "size": 15.0,
+         "bold": true,
+         "color": "2563EB",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "核心參數與 shell limits 設定",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 4 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 10.3,
+     "h": 6.25,
+     "kind": "shape",
+     "fill": "111827",
+     "radius": 0.045,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 10.3,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "1E293B",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "FF5F57",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.14,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "FEBC2E",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.31,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "28C840",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.95,
+     "y": 2.6,
+     "w": 9.91,
+     "h": 0.541,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "$ ",
+         "size": null,
+         "bold": true,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "sqlplus",
+         "size": null,
+         "bold": true,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " ／ ",
+         "size": null,
+         "bold": true,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "實作步驟",
+         "size": null,
+         "bold": true,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": true,
+       "dc": "CBD5E1",
+       "ln": 17.16
+      }
+     ]
+    },
+    {
+     "x": 0.95,
+     "y": 3.305,
+     "w": 9.91,
+     "h": 3.731,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "paras": [
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "# /",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "etc",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "/",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "sysctl.conf",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "kernel.shmall",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " = 2097152",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "kernel.shmmax",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " = 536870912        # 需 >= SGA ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "大小",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "kernel.shmmni",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " = 4096",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "kernel.sem",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " = 250 32000 100 128   # ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "semmsl",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "semmns",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "semopm",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "semmni",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": 20.0,
+       "db": null,
+       "dc": "E2E8F0",
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "sysctl",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " -p                        # ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "套用設定",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "# /",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "etc",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "/security/",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "limits.conf",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "*   soft  ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "nproc",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "   2047",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "*   hard  ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "nproc",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "   16384",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "*   soft  ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "nofile",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "  1024",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.32
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "*   hard  ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "nofile",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "  65536",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.32
+      }
+     ],
+     "anchor": "top"
+    },
+    {
+     "x": 11.3,
+     "y": 2.3,
+     "w": 4.617,
+     "h": 6.25,
+     "kind": "shape",
+     "fill": "0F172A",
+     "radius": 0.06,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 11.3,
+     "y": 2.3,
+     "w": 4.617,
+     "h": 0.08,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 11.56,
+     "y": 2.6,
+     "w": 4.117,
+     "h": 0.36,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "判讀重點",
+         "size": 17.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 22.44
+      }
+     ]
+    },
+    {
+     "x": 11.56,
+     "y": 3.1,
+     "w": 4.117,
+     "h": 5.25,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "◆ 19c 的 shmmax 下限已大幅提高，請以官方需求文件的表格為準，不要沿用舊值。\n\n⚠ shmmax 小於 SGA 時，STARTUP 會在配置記憶體階段直接失敗。",
+         "size": 14.5,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 20.59
+      }
+     ]
+    }
+   ],
+   "notes": "作業系統前置是最容易「低估」的一段：參數不對，後面所有 DBA 工作都無法開始。\n\n【適用範圍】\n作業系統章節以 Oracle Linux／RHEL 為例；Enterprise Manager 章節以 19c 的 EM Express 為基準，說明 DB Control 已被移除後的管理替代方案。\n\n【資料來源】\n來源 p.586–587\n\n【官方來源】\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/operating-system-checklist-for-installing-oracle-database.html"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 2.362,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "E4ECFC",
+     "radius": 0.45,
+     "line": {
+      "color": "2563EB",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "T1 ｜ 作業系統前置",
+         "size": 15.0,
+         "bold": true,
+         "color": "2563EB",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "檢核：作業系統前置是否到位",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 5 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 9.55,
+     "h": 6.25,
+     "kind": "shape",
+     "fill": "111827",
+     "radius": 0.045,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 9.55,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "1E293B",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "FF5F57",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.14,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "FEBC2E",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.31,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "28C840",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.95,
+     "y": 2.6,
+     "w": 9.16,
+     "h": 0.541,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "怎麼檢查",
+         "size": null,
+         "bold": true,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": true,
+       "dc": "CBD5E1",
+       "ln": 17.16
+      }
+     ]
+    },
+    {
+     "x": 0.95,
+     "y": 3.359,
+     "w": 9.16,
+     "h": 2.931,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "paras": [
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "sysctl",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "kernel.shmmax",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "kernel.sem",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "kernel.shmmni",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "grep ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "MemTotal",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " /proc/",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "meminfo",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "; free -m",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "ulimit",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "-a                 # ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "切到",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " oracle ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "身分再執行",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "cat ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "/",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "etc",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "/security/",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "limits.conf",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " | grep -E '",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "nofile|nproc",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "'",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "getenforce",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "rpm ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "-q ",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "libaio",
+         "size": 20.0,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": 20.0,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      }
+     ],
+     "anchor": "top"
+    },
+    {
+     "x": 10.55,
+     "y": 2.3,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 2.3,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 2.489,
+     "w": 4.907,
+     "h": 0.715,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "shmmax",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": true,
+       "dc": "0F172A",
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "≥ SGA ",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "大小（bytes",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "）。",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "不足時",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " STARTUP ",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "直接失敗",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": false,
+       "dc": "475569",
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 3.493,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 3.493,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 3.786,
+     "w": 4.907,
+     "h": 0.505,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "kernel.sem",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "四值皆非 0，且足以支撐最大併發連線數",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 4.685,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 4.685,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 4.874,
+     "w": 4.907,
+     "h": 0.715,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "nofile／nproc",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "oracle 帳號已提高，不是預設的 1024／2047",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 5.878,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 5.878,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 6.066,
+     "w": 4.907,
+     "h": 0.715,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "SELinux",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Disabled 或 Permissive。Enforcing 會擋檔案存取",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 7.13,
+     "w": 5.367,
+     "h": 1.42,
+     "kind": "shape",
+     "fill": "0F172A",
+     "radius": 0.07,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 7.25,
+     "w": 4.887,
+     "h": 0.996,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "常見錯誤",
+         "size": null,
+         "bold": true,
+         "color": "FCA5A5",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": true,
+       "dc": "FCA5A5",
+       "ln": 16.8
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "× ",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "改完沒",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " ",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "sysctl",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " -",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "p，值其實沒生效",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": false,
+       "dc": "CBD5E1",
+       "ln": 14.88
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "× limits 給 ",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "root，忘了",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " oracle ",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "帳號",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": false,
+       "dc": "CBD5E1",
+       "ln": 14.88
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "× ",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "只查參數，沒查",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " ",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "libaio",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " ",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "是否已安裝",
+         "size": null,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": false,
+       "dc": "CBD5E1",
+       "ln": 14.88
+      }
+     ],
+     "anchor": "top"
+    }
+   ],
+   "notes": "作業系統前置是最容易「低估」的一段：參數不對，後面所有 DBA 工作都無法開始。\n\n【適用範圍】\n作業系統章節以 Oracle Linux／RHEL 為例；Enterprise Manager 章節以 19c 的 EM Express 為基準，說明 DB Control 已被移除後的管理替代方案。\n\n【資料來源】\n來源 p.586–587\n\n【官方來源】\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/operating-system-checklist-for-installing-oracle-database.html"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 2.237,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "E1F2F0",
+     "radius": 0.45,
+     "line": {
+      "color": "0D9488",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "T2 ｜ EM 管理工具",
+         "size": 15.0,
+         "bold": true,
+         "color": "0D9488",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "從 DB Control 到 EM Express：管理工具的演進",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 6 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.36,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.36,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 2.46,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "DB Control 已移除",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "19c 不再提供 dbconsole 與 emctl，原廠建議改用 EM Express。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 3.624,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 3.624,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 3.724,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "EM Express 內建",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "隨資料庫安裝，透過 DBMS_XDB_CONFIG 設定 HTTPS 埠即可使用。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 4.888,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 4.888,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 4.988,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Cloud Control 為集中式",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "多資料庫、多主機的集中監控與生命週期管理，需另外部署。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.152,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.152,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 6.252,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "圖形工具的分工",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "日常操作仍以 SQLcl 與指令碼為主，GUI 用於檢視與教學。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 7.416,
+     "w": 10.3,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 7.416,
+     "w": 0.15,
+     "h": 1.134,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 7.516,
+     "w": 9.94,
+     "h": 0.934,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "先確認 port",
+         "size": 17.5,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.7
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "EM Express 使用 XDB 的 HTTPS 埠，變更前先確認是否已被占用。",
+         "size": 14.5,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.55
+      }
+     ]
+    },
+    {
+     "x": 11.3,
+     "y": 2.36,
+     "w": 4.617,
+     "h": 6.19,
+     "kind": "shape",
+     "fill": "0F172A",
+     "radius": 0.06,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 11.3,
+     "y": 2.36,
+     "w": 4.617,
+     "h": 0.08,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 11.56,
+     "y": 2.66,
+     "w": 4.117,
+     "h": 0.36,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "這一頁的重點",
+         "size": 17.0,
+         "bold": true,
+         "color": "FFFFFF",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 22.44
+      }
+     ]
+    },
+    {
+     "x": 11.56,
+     "y": 3.16,
+     "w": 4.117,
+     "h": 5.19,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "工具會世代交替，但 DBA 的核心能力是「知道用哪個檢視查什麼」。",
+         "size": 15.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.29
+      }
+     ]
+    }
+   ],
+   "notes": "這一頁的重點不是工具操作，而是「世代交替時如何遷移知識」：工具會消失，檢視與方法不會。\n\n【適用範圍】\n作業系統章節以 Oracle Linux／RHEL 為例；Enterprise Manager 章節以 19c 的 EM Express 為基準，說明 DB Control 已被移除後的管理替代方案。\n\n【資料來源】\n來源 p.583–585\n\n【官方來源】\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/admqs/getting-started-with-oracle-enterprise-manager-express.html"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 2.237,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "E1F2F0",
+     "radius": 0.45,
+     "line": {
+      "color": "0D9488",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "T2 ｜ EM 管理工具",
+         "size": 15.0,
+         "bold": true,
+         "color": "0D9488",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "從 DB Control 到 EM Express：管理工具的演進",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 7 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 15.1,
+     "h": 5.15,
+     "kind": "table",
+     "col_w": [
+      4.15,
+      6.55,
+      4.4
+     ],
+     "row_h": [
+      0.858,
+      0.858,
+      0.858,
+      0.858,
+      0.858,
+      0.858
+     ],
+     "cells": [
+      [
+       {
+        "fill": "0D9488",
+        "t": "工具",
+        "size": 14.5,
+        "bold": true
+       },
+       {
+        "fill": "0D9488",
+        "t": "適用範圍",
+        "size": 14.5,
+        "bold": true
+       },
+       {
+        "fill": "0D9488",
+        "t": "19c 狀態",
+        "size": 14.5,
+        "bold": true
+       }
+      ],
+      [
+       {
+        "fill": "FFFFFF",
+        "t": "DB Control（dbconsole）",
+        "size": 13.0,
+        "bold": true
+       },
+       {
+        "fill": "FFFFFF",
+        "t": "單一資料庫的圖形管理主控台",
+        "size": 13.0,
+        "bold": false
+       },
+       {
+        "fill": "FFFFFF",
+        "t": "已移除，emctl 無法使用",
+        "size": 13.0,
+        "bold": false
+       }
+      ],
+      [
+       {
+        "fill": "F8FAFC",
+        "t": "EM Express",
+        "size": 13.0,
+        "bold": true
+       },
+       {
+        "fill": "F8FAFC",
+        "t": "內建於資料庫的輕量網頁管理介面",
+        "size": 13.0,
+        "bold": false
+       },
+       {
+        "fill": "F8FAFC",
+        "t": "支援，需設定 XDB HTTPS 埠",
+        "size": 13.0,
+        "bold": false
+       }
+      ],
+      [
+       {
+        "fill": "FFFFFF",
+        "t": "Cloud Control（OEM）",
+        "size": 13.0,
+        "bold": true
+       },
+       {
+        "fill": "FFFFFF",
+        "t": "多主機、多資料庫的集中管理平台",
+        "size": 13.0,
+        "bold": false
+       },
+       {
+        "fill": "FFFFFF",
+        "t": "支援，需獨立部署",
+        "size": 13.0,
+        "bold": false
+       }
+      ],
+      [
+       {
+        "fill": "F8FAFC",
+        "t": "SQLcl ／ SQL*Plus",
+        "size": 13.0,
+        "bold": true
+       },
+       {
+        "fill": "F8FAFC",
+        "t": "指令碼、自動化、批次作業",
+        "size": 13.0,
+        "bold": false
+       },
+       {
+        "fill": "F8FAFC",
+        "t": "主要工具，建議優先",
+        "size": 13.0,
+        "bold": false
+       }
+      ],
+      [
+       {
+        "fill": "FFFFFF",
+        "t": "RMAN ／ Data Pump",
+        "size": 13.0,
+        "bold": true
+       },
+       {
+        "fill": "FFFFFF",
+        "t": "備份還原與資料移轉",
+        "size": 13.0,
+        "bold": false
+       },
+       {
+        "fill": "FFFFFF",
+        "t": "命令列為主",
+        "size": 13.0,
+        "bold": false
+       }
+      ]
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 7.63,
+     "w": 15.167,
+     "h": 0.92,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "教學環境建議同時展示 EM Express 與 SQLcl，讓學員知道同一個現象有兩種觀察方式。",
+         "size": 14.0,
+         "bold": false,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.04
+      }
+     ]
+    }
+   ],
+   "notes": "這一頁的重點不是工具操作，而是「世代交替時如何遷移知識」：工具會消失，檢視與方法不會。\n\n【適用範圍】\n作業系統章節以 Oracle Linux／RHEL 為例；Enterprise Manager 章節以 19c 的 EM Express 為基準，說明 DB Control 已被移除後的管理替代方案。\n\n【資料來源】\n來源 p.583–585\n\n【官方來源】\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/admqs/getting-started-with-oracle-enterprise-manager-express.html"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 2.237,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "E1F2F0",
+     "radius": 0.45,
+     "line": {
+      "color": "0D9488",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "T2 ｜ EM 管理工具",
+         "size": 15.0,
+         "bold": true,
+         "color": "0D9488",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "檢核：管理工具是否就位",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 8 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 9.55,
+     "h": 6.25,
+     "kind": "shape",
+     "fill": "111827",
+     "radius": 0.045,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 9.55,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "1E293B",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.97,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "FF5F57",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.14,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "FEBC2E",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.31,
+     "y": 2.46,
+     "w": 0.11,
+     "h": 0.11,
+     "kind": "shape",
+     "fill": "28C840",
+     "radius": 0.5,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.95,
+     "y": 2.613,
+     "w": 9.16,
+     "h": 0.541,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "怎麼檢查",
+         "size": null,
+         "bold": true,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": true,
+       "dc": "CBD5E1",
+       "ln": 17.16
+      }
+     ]
+    },
+    {
+     "x": 0.95,
+     "y": 3.454,
+     "w": 9.16,
+     "h": 2.665,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "paras": [
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "lsnrctl",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " status",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "SELECT * FROM ",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "v$version",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": ";",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "sqlplus",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " -V",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "SELECT * FROM ",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "dba_registry",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " WHERE ",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "comp_id",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " IN ('EM','XDB');",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": " ",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": false,
+       "dc": "E2E8F0",
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "SELECT ",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "dbms_xdb_config.gethttpsport",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " FROM dual;",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      },
+      {
+       "a": null,
+       "runs": [
+        {
+         "t": "which ",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "emctl",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " || echo \"",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "emctl",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": " 已移除（19c ",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "正常",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        },
+        {
+         "t": "）\"",
+         "size": null,
+         "bold": false,
+         "color": "E2E8F0",
+         "font": "Consolas"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.63
+      }
+     ],
+     "anchor": "top"
+    },
+    {
+     "x": 10.55,
+     "y": 2.3,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 2.3,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 2.489,
+     "w": 4.907,
+     "h": 0.715,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "listener",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "READY，SERVICE 有 XDB／EM Express 相關項目",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 3.493,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 3.493,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 3.681,
+     "w": 4.907,
+     "h": 0.715,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "版本一致性",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "v$version 與 sqlplus -V 同為 19.x，不同即不匹配",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 4.685,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 4.685,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 4.979,
+     "w": 4.907,
+     "h": 0.505,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "dba_registry",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "XDB 為 VALID；EM 不存在屬 19c 正常",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 5.878,
+     "w": 5.367,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 5.878,
+     "w": 0.13,
+     "h": 1.093,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 6.171,
+     "w": 4.907,
+     "h": 0.505,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "gethttpsport",
+         "size": null,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 18.0
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "非 0（如 5500）。0 表示 HTTPS 未啟用",
+         "size": null,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 15.25
+      }
+     ]
+    },
+    {
+     "x": 10.55,
+     "y": 7.13,
+     "w": 5.367,
+     "h": 1.42,
+     "kind": "shape",
+     "fill": "0F172A",
+     "radius": 0.07,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 10.79,
+     "y": 7.25,
+     "w": 4.887,
+     "h": 0.996,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "常見錯誤",
+         "size": 16.0,
+         "bold": true,
+         "color": "FCA5A5",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": 16.0,
+       "db": true,
+       "dc": "FCA5A5",
+       "ln": 16.8
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "× ",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "照舊教材跑",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " ",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "emctl，找不到才發現已移除",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": 16.0,
+       "db": false,
+       "dc": "CBD5E1",
+       "ln": 14.88
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "× 把 EM Express ",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "當萬用工具，期待完整功能",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": 16.0,
+       "db": false,
+       "dc": "CBD5E1",
+       "ln": 14.88
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "× ",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "生產環境隨意改",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": " XDB ",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        },
+        {
+         "t": "埠，影響其他應用",
+         "size": 16.0,
+         "bold": false,
+         "color": "CBD5E1",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": 16.0,
+       "db": false,
+       "dc": "CBD5E1",
+       "ln": 14.88
+      }
+     ],
+     "anchor": "top"
+    }
+   ],
+   "notes": "這一頁的重點不是工具操作，而是「世代交替時如何遷移知識」：工具會消失，檢視與方法不會。\n\n【適用範圍】\n作業系統章節以 Oracle Linux／RHEL 為例；Enterprise Manager 章節以 19c 的 EM Express 為基準，說明 DB Control 已被移除後的管理替代方案。\n\n【資料來源】\n來源 p.583–585\n\n【官方來源】\nhttps://docs.oracle.com/en/database/oracle/oracle-database/19/admqs/getting-started-with-oracle-enterprise-manager-express.html"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 1.383,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "F8E8E6",
+     "radius": 0.45,
+     "line": {
+      "color": "C74634",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "整合複習",
+         "size": 15.0,
+         "bold": true,
+         "color": "C74634",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "本章重點回顧",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 9 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 7.443,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 0.15,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.01,
+     "y": 2.4,
+     "w": 7.043,
+     "h": 1.567,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "OS 前置",
+         "size": 17.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.08
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "shmmax／shmall、kernel.sem、limits.conf、SELinux 四項先對，資料庫才跑得起來。",
+         "size": 14.0,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.92
+      }
+     ]
+    },
+    {
+     "x": 8.473,
+     "y": 2.3,
+     "w": 7.443,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 8.473,
+     "y": 2.3,
+     "w": 0.15,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "0D9488",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 8.733,
+     "y": 2.4,
+     "w": 7.043,
+     "h": 1.567,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "驗證方式",
+         "size": 17.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.08
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "sysctl -p 之後用 ulimit -a 與實際啟動 instance 驗證，不只看設定檔。",
+         "size": 14.0,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.92
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 4.197,
+     "w": 7.443,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 4.197,
+     "w": 0.15,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "D97706",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.01,
+     "y": 4.297,
+     "w": 7.043,
+     "h": 1.567,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "DB Control",
+         "size": 17.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.08
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "19c 已移除；舊教材的 emctl 與 RepManager 步驟不可再用。",
+         "size": 14.0,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.92
+      }
+     ]
+    },
+    {
+     "x": 8.473,
+     "y": 4.197,
+     "w": 7.443,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 8.473,
+     "y": 4.197,
+     "w": 0.15,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "7C3AED",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 8.733,
+     "y": 4.297,
+     "w": 7.043,
+     "h": 1.567,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "EM Express",
+         "size": 17.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.08
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "內建、需設定 XDB HTTPS 埠，適合單一資料庫的監控與教學。",
+         "size": 14.0,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.92
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.093,
+     "w": 7.443,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.1,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 6.093,
+     "w": 0.15,
+     "h": 1.767,
+     "kind": "shape",
+     "fill": "2563EB",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.01,
+     "y": 6.193,
+     "w": 7.043,
+     "h": 1.567,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "工具策略",
+         "size": 17.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.08
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "GUI 用於觀察，SQLcl 與指令碼用於自動化與交付。",
+         "size": 14.0,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.92
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.0,
+     "w": 15.167,
+     "h": 0.34,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "本章雖是選修，但作業系統前置是所有章節的共同前提。",
+         "size": 13.0,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.9
+      }
+     ]
+    }
+   ],
+   "notes": "本章雖是選修，但作業系統前置是所有章節的共同前提。"
+  },
+  {
+   "bg": null,
+   "shapes": [
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 9.375,
+     "kind": "shape",
+     "fill": "F1F5F9",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.0,
+     "y": 0.0,
+     "w": 16.667,
+     "h": 0.1,
+     "kind": "shape",
+     "fill": "C74634",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.34,
+     "w": 1.383,
+     "h": 0.44,
+     "kind": "shape",
+     "fill": "F8E8E6",
+     "radius": 0.45,
+     "line": {
+      "color": "C74634",
+      "width": 1.25
+     },
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": "c",
+       "runs": [
+        {
+         "t": "資料來源",
+         "size": 15.0,
+         "bold": true,
+         "color": "C74634",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 19.8
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 0.92,
+     "w": 15.167,
+     "h": 0.64,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "官方參考資料與版本說明",
+         "size": 33.0,
+         "bold": true,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 43.56
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.08,
+     "w": 15.167,
+     "h": 0.025,
+     "kind": "shape",
+     "fill": "CBD5E1",
+     "radius": 0.0,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 8.7,
+     "w": 11.0,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "Oracle Database 作業系統前置與 EM 管理工具 ｜ 初級 DBA 訓練課程",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 13.717,
+     "y": 8.7,
+     "w": 2.2,
+     "h": 0.3,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "r",
+       "runs": [
+        {
+         "t": "Slide 10 / 10",
+         "size": 12.5,
+         "bold": false,
+         "color": "94A3B8",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 16.5
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 2.3,
+     "w": 15.167,
+     "h": 0.62,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "19c 已無 Oracle Enterprise Manager Database Control；請改用 EM Express 或 Cloud Control。",
+         "size": 15.0,
+         "bold": false,
+         "color": "475569",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 21.0
+      }
+     ]
+    },
+    {
+     "x": 0.75,
+     "y": 3.02,
+     "w": 15.167,
+     "h": 1.38,
+     "kind": "shape",
+     "fill": "FFFFFF",
+     "radius": 0.06,
+     "line": {
+      "color": null,
+      "width": 0
+     },
+     "anchor": "mid",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      }
+     ]
+    },
+    {
+     "x": 1.05,
+     "y": 3.22,
+     "w": 14.567,
+     "h": 0.34,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "1.  https://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/operating-system-checklist-for-installing-oracle-database.html",
+         "size": 13.5,
+         "bold": false,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.82
+      }
+     ]
+    },
+    {
+     "x": 1.05,
+     "y": 3.74,
+     "w": 14.567,
+     "h": 0.34,
+     "kind": "textbox",
+     "ins": {
+      "lIns": 0.0,
+      "rIns": 0.0,
+      "tIns": 0.0,
+      "bIns": 0.0
+     },
+     "anchor": "top",
+     "paras": [
+      {
+       "a": null,
+       "runs": [],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": null
+      },
+      {
+       "a": "l",
+       "runs": [
+        {
+         "t": "2.  https://docs.oracle.com/en/database/oracle/oracle-database/19/admqs/getting-started-with-oracle-enterprise-manager-express.html",
+         "size": 13.5,
+         "bold": false,
+         "color": "0F172A",
+         "font": "Microsoft JhengHei"
+        }
+       ],
+       "dsz": null,
+       "db": null,
+       "dc": null,
+       "ln": 17.82
+      }
+     ]
+    }
+   ],
+   "notes": "19c 已無 Oracle Enterprise Manager Database Control；請改用 EM Express 或 Cloud Control。"
+  }
+ ]
+}
