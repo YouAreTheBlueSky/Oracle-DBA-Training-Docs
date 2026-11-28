@@ -26,7 +26,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -55,7 +55,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -92,7 +92,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 1 / 30",
@@ -129,7 +129,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database",
@@ -166,7 +166,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "儲存、記憶體與程序架構",
@@ -203,7 +203,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Physical Storage  /  Logical Storage  /  Memory & Process",
@@ -240,7 +240,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle 19c 基礎教學",
@@ -271,7 +271,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -294,7 +294,8 @@
      "line": {
       "color": "C74634",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"10\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{46B402C3-24E4-4CBD-AE1A-4B0AF5ADC707}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" flipH=\"1\"><a:off x=\"9601200\" y=\"3476625\"/><a:ext cx=\"2352675\" cy=\"1476375\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"C74634\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 9.167,
@@ -305,7 +306,8 @@
      "line": {
       "color": "C74634",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{8CD1ABE6-6AA3-44EF-9C87-9FA09FB4AD84}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"8382000\" y=\"2857500\"/><a:ext cx=\"1143000\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"C74634\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 4.375,
@@ -316,7 +318,8 @@
      "line": {
       "color": "C74634",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"7\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{204B0904-6D01-42BD-8272-1A4C13F96625}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"4000500\" y=\"2857500\"/><a:ext cx=\"1047750\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"C74634\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -339,7 +342,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "整體架構：Instance 與 Database",
@@ -376,7 +379,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -413,7 +416,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 2 / 30",
@@ -450,7 +453,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Client Process",
@@ -465,7 +468,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SQLcl / 應用程式",
@@ -479,7 +482,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 5.521,
@@ -502,7 +506,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Server Process",
@@ -517,7 +521,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "私人 PGA",
@@ -531,7 +535,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 10.417,
@@ -554,7 +559,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Instance",
@@ -569,7 +574,7 @@
        "dc": "FFFFFF"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SGA ＋ 背景程序",
@@ -583,7 +588,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 5.521,
@@ -606,7 +612,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Database",
@@ -621,7 +627,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data Files ＋ Control Files ＋ Online Redo Logs",
@@ -635,7 +641,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 10.625,
@@ -658,7 +665,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "執行中的運作環境",
@@ -695,7 +702,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "持久保存的檔案集合",
@@ -726,7 +733,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -749,7 +756,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"19\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{A5E6570C-1666-45DC-8596-1F77A9387B34}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"11\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"16\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"12525375\" y=\"5191125\"/><a:ext cx=\"0\" cy=\"1047750\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 2.969,
@@ -760,7 +768,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"17\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{2E904B20-B5A2-40C5-BC35-D06EB580D921}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"15\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"2714625\" y=\"5191125\"/><a:ext cx=\"0\" cy=\"1047750\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 8.333,
@@ -771,7 +780,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"14\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{E9064752-8DAD-4C6C-B909-6DDDE1AC9450}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"11\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"7620000\" y=\"2952750\"/><a:ext cx=\"4905375\" cy=\"1143000\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 0\"/><a:gd name=\"adj2\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 8.333,
@@ -782,7 +792,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"13\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{C8FECCCC-EFD7-4CF0-965D-B0BD900DDD4F}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"10\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"7620000\" y=\"2952750\"/><a:ext cx=\"0\" cy=\"1143000\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 2.969,
@@ -793,7 +804,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"12\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{C7B4890D-51BD-4F40-BAF0-3D6B1246FDE9}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" flipH=\"1\"><a:off x=\"2714625\" y=\"2952750\"/><a:ext cx=\"4905375\" cy=\"1143000\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 0\"/><a:gd name=\"adj2\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 10.417,
@@ -804,7 +816,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{7E91BC2E-1619-4041-B190-D516DD3CCC96}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"1\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"3\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" flipH=\"1\"><a:off x=\"9525000\" y=\"2428875\"/><a:ext cx=\"1047750\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 5.104,
@@ -815,7 +828,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"7\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{2A530039-7EB5-4000-B40C-508D71E395A0}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"4667250\" y=\"2428875\"/><a:ext cx=\"1047750\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -838,7 +852,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Physical Storage Structure：檔案關係",
@@ -875,7 +889,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -912,7 +926,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 3 / 30",
@@ -949,7 +963,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "PFILE / SPFILE",
@@ -964,7 +978,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "啟動參數",
@@ -978,7 +992,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.25,
@@ -1001,7 +1016,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Instance",
@@ -1016,7 +1031,7 @@
        "dc": "FFFFFF"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SGA ＋ 背景程序",
@@ -1030,7 +1045,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.562,
@@ -1053,7 +1069,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Password File",
@@ -1068,7 +1084,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "管理身分驗證",
@@ -1082,7 +1098,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -1105,7 +1122,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data Files",
@@ -1120,7 +1137,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "含資料、索引、Undo",
@@ -1134,7 +1151,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.25,
@@ -1157,7 +1175,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Control Files",
@@ -1172,7 +1190,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "追蹤檔案與復原狀態",
@@ -1186,7 +1204,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.562,
@@ -1209,7 +1228,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Online Redo Logs",
@@ -1224,7 +1243,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "變更紀錄",
@@ -1238,7 +1257,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -1261,7 +1281,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Flashback Logs",
@@ -1276,7 +1296,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "RVWR 寫入 FRA",
@@ -1290,7 +1310,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.562,
@@ -1313,7 +1334,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Archived Redo Logs",
@@ -1328,7 +1349,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "ARCn 封存已切換的 redo",
@@ -1342,7 +1363,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 5.312,
@@ -1365,7 +1387,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "資料區塊的先前影像",
@@ -1396,7 +1418,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -1431,7 +1453,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Data Files、Control Files 與 Redo Logs",
@@ -1468,7 +1490,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -1505,7 +1527,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 4 / 30",
@@ -1663,7 +1685,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "資料檔保存區塊狀態，redo 保存變更資訊，control file 保存結構與復原中繼資料",
@@ -1694,7 +1716,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -1717,7 +1739,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"15\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{B2075210-102A-4C5E-A0CC-C5E0D7031BBB}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"7\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"14\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"12477750\" y=\"4095750\"/><a:ext cx=\"0\" cy=\"762000\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 8.333,
@@ -1728,7 +1751,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"13\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{E9BF8153-15C1-46C3-9086-85851D29B9A2}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"12\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"7620000\" y=\"4095750\"/><a:ext cx=\"0\" cy=\"762000\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 3.021,
@@ -1739,7 +1763,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"11\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{FB615675-59ED-437A-9DBE-2A794428968B}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"10\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"2762250\" y=\"4095750\"/><a:ext cx=\"0\" cy=\"762000\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 10.521,
@@ -1750,7 +1775,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"9\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{D94A28FA-AEA6-4CD9-99A6-77CB73023FE1}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"7\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"9620250\" y=\"3429000\"/><a:ext cx=\"857250\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 5.208,
@@ -1761,7 +1787,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{3E9FC2FB-891A-45CE-9F1E-093049DC1F81}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"4762500\" y=\"3429000\"/><a:ext cx=\"857250\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -1784,7 +1811,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Redo Log：Thread、Group 與 Member",
@@ -1821,7 +1848,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -1858,7 +1885,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 5 / 30",
@@ -1895,7 +1922,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "單一 Redo Thread 的三組範例",
@@ -1932,7 +1959,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 1",
@@ -1947,7 +1974,7 @@
        "dc": "FFFFFF"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "CURRENT",
@@ -1961,7 +1988,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.146,
@@ -1984,7 +2012,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 2",
@@ -1999,7 +2027,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "INACTIVE",
@@ -2013,7 +2041,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.458,
@@ -2036,7 +2065,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 3",
@@ -2051,7 +2080,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "INACTIVE",
@@ -2065,7 +2094,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -2088,7 +2118,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 1 member A",
@@ -2103,7 +2133,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 1 member B",
@@ -2117,7 +2147,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.146,
@@ -2140,7 +2171,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 2 member A",
@@ -2155,7 +2186,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 2 member B",
@@ -2169,7 +2200,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.458,
@@ -2192,7 +2224,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 3 member A",
@@ -2207,7 +2239,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Group 3 member B",
@@ -2221,7 +2253,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.885,
@@ -2244,7 +2277,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "LGWR 同步寫同組所有 members。Log switch 後改寫下一組。",
@@ -2281,7 +2314,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "同組複本用於容錯。不同 group 依序保存不同時間的 redo",
@@ -2312,7 +2345,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -2347,7 +2380,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Archived Logs 與 Flashback Logs",
@@ -2384,7 +2417,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -2421,7 +2454,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 6 / 30",
@@ -2600,7 +2633,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FRA 是復原檔案儲存區，可容納多種檔案。封存檔也可放在 FRA 以外",
@@ -2631,7 +2664,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -2654,7 +2687,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{41E96411-B1F9-45D8-9EDE-EAF028C713D5}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"9620250\" y=\"3524250\"/><a:ext cx=\"857250\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 5.208,
@@ -2665,7 +2699,8 @@
      "line": {
       "color": "2563EB",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"7\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{6E59EE39-A94C-49CE-A492-CFBEBB44368C}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"4762500\" y=\"3524250\"/><a:ext cx=\"857250\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"2563EB\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -2688,7 +2723,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "啟動階段與參數檔、密碼檔",
@@ -2725,7 +2760,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -2762,7 +2797,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 7 / 30",
@@ -2799,7 +2834,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "NOMOUNT",
@@ -2814,7 +2849,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "讀參數、配置 SGA",
@@ -2829,7 +2864,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "啟動背景程序",
@@ -2843,7 +2878,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.146,
@@ -2866,7 +2902,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "MOUNT",
@@ -2881,7 +2917,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "開啟 Control Files",
@@ -2896,7 +2932,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "辨識資料庫檔案",
@@ -2910,7 +2946,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.458,
@@ -2933,7 +2970,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "OPEN",
@@ -2948,7 +2985,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "開啟 Data Files",
@@ -2963,7 +3000,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "與 Online Redo Logs",
@@ -2977,7 +3014,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.854,
@@ -3000,7 +3038,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "PFILE / SPFILE",
@@ -3037,7 +3075,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "PFILE 為文字檔，SPFILE 為持久化參數檔。每次啟動使用選定的參數來源。",
@@ -3074,7 +3112,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Password File",
@@ -3111,7 +3149,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "供管理權限驗證使用，可存於檔案系統或 ASM。",
@@ -3142,7 +3180,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -3177,7 +3215,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "檔案位置查詢：資料、控制與 Redo",
@@ -3214,7 +3252,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -3251,7 +3289,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 8 / 30",
@@ -3288,7 +3326,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SHOW CON_NAME",
@@ -3303,7 +3341,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT con_id, file#, name FROM v$datafile;",
@@ -3318,7 +3356,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT con_id, file#, name FROM v$tempfile;",
@@ -3333,14 +3371,14 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
        "dc": null
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT name FROM v$controlfile;",
@@ -3355,14 +3393,14 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
        "dc": null
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT group#, type, member",
@@ -3377,7 +3415,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FROM v$logfile",
@@ -3392,7 +3430,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "ORDER BY group#, member;",
@@ -3429,7 +3467,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "以資料字典記錄的路徑為準。TYPE 可區分 ONLINE 與 STANDBY redo。",
@@ -3466,7 +3504,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "CDB 全域盤點通常由具授權的管理者在 CDB$ROOT 執行",
@@ -3497,7 +3535,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -3532,7 +3570,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "檔案位置查詢：Archive 與 Flashback",
@@ -3569,7 +3607,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -3606,7 +3644,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 9 / 30",
@@ -3643,7 +3681,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "ARCHIVE LOG LIST",
@@ -3658,7 +3696,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT thread#, sequence#, dest_id, name",
@@ -3673,7 +3711,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FROM v$archived_log",
@@ -3688,7 +3726,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "WHERE name IS NOT NULL AND deleted = 'NO'",
@@ -3703,7 +3741,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "ORDER BY completion_time DESC",
@@ -3718,7 +3756,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FETCH FIRST 20 ROWS ONLY;",
@@ -3733,14 +3771,14 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
        "dc": null
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT name, bytes, first_time",
@@ -3755,7 +3793,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FROM v$flashback_database_logfile;",
@@ -3770,7 +3808,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT flashback_on FROM v$database;",
@@ -3807,7 +3845,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "封存歷史紀錄需再與檔案系統或 ASM 核對。Flashback view 無資料時，先確認功能與權限。",
@@ -3838,7 +3876,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -3873,7 +3911,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "檔案位置查詢：參數、密碼檔與 FRA",
@@ -3910,7 +3948,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -3947,7 +3985,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 10 / 30",
@@ -3984,7 +4022,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SHOW PARAMETER spfile",
@@ -3999,7 +4037,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SHOW PARAMETER control_files",
@@ -4014,7 +4052,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SHOW PARAMETER db_create_file_dest",
@@ -4029,7 +4067,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SHOW PARAMETER db_recovery_file_dest",
@@ -4044,7 +4082,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SHOW PARAMETER log_archive_dest",
@@ -4059,14 +4097,14 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
        "dc": null
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT file_name, format, is_asm",
@@ -4081,7 +4119,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FROM v$passwordfile_info;",
@@ -4118,7 +4156,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "DB_CREATE_FILE_DEST 是新建 OMF 檔案的預設目的地，並不代表所有既有資料檔的位置。",
@@ -4155,7 +4193,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SPFILE 值空白時，需由實際啟動設定追查使用的 PFILE",
@@ -4186,7 +4224,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -4221,7 +4259,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "檔案系統、ASM 與預設路徑",
@@ -4258,7 +4296,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -4295,7 +4333,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 11 / 30",
@@ -4332,7 +4370,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "File System",
@@ -4369,7 +4407,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "範例：D:\\oradata\\ORCL\\users01.dbf",
@@ -4384,7 +4422,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "使用 SQL 查出的路徑，再到資料庫主機核對。",
@@ -4421,7 +4459,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "ASM",
@@ -4458,7 +4496,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "範例：+DATA/ORCL/DATAFILE/users.123.456",
@@ -4473,7 +4511,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "這是 disk group 名稱，可使用 ASMCMD 或 Grid 工具檢視。",
@@ -4510,7 +4548,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "常見參數檔位置",
@@ -4547,7 +4585,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Linux / Unix：$ORACLE_HOME/dbs",
@@ -4562,7 +4600,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Windows：%ORACLE_HOME%\\database",
@@ -4599,7 +4637,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "PFILE 可指定任意路徑。預設目錄與檔名只能作為追查線索",
@@ -4630,7 +4668,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -4653,7 +4691,8 @@
      "line": {
       "color": "0D9488",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"10\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{65B84047-B3B8-4525-B628-8D814E19D358}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"7\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"2857500\" y=\"5219700\"/><a:ext cx=\"0\" cy=\"447675\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"0D9488\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 3.125,
@@ -4664,7 +4703,8 @@
      "line": {
       "color": "0D9488",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{3815261B-8FA1-4D42-B3DA-6EC353024013}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"7\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"2857500\" y=\"3933825\"/><a:ext cx=\"0\" cy=\"447675\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"0D9488\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 3.125,
@@ -4675,7 +4715,8 @@
      "line": {
       "color": "0D9488",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"6\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{B30ED98D-18E1-4F34-A027-2418705089E6}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"2857500\" y=\"2647950\"/><a:ext cx=\"0\" cy=\"447675\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"0D9488\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -4698,7 +4739,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Logical Storage Structure：從屬關係",
@@ -4735,7 +4776,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -4772,7 +4813,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 12 / 30",
@@ -4809,7 +4850,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Tablespace",
@@ -4823,7 +4864,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -4846,7 +4888,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Segment",
@@ -4860,7 +4902,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -4883,7 +4926,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Extent",
@@ -4897,7 +4940,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -4920,7 +4964,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Oracle Block",
@@ -4934,7 +4978,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.25,
@@ -4957,7 +5002,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "邏輯空間容器，包含多個 Segments",
@@ -4994,7 +5039,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "某一儲存結構所用的空間集合",
@@ -5031,7 +5076,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Segment 一次配置的連續區塊集合",
@@ -5068,7 +5113,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle 管理與配置的最小儲存單位",
@@ -5105,7 +5150,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Physical Disk Section 屬於底層實體映射，需另看檔案系統、ASM 與磁碟配置",
@@ -5136,7 +5181,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -5171,7 +5216,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Tablespace：空間管理與資料檔",
@@ -5208,7 +5253,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -5245,7 +5290,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 13 / 30",
@@ -5424,7 +5469,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Tablespace 定義邏輯用途，實際檔案位置與儲存設備決定 I/O 分布",
@@ -5455,7 +5500,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -5490,7 +5535,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Segment：物件實際配置的空間",
@@ -5527,7 +5572,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -5564,7 +5609,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 14 / 30",
@@ -5601,7 +5646,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "常見 Segment",
@@ -5638,7 +5683,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Table、Index、Table Partition、Index Partition、LOB、Undo 與 Temporary。",
@@ -5675,7 +5720,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "物件與 Segment",
@@ -5712,7 +5757,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "一張含索引與 LOB 的表格，可能對應多個 Segments。",
@@ -5749,7 +5794,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "配置範圍",
@@ -5786,7 +5831,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "每個 Segment 屬於一個 Tablespace，可跨該 Tablespace 的多個 Data Files。",
@@ -5823,7 +5868,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "配置時間",
@@ -5860,7 +5905,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "View 沒有自己的資料 Segment。延遲配置的空表可能尚無 Segment。",
@@ -5891,7 +5936,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -5914,7 +5959,8 @@
      "line": {
       "color": "0D9488",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{E9EBA30D-4421-4DD1-A528-926A2FBD5382}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"7620000\" y=\"2647950\"/><a:ext cx=\"3667125\" cy=\"733425\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 0\"/><a:gd name=\"adj2\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"0D9488\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 4.323,
@@ -5925,7 +5971,8 @@
      "line": {
       "color": "0D9488",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"7\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{56B89D36-AF51-4FEE-AE11-EC26FEFD6354}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" flipH=\"1\"><a:off x=\"3952875\" y=\"2647950\"/><a:ext cx=\"3667125\" cy=\"733425\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 0\"/><a:gd name=\"adj2\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"0D9488\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -5948,7 +5995,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Extent：Segment 可跨檔，Extent 留在單一檔",
@@ -5985,7 +6032,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -6022,7 +6069,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 15 / 30",
@@ -6059,7 +6106,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Tablespace：APP_DATA",
@@ -6073,7 +6120,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -6096,7 +6144,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data File A",
@@ -6110,7 +6158,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 8.854,
@@ -6133,7 +6182,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data File B",
@@ -6147,7 +6196,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 1.146,
@@ -6170,7 +6220,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "EMP：Extent 1",
@@ -6185,7 +6235,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Blocks 100–107",
@@ -6199,7 +6249,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 4.479,
@@ -6222,7 +6273,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "EMP：Extent 3",
@@ -6237,7 +6288,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Blocks 900–915",
@@ -6251,7 +6302,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 10.625,
@@ -6274,7 +6326,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "EMP：Extent 2",
@@ -6289,7 +6341,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Blocks 200–207",
@@ -6303,7 +6355,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.885,
@@ -6326,7 +6379,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "EMP Segment = Extent 1 ＋ Extent 2 ＋ Extent 3",
@@ -6363,7 +6416,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "範例區塊編號僅用於說明。檔案內連續，不保證實體磁碟相鄰",
@@ -6394,7 +6447,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -6417,7 +6470,8 @@
      "line": {
       "color": "0D9488",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{4DDA6722-C855-441D-9AC8-2947655C4E65}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"7\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"11430000\" y=\"4000500\"/><a:ext cx=\"0\" cy=\"1143000\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"0D9488\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 7.396,
@@ -6428,7 +6482,8 @@
      "line": {
       "color": "0D9488",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"6\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{CCD9B819-91DF-495F-B899-9DD186EED963}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"6762750\" y=\"3048000\"/><a:ext cx=\"1619250\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"0D9488\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -6451,7 +6506,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Block 與 Physical Disk Section 的映射",
@@ -6488,7 +6543,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -6525,7 +6580,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 16 / 30",
@@ -6562,7 +6617,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Oracle Block（範例 8 KB）",
@@ -6577,7 +6632,7 @@
        "dc": "FFFFFF"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Header / Row Directory",
@@ -6592,7 +6647,7 @@
        "dc": "FFFFFF"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Free Space / Row Data",
@@ -6606,7 +6661,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 9.167,
@@ -6629,7 +6685,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data File 中的位元組範圍",
@@ -6644,7 +6700,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "由 file number ＋ block number 定位",
@@ -6658,7 +6714,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 9.167,
@@ -6681,7 +6738,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "File System Blocks / ASM Extents",
@@ -6696,7 +6753,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "映射到儲存裝置",
@@ -6710,7 +6767,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -6733,7 +6791,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Physical Disk Section",
@@ -6770,7 +6828,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "可理解為底層磁碟區段或磁區。",
@@ -6785,7 +6843,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "它不隸屬於 Oracle 的邏輯層級。",
@@ -6822,7 +6880,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Block、OS Block 與磁碟 Sector 是不同層次，大小與位置不能直接畫等號",
@@ -6853,7 +6911,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -6888,7 +6946,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "配置容量：Block、Extent 與 Segment 範例",
@@ -6925,7 +6983,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -6962,7 +7020,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 17 / 30",
@@ -6999,7 +7057,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Block = 8 KB",
@@ -7036,7 +7094,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "一個 Extent 配置 128 個 Blocks。",
@@ -7073,7 +7131,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Extent = 1 MB",
@@ -7110,7 +7168,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "8 KB × 128 = 1,024 KB = 1 MB。",
@@ -7147,7 +7205,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Segment = 10 MB",
@@ -7184,7 +7242,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "假設該 Segment 有 10 個等大的 Extents。",
@@ -7221,7 +7279,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "配置量 ≠ 有效資料量",
@@ -7258,7 +7316,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Header、空閒空間與保留空間，都會占用配置容量。",
@@ -7295,7 +7353,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "這是換算範例。實際 extent 大小依 AUTOALLOCATE／UNIFORM 等設定而定",
@@ -7326,7 +7384,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -7361,7 +7419,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "邏輯到實體：Extent 與 Data File 對照",
@@ -7398,7 +7456,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -7435,7 +7493,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 18 / 30",
@@ -7472,7 +7530,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT e.owner, e.segment_name, e.partition_name,",
@@ -7487,7 +7545,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "       e.tablespace_name, e.extent_id, e.file_id,",
@@ -7502,7 +7560,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "       e.block_id, e.blocks, d.file_name",
@@ -7517,7 +7575,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FROM dba_extents e",
@@ -7532,7 +7590,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "JOIN dba_data_files d ON d.file_id = e.file_id",
@@ -7547,7 +7605,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "WHERE e.owner = 'HR'",
@@ -7562,7 +7620,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "  AND e.segment_name = 'EMPLOYEES'",
@@ -7577,7 +7635,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "ORDER BY e.partition_name, e.extent_id;",
@@ -7614,7 +7672,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FILE_ID 指向檔案，BLOCK_ID 是 Extent 起始區塊，BLOCKS 是區塊數。",
@@ -7651,7 +7709,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "本例查目標容器內的永久 Segment。TEMP 使用相應的暫存空間檢視",
@@ -7682,7 +7740,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -7705,7 +7763,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"12\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{C40238A0-A111-4DDA-8061-FCDF5BBF9F55}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"11\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" flipV=\"1\"><a:off x=\"4476750\" y=\"2238375\"/><a:ext cx=\"1238250\" cy=\"4048125\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector3\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 4.896,
@@ -7716,7 +7775,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"10\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{57103DB7-3AA2-4E5D-9D61-C66B715E5ACE}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" flipV=\"1\"><a:off x=\"4476750\" y=\"2238375\"/><a:ext cx=\"1238250\" cy=\"1428750\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector3\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -7739,7 +7799,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Memory & Process Structure：整體關係",
@@ -7776,7 +7836,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -7813,7 +7873,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 19 / 30",
@@ -7850,7 +7910,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SGA：同一 Instance 共用",
@@ -7864,7 +7924,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.51,
@@ -7887,7 +7948,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Buffer Cache",
@@ -7902,7 +7963,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "資料區塊",
@@ -7916,7 +7977,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.25,
@@ -7939,7 +8001,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Shared Pool",
@@ -7954,7 +8016,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SQL / Dictionary",
@@ -7968,7 +8030,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.51,
@@ -7991,7 +8054,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Redo Log Buffer",
@@ -8006,7 +8069,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "變更紀錄",
@@ -8020,7 +8083,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.25,
@@ -8043,7 +8107,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "其他 Pools",
@@ -8058,7 +8122,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "依功能啟用",
@@ -8072,7 +8136,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -8095,7 +8160,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Server Processes",
@@ -8110,7 +8175,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "各自具有 PGA",
@@ -8124,7 +8189,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -8147,7 +8213,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Background Processes",
@@ -8162,7 +8228,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "DBWn / LGWR / CKPT …",
@@ -8177,7 +8243,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "各自也有私人記憶體",
@@ -8191,7 +8257,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.562,
@@ -8214,7 +8281,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Instance 核心 = SGA ＋ 背景程序",
@@ -8245,7 +8312,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -8280,7 +8347,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SGA：Buffer Cache 與 Redo Log Buffer",
@@ -8317,7 +8384,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -8354,7 +8421,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 20 / 30",
@@ -8391,7 +8458,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Database Buffer Cache",
@@ -8428,7 +8495,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "快取資料、索引與 Undo 區塊，減少實體讀取。",
@@ -8443,7 +8510,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "DBWn 將需要寫回的 Dirty Buffers 寫入資料檔。",
@@ -8480,7 +8547,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Redo Log Buffer",
@@ -8517,7 +8584,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "暫存資料變更產生的 Redo Records。",
@@ -8532,7 +8599,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "LGWR 將 Redo 寫入 Online Redo Log。",
@@ -8569,7 +8636,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Dirty 的意義",
@@ -8606,7 +8673,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Dirty 代表快取區塊與磁碟版本不同。",
@@ -8621,7 +8688,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "它無法直接回答該筆交易是否已提交。",
@@ -8658,7 +8725,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "資料區塊與 redo 走不同的記憶體區域，由不同程序寫入不同檔案",
@@ -8689,7 +8756,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -8712,7 +8779,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"10\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{0DE4F719-7636-4ABD-A5FC-0A31CBBEEE6C}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"7\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"7620000\" y=\"2714625\"/><a:ext cx=\"4762500\" cy=\"1000125\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 0\"/><a:gd name=\"adj2\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 8.333,
@@ -8723,7 +8791,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"9\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{8F1AA290-B56F-4F8B-838F-21961BD17EDD}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"7620000\" y=\"2714625\"/><a:ext cx=\"0\" cy=\"1000125\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 3.125,
@@ -8734,7 +8803,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{9B6BEAF7-3CB5-4542-A33E-5738F70D0EDE}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" flipH=\"1\"><a:off x=\"2857500\" y=\"2714625\"/><a:ext cx=\"4762500\" cy=\"1000125\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 0\"/><a:gd name=\"adj2\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -8757,7 +8827,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Shared Pool：SQL 與中繼資料共用",
@@ -8794,7 +8864,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -8831,7 +8901,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 21 / 30",
@@ -8868,7 +8938,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Shared Pool",
@@ -8882,7 +8952,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -8905,7 +8976,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Library Cache",
@@ -8920,7 +8991,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Shared SQL / PL/SQL",
@@ -8934,7 +9005,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.042,
@@ -8957,7 +9029,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data Dictionary Cache",
@@ -8972,7 +9044,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "物件、欄位、權限等中繼資料",
@@ -8986,7 +9058,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.25,
@@ -9009,7 +9082,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Server Result Cache",
@@ -9024,7 +9097,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "符合條件的查詢結果",
@@ -9038,7 +9111,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.885,
@@ -9061,7 +9135,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "重複 SQL 若可共用 Cursor，可降低重複解析成本。",
@@ -9098,7 +9172,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Dictionary Cache 又稱 Row Cache。Result Cache 是否使用取決於設定與查詢",
@@ -9129,7 +9203,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -9164,7 +9238,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "其他 SGA 記憶體區的用途",
@@ -9201,7 +9275,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -9238,7 +9312,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 22 / 30",
@@ -9438,7 +9512,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Memory Area 不代表每套資料庫都會配置同樣大小或啟用相同功能",
@@ -9469,7 +9543,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -9504,7 +9578,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "PGA、UGA 與 Server 模式",
@@ -9541,7 +9615,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -9578,7 +9652,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 23 / 30",
@@ -9615,7 +9689,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Dedicated Server",
@@ -9629,7 +9703,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 8.958,
@@ -9652,7 +9727,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Shared Server",
@@ -9666,7 +9741,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -9689,7 +9765,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "PGA",
@@ -9704,7 +9780,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "UGA（Session State）",
@@ -9719,7 +9795,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Private SQL / Work Areas / Stack",
@@ -9733,7 +9809,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 8.958,
@@ -9756,7 +9833,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "PGA",
@@ -9771,7 +9848,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "程序私人工作空間",
@@ -9785,7 +9862,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 8.958,
@@ -9808,7 +9886,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SGA",
@@ -9823,7 +9901,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "UGA 在 Large Pool 或 Shared Pool",
@@ -9837,7 +9915,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.885,
@@ -9860,7 +9939,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Work Areas 用於 Sort / Hash 等操作，記憶體不足時可能溢寫 TEMP。",
@@ -9897,7 +9976,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "PGA 屬於程序，UGA 屬於 Session。兩者的生命週期與歸屬不同",
@@ -9928,7 +10007,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -9963,7 +10042,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "背景程序與各自負責的工作",
@@ -10000,7 +10079,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -10037,7 +10116,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 24 / 30",
@@ -10252,7 +10331,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -10275,7 +10354,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"14\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{C98A6631-59B0-4C3F-998E-43630E56DC0C}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"13\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"9620250\" y=\"5524500\"/><a:ext cx=\"0\" cy=\"1047750\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 3.958,
@@ -10286,7 +10366,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"12\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{4F3631D4-854A-4A81-8180-8CDD21B23280}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"11\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"3619500\" y=\"4905375\"/><a:ext cx=\"1143000\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 7.448,
@@ -10297,7 +10378,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"10\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{A6062845-78CD-4FE0-B6E1-D8207BFCCB54}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"2\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"9\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"6810375\" y=\"3095625\"/><a:ext cx=\"2809875\" cy=\"1190625\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"bentConnector4\"><a:avLst><a:gd name=\"adj1\" fmla=\"val 0\"/><a:gd name=\"adj2\" fmla=\"val 50000\"/></a:avLst></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 9.688,
@@ -10308,7 +10390,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{2C6ED699-73B4-47AB-BF72-64E1EECCF02F}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"8858250\" y=\"2571750\"/><a:ext cx=\"1143000\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 3.958,
@@ -10319,7 +10402,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"7\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{A9626A5C-EEEE-4F9E-A2B7-9C7BCC79AADC}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"3619500\" y=\"2571750\"/><a:ext cx=\"1143000\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -10342,7 +10426,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SQL 讀取與更新的主要資料流",
@@ -10379,7 +10463,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -10416,7 +10500,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 25 / 30",
@@ -10453,7 +10537,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SQL",
@@ -10468,7 +10552,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Client",
@@ -10482,7 +10566,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 5.208,
@@ -10505,7 +10590,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Server Process",
@@ -10520,7 +10605,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "解析／執行",
@@ -10534,7 +10619,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 10.938,
@@ -10557,7 +10643,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Shared Pool",
@@ -10572,7 +10658,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "SQL 與執行計畫",
@@ -10586,7 +10672,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 5.208,
@@ -10609,7 +10696,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Buffer Cache",
@@ -10624,7 +10711,7 @@
        "dc": "FFFFFF"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "讀取／修改資料與 Undo Blocks",
@@ -10638,7 +10725,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -10661,7 +10749,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data Files",
@@ -10676,7 +10764,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "未命中時讀入",
@@ -10690,7 +10778,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 5.208,
@@ -10713,7 +10802,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Redo Log Buffer",
@@ -10728,7 +10817,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "暫存變更紀錄",
@@ -10742,7 +10831,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.833,
@@ -10765,7 +10855,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT 使用 Undo 建立一致性讀取。DML 會建立 Undo 與 Redo。",
@@ -10796,7 +10886,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -10819,7 +10909,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"14\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{3F4D5F95-73BD-4FB8-8E7D-6ABCBD21FE1D}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"11\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"12\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"8905875\" y=\"5357813\"/><a:ext cx=\"1190625\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 5.417,
@@ -10830,7 +10921,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"13\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{7352F845-7D73-4402-8740-7286DEBC3084}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"10\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"11\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"4953000\" y=\"5357813\"/><a:ext cx=\"1095375\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 9.74,
@@ -10841,7 +10933,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"8\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{6EB22FE7-B9BD-48E6-A62B-4F9383AEB7C4}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"6\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"8905875\" y=\"2738438\"/><a:ext cx=\"1190625\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 5.417,
@@ -10852,7 +10945,8 @@
      "line": {
       "color": "D97706",
       "width": 2.25
-     }
+     },
+     "xml": "<p:cxnSp xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"><p:nvCxnSpPr><p:cNvPr id=\"7\" name=\"\"><a:extLst xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{F06C4774-89CE-4B26-967D-28F5FAB03245}\"/></a:ext></a:extLst></p:cNvPr><p:cNvCxnSpPr><a:stCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"4\" idx=\"3\"/><a:endCxn xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" id=\"5\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:off x=\"4953000\" y=\"2738438\"/><a:ext cx=\"1095375\" cy=\"0\"/></a:xfrm><a:prstGeom xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" prst=\"straightConnector1\"><a:avLst/></a:prstGeom><a:ln xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" w=\"28575\"><a:solidFill><a:srgbClr val=\"D97706\"/></a:solidFill><a:tailEnd type=\"triangle\" w=\"med\" len=\"med\"/></a:ln></p:spPr></p:cxnSp>"
     },
     {
      "x": 0.792,
@@ -10875,7 +10969,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "COMMIT、寫檔與 Checkpoint 的差異",
@@ -10912,7 +11006,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -10949,7 +11043,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 26 / 30",
@@ -10986,7 +11080,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Redo Log Buffer",
@@ -11000,7 +11094,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.615,
@@ -11023,7 +11118,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "LGWR",
@@ -11037,7 +11132,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.042,
@@ -11060,7 +11156,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Online Redo Logs",
@@ -11074,7 +11170,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.885,
@@ -11097,7 +11194,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "一般同步 COMMIT：等待對應 Redo 持久寫入後回覆",
@@ -11134,7 +11231,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Dirty Buffers",
@@ -11148,7 +11245,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 6.615,
@@ -11171,7 +11269,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "DBWn",
@@ -11185,7 +11283,8 @@
        "db": true,
        "dc": "FFFFFF"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 11.042,
@@ -11208,7 +11307,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": "c",
        "runs": [
         {
          "t": "Data Files",
@@ -11222,7 +11321,8 @@
        "db": true,
        "dc": "16333D"
       }
-     ]
+     ],
+     "da": "c"
     },
     {
      "x": 0.885,
@@ -11245,7 +11345,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "DBWn 依寫回需求工作，COMMIT 不要求立刻寫出所有資料區塊。",
@@ -11282,7 +11382,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "CKPT 管理檢查點進度與標頭資訊。實際資料區塊由 DBWn 寫入",
@@ -11313,7 +11413,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -11348,7 +11448,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "記憶體管理參數的範圍",
@@ -11385,7 +11485,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -11422,7 +11522,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 27 / 30",
@@ -11601,7 +11701,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "主機還需預留 OS、其他程序與負載尖峰的記憶體空間",
@@ -11632,7 +11732,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -11667,7 +11767,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SQLcl 觀察記憶體與背景程序",
@@ -11704,7 +11804,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -11741,7 +11841,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 28 / 30",
@@ -11778,7 +11878,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SHOW SGA",
@@ -11793,7 +11893,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT component, ROUND(current_size/1024/1024) mb",
@@ -11808,7 +11908,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FROM v$sga_dynamic_components WHERE current_size > 0;",
@@ -11823,14 +11923,14 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
        "dc": null
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT name, value, unit FROM v$pgastat",
@@ -11845,7 +11945,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "WHERE name IN ('total PGA allocated', 'over allocation count');",
@@ -11860,14 +11960,14 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
        "dc": null
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SELECT b.name, p.spid, b.description",
@@ -11882,7 +11982,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "FROM v$bgprocess b JOIN v$process p ON p.addr = b.paddr",
@@ -11897,7 +11997,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "ORDER BY b.name;",
@@ -11934,7 +12034,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "PGA 統計的 VALUE 必須搭配 UNIT 解讀。Windows 的 Oracle 程序可能以執行緒實作。",
@@ -11965,7 +12065,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -12000,7 +12100,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "架構重點與檢核",
@@ -12037,7 +12137,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -12074,7 +12174,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 29 / 30",
@@ -12111,7 +12211,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Physical Storage",
@@ -12148,7 +12248,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Data、Control、Redo 是核心檔案。Archive、Flashback 與啟動檔各有用途。",
@@ -12185,7 +12285,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Logical Storage",
@@ -12222,7 +12322,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Tablespace 包含 Segment、Extent 與 Block，透過 Data File 映射至實體儲存。",
@@ -12259,7 +12359,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Memory & Process",
@@ -12296,7 +12396,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "SGA 共用、PGA 私有。UGA 位置隨伺服器模式而不同。",
@@ -12333,7 +12433,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "資料持久化",
@@ -12370,7 +12470,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "LGWR 寫 Redo，DBWn 寫資料區塊，CKPT 管理檢查點資訊。",
@@ -12401,7 +12501,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,
@@ -12436,7 +12536,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle 官方參考資料",
@@ -12473,7 +12573,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Oracle Database 儲存、記憶體與程序架構 ｜ 初級 DBA 訓練課程",
@@ -12510,7 +12610,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Slide 30 / 30",
@@ -12547,7 +12647,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Database Concepts",
@@ -12584,7 +12684,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Physical Storage Structures，Chapter 12",
@@ -12599,7 +12699,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Logical Storage Structures，Chapter 13",
@@ -12636,7 +12736,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Database Concepts",
@@ -12673,7 +12773,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Memory Architecture，Chapter 15",
@@ -12688,7 +12788,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Process Architecture，Chapter 16",
@@ -12725,7 +12825,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Administrator’s Guide",
@@ -12762,7 +12862,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Starting Up and Shutting Down",
@@ -12777,7 +12877,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Managing Memory / Control Files / Redo Log",
@@ -12814,7 +12914,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Reference / Recovery",
@@ -12851,7 +12951,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Database Reference：各 V$ 與 DBA_* 檢視",
@@ -12866,7 +12966,7 @@
        "dc": "16333D"
       },
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "Backup and Recovery User’s Guide：Flashback Database",
@@ -12903,7 +13003,7 @@
      "anchor": "top",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [
         {
          "t": "docs.oracle.com/en/database/oracle/oracle-database/19/",
@@ -12934,7 +13034,7 @@
      "anchor": "mid",
      "paras": [
       {
-       "a": "l",
+       "a": null,
        "runs": [],
        "dsz": null,
        "db": null,

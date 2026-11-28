@@ -54,14 +54,20 @@ def render(spec, out_path):
                         r.font.color.rgb = rgb(cell.get("color") or "0F172A")
                 continue
             if kind == "line":
-                from pptx.enum.shapes import MSO_CONNECTOR
-                cn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, x, y,
-                                                Inches(it["x"] + it["w"]),
-                                                Inches(it["y"] + it["h"]))
-                lc = (it.get("line") or {}).get("color")
-                if lc:
-                    cn.line.color.rgb = rgb(lc)
-                cn.line.width = Pt((it.get("line") or {}).get("width", 1.0))
+                from lxml import etree
+                import copy as _copy
+                el = etree.fromstring(it["xml"])
+                A_ = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
+                P_ = "{http://schemas.openxmlformats.org/presentationml/2006/main}"
+                for tag in (A_ + "stCxn", A_ + "endCxn"):
+                    for node in el.iter(tag):
+                        node.getparent().remove(node)
+                cnv = el.find(".//" + P_ + "cNvPr")
+                if cnv is not None:
+                    cnv.set("id", str(9000 + len(slide.shapes._spTree)))
+                    cnv.set("name", "")
+                spTree = slide.shapes._spTree
+                spTree.append(_copy.deepcopy(el))
                 continue
             if kind == "textbox":
                 shape = slide.shapes.add_textbox(x, y, w, h)
@@ -86,6 +92,13 @@ def render(spec, out_path):
                 else:
                     shape.line.fill.background()
                 shape.shadow.inherit = False
+                if it.get("effect"):
+                    from lxml import etree as _et
+                    _eff = _et.fromstring(it["effect"])
+                    _spPr = shape._element.find(
+                        "{http://schemas.openxmlformats.org/presentationml/2006/main}spPr")
+                    if _spPr is not None:
+                        _spPr.append(_eff)
             tf = shape.text_frame
             tf.word_wrap = True
             ins = it.get("ins") or {}
@@ -98,7 +111,8 @@ def render(spec, out_path):
             tf.text = ""
             for i, p in enumerate(para_list):
                 para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
-                para.alignment = ALIGN.get(p.get("a", "l"), PP_ALIGN.LEFT)
+                al = p.get("a") or it.get("da") or "l"
+                para.alignment = ALIGN.get(al, PP_ALIGN.LEFT)
                 for r in p["runs"]:
                     run = para.add_run()
                     run.text = r["t"]

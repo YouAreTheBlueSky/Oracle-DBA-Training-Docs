@@ -38,9 +38,24 @@ def color_of(fmt):
     return None
 
 
+def shape_default_align(sh):
+    """形狀層級的文字對齊（很多方塊寫在 lstStyle 裡）。"""
+    try:
+        body = sh.text_frame._txBody
+    except Exception:
+        return None
+    for tag in ("defPPr", "lvl1pPr"):
+        el = body.find(".//" + A + tag)
+        if el is not None and el.get("algn"):
+            return {"ctr": "c", "r": "r", "l": "l", "just": "l"}.get(el.get("algn"))
+    return None
+
+
 def align_of(p):
-    a = str(p.alignment) if p.alignment is not None else "LEFT"
-    return {"CENTER": "c", "RIGHT": "r"}.get(a, "l")
+    if p.alignment is None:
+        return None
+    a = str(p.alignment).split()[0]          # 例："CENTER (2)" → "CENTER"
+    return {"CENTER": "c", "RIGHT": "r", "JUSTIFY": "l"}.get(a, "l")
 
 
 def extract(path):
@@ -73,7 +88,10 @@ def extract(path):
                     item["cells"].append(row)
             elif "LINE" in st:
                 item["kind"] = "line"
-                item["line"] = {"color": color_of(sh.line.fill), "width": sh.line.width.pt if sh.line.width else 1.0}
+                item["line"] = {"color": color_of(sh.line.fill),
+                                "width": sh.line.width.pt if sh.line.width else 1.0}
+                from lxml import etree
+                item["xml"] = etree.tostring(sh._element, encoding="unicode")
             else:
                 is_tb = "TEXT_BOX" in st
                 item["kind"] = "textbox" if is_tb else "shape"
@@ -86,6 +104,12 @@ def extract(path):
                         item["radius"] = 0.0
                     item["line"] = {"color": color_of(sh.line.fill),
                                     "width": sh.line.width.pt if sh.line.width else 0}
+                from lxml import etree as _et
+                _spPr = sh._element.find("{http://schemas.openxmlformats.org/presentationml/2006/main}spPr")
+                if _spPr is not None:
+                    _eff = _spPr.find(".//{http://schemas.openxmlformats.org/drawingml/2006/main}effectLst")
+                    if _eff is not None and len(_eff):
+                        item["effect"] = _et.tostring(_eff, encoding="unicode")
                 if sh.has_text_frame:
                     body = sh.text_frame._txBody.find(A + "bodyPr")
                     if body is not None:
@@ -121,6 +145,9 @@ def extract(path):
                                       "db": dflt.get("bold"),
                                       "dc": dflt.get("color")})
                     item["paras"] = paras
+                    da = shape_default_align(sh)
+                    if da:
+                        item["da"] = da
                     item["anchor"] = str(sh.text_frame.vertical_anchor or "TOP")[:3].lower()
             shapes.append(item)
         bg = None

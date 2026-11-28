@@ -22,7 +22,7 @@ def main():
         mod = importlib.import_module(MODS[key])
         out = os.path.join(snap_build.HERE, mod.OUT)
         n = snap_build.build(mod, out, force=force)
-        print("%s → %s（套用 %d 筆文字覆寫）" % (mod.TITLE, os.path.basename(out), n))
+        print("%s → %s（%d 頁）" % (mod.TITLE, os.path.basename(out), n))
     return 0
 
 

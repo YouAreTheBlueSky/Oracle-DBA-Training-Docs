@@ -1,17 +1,16 @@
-﻿# -*- coding: utf-8 -*-
-"""第 1 章 _v2 的來源。
+# -*- coding: utf-8 -*-
+"""第 1 章 _v2 的來源（JSON）。
 
-版面以 work/base/01_v2_base.pptx 為底（原樣保留），
-這裡只記錄你對「文字」的修改：
+版面、文字、備忘全部在 work/spec/01.json：
+    SPEC = r"work/spec/01.json"
 
-    OVERRIDES = {(投影片編號, 該頁第幾個有文字的形狀, 第幾段): "新文字"}
-
-索引皆從 0 開始；執行 python work/snap_build.py 01 可重建。
+修改方式：
+  1. 直接改 JSON（座標、文字、備忘）
+  2. 或在 PowerPoint 改完後執行 python work/snap_diff.py 01 --apply
+重建：python work/snap_build_cli.py 01
 """
 
-BASE = r"work\base\01_v2_base.pptx"
-OUT = r"deliver_beginner\01_Oracle_DBA_儲存記憶體與程序架構_v2.pptx"
 KEY = "01"
 TITLE = "第 1 章 儲存、記憶體與程序架構"
-
-OVERRIDES = {}
+SPEC = r"work/spec/01.json"
+OUT = r"deliver_beginner\01_Oracle_DBA_儲存記憶體與程序架構_v2.pptx"
