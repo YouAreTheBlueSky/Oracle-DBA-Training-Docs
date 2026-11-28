@@ -370,3 +370,44 @@ def table(slide, header, rows, top=2.02, col_w=None, row_h=0.86, sizes=(19.0, 19
             if n * body_size * 1.25 / 72.0 > row_h - 0.1:
                 warn(f"table cell may overflow: {str(text)[:24]}")
     return frame
+
+STMT_START = ("SELECT", "WITH ", "INSERT", "UPDATE ", "DELETE ", "MERGE",
+              "CREATE ", "ALTER ", "DROP ", "GRANT ", "REVOKE ", "BACKUP ",
+              "RESTORE ", "RECOVER ", "SHOW ", "RMAN>", "SQL>", "orapwd",
+              "srvctl", "crsctl", "asmcmd", "sqlplus")
+
+
+def spread_statements(lines, size, avail_in, line_factor=1.34):
+    """在語句之間、以及新註解區塊之前插入空行；空間不足則原樣回傳。"""
+    import re as _re
+    if not lines:
+        return lines
+
+    def is_start(t):
+        u = (t or "").strip().upper()
+        return any(u.startswith(k.upper()) for k in STMT_START)
+
+    def is_end(t):
+        u = (t or "").strip()
+        if _re.search(r";\s*(--.*)?$", u):
+            return True
+        return bool(_re.match(r"^(SHOW|EXIT|HOST|SET|SPOOL|DESC|DESCRIBE)\b", u, _re.I))
+
+    def is_comment(t):
+        return bool(_re.match(r"--(?!-)", (t or "").strip()))
+
+    out, last = [], None
+    for ln in lines:
+        fresh = bool((ln or "").strip())
+        gap = False
+        if fresh and is_start(ln) and last is not None and is_end(last):
+            gap = True
+        if fresh and is_comment(ln) and last is not None and not is_comment(last):
+            gap = True
+        if gap and (not out or (out[-1] or "").strip()):
+            out.append("")
+        out.append(ln)
+        if fresh:
+            last = ln
+    need = len(out) * size * line_factor / 72.0
+    return out if need <= avail_in else lines

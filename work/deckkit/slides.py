@@ -3,7 +3,8 @@ from pptx.util import Inches, Pt
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.oxml.ns import qn
 from pptx.enum.shapes import MSO_CONNECTOR
-from base import (C, ZH, MONO, LEFT, WIDTH, TITLE_TOP, BODY_TOP, BODY_BOTTOM,
+from base import (spread_statements,
+                  C, ZH, MONO, LEFT, WIDTH, TITLE_TOP, BODY_TOP, BODY_BOTTOM,
                   LINE_BODY, LINE_CODE,
                   blank_deck, textbox, para, rect, hline, title, footer, takeaway,
                   warning, notes, table, fit_size, wrap_lines, text_w_pt, warn, _rgb,
@@ -177,7 +178,7 @@ class Chapter:
         s = self._new()
         c = t["code"]
         title(s, t.get("code_title") or c.get("title") or t["title"])
-        lines = c["lines"]
+        lines = spread_statements(c["lines"], 15.0, 4.45)
         # panel geometry
         pad_l, pad_r = 0.25, 0.25
         inner_w = WIDTH - pad_l - pad_r
