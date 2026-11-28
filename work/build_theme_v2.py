@@ -61,6 +61,13 @@ def main(argv):
 
         if os.path.exists(out) and not force:
             changes, warns = diff_pptx.diff(diff_pptx.dump(TMP), diff_pptx.dump(out))
+            moved = diff_pptx.layout_changed(TMP, out)
+            if moved:
+                print("拒絕覆蓋：%s 的版面與模組重建結果不同（有人移動或縮放了物件）。" % os.path.basename(out))
+                print("  差異頁：%s" % ", ".join("p%d" % p for p in moved[:8]))
+                print("  v2 版型的版面由程式產生，無法保留手動調整；請改文字、或加 --force 覆蓋。")
+                rc = 1
+                continue
             if changes:
                 print("拒絕覆蓋：%s 與模組重建結果不同（可能是你手改過）。" % os.path.basename(out))
                 print("  差異 %d 處，請先執行：" % len(changes))

@@ -45,6 +45,13 @@ def build(mod, out_path, force=False):
 
     if os.path.exists(out_path) and not force:
         import snap_diff
+        import diff_pptx
+        moved = diff_pptx.layout_changed(tmp, out_path)
+        if moved:
+            raise SystemExit(
+                "拒絕覆蓋：%s 的版面與底稿不同（有人移動或縮放了物件，差異頁：%s）。\n"
+                "  底稿＋覆寫只保存文字；版面調整請直接另存為新底稿，或加 --force 覆蓋。"
+                % (os.path.basename(out_path), ", ".join("p%d" % p for p in moved[:8])))
         changes, _ = snap_diff.diff_files(tmp, out_path)
         if changes:
             raise SystemExit(

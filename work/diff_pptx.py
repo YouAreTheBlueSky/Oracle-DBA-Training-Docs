@@ -90,6 +90,35 @@ def norm_notes(text):
     return "\n".join(out).strip()
 
 
+
+def geometry(path):
+    """每頁、每個形狀的位置尺寸（供「只移動方塊」的偵測）。"""
+    from pptx import Presentation
+    prs = Presentation(path)
+    out = []
+    for sl in prs.slides:
+        row = []
+        for sh in sl.shapes:
+            if sh.left is None:
+                continue
+            row.append((round(sh.left / 91440), round(sh.top / 91440),
+                        round(sh.width / 91440), round(sh.height / 91440)))
+        out.append(row)
+    return out
+
+
+def layout_changed(a_path, b_path):
+    """回傳版面差異的頁碼清單（空清單＝版面相同）。"""
+    ga, gb = geometry(a_path), geometry(b_path)
+    pages = []
+    for i, (ra, rb) in enumerate(zip(ga, gb), 1):
+        if ra != rb:
+            pages.append(i)
+    if len(ga) != len(gb):
+        pages.append(0)
+    return pages
+
+
 def dump(path):
     prs = Presentation(path)
     slides = []
