@@ -12,7 +12,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import snap_build
 
-MODS = {"01": "snap01", "02": "snap02", "03": "snap03", "04": "snap04", "05": "snap05", "06": "snap06", "07": "snap07", "08": "snap08"}
+MODS = {"01": "snap01", "02": "snap02", "03": "snap03", "04": "snap04", "05": "snap05", "06": "snap06", "07": "snap07", "08": "snap08", "09": "snap09", "10": "snap10"}
 
 
 def main():
