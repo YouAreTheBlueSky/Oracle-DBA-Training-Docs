@@ -239,11 +239,18 @@ def spread_statements(lines, size, avail_in):
         u = t.strip().upper()
         return any(u.startswith(k.upper()) for k in STMT_START)
 
+    def is_end(t):
+        import re as _re
+        u = (t or "").strip()
+        if u.endswith(";"):
+            return True
+        return bool(_re.match(r"^(SHOW|EXIT|HOST|SET|SPOOL|DESC|DESCRIBE)\b", u, _re.I))
+
     last = None
     for ln in lines:
         fresh = bool(ln.strip())
         if (fresh and is_start(ln) and last is not None
-                and last.strip().endswith(";") and (not out or out[-1].strip())):
+                and is_end(last) and (not out or out[-1].strip())):
             out.append("")
         out.append(ln)
         if fresh:
