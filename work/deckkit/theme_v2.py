@@ -162,10 +162,10 @@ def chrome(slide, badge, badge_color, title, subtitle, page_no, total, course=""
         text(slide, LEFT, 1.58, CW, 0.40, subtitle, 16.5, BODY)
     box(slide, LEFT, 2.08, CW, 0.025, fill=LINE)
     # 頁尾
-    text(slide, LEFT, FOOTER_Y, 11.0, 0.30,
-         "Oracle Database %s ｜ 初級 DBA 訓練課程" % (course or "實戰"), 12.5, MUTED)
-    text(slide, RIGHT - 2.2, FOOTER_Y, 2.2, 0.30,
-         "Slide %d / %d" % (page_no, total), 12.5, MUTED, align=PP_ALIGN.RIGHT)
+    text(slide, LEFT, FOOTER_Y - 0.04, 11.0, 0.36,
+         "Oracle Database %s ｜ 初級 DBA 訓練課程" % (course or "實戰"), min(20.0, BODY_PT - 4), MUTED)
+    text(slide, RIGHT - 2.2, FOOTER_Y - 0.04, 2.2, 0.36,
+         "Slide %d / %d" % (page_no, total), min(20.0, BODY_PT - 4), MUTED, align=PP_ALIGN.RIGHT)
 
 
 def _tint(hexcolor):
@@ -194,8 +194,8 @@ def dark_panel(slide, x, y, w, h, heading, body, accent=ACCENT, hsize=None,
                bsize=None):
     box(slide, x, y, w, h, fill=DARK, radius=0.06)
     box(slide, x, y, w, 0.08, fill=accent)
-    hsize = hsize or max(16.0, BODY_PT - 2)
-    bsize = bsize or max(15.0, BODY_PT - 2)
+    hsize = hsize or BODY_PT
+    bsize = bsize or BODY_PT
     yy = y + 0.30
     if heading:
         text(slide, x + 0.26, yy, w - 0.5, 0.36, heading, hsize, WHITE, True)
@@ -210,13 +210,7 @@ def terminal(slide, x, y, w, h, label, lines, size=None, dots=True):
     # 先插入語句間空行（不加高度上限），再依可用空間縮字級
     lines = spread_lines(lines)
     if size is None:
-        best = BODY_PT
-        longest = max((text_w_pt(l, 1.0, True) for l in lines), default=0)
-        avail = (h - 0.78) * 72.0
-        while best > 12.0 and (longest * best > inner_w * 0.98
-                               or len(lines) * best * 1.05 > avail):
-            best -= 0.5
-        size = best
+        size = BODY_PT          # 固定字級；過長的指令由使用者自行折行
     box(slide, x, y, w, h, fill=TERM, radius=0.045)
     box(slide, x, y, w, 0.44, fill=TERM_H)
     tx = x + 0.22
@@ -224,7 +218,7 @@ def terminal(slide, x, y, w, h, label, lines, size=None, dots=True):
         for i, c in enumerate(("FF5F57", "FEBC2E", "28C840")):
             d = box(slide, tx + i * 0.17, y + 0.16, 0.11, 0.11, fill=c, radius=0.5)
         tx += 0.62
-    lab = 17.0 if size >= 15 else 15.5
+    lab = BODY_PT
     ltb = slide.shapes.add_textbox(Inches(tx + 0.06), Inches(y + 0.05),
                                    Inches(w - (tx - x) - 0.25), Inches(0.34))
     ltf = ltb.text_frame
@@ -337,15 +331,15 @@ def cover(prs, ch):
     text(s, 1.12, 2.38, 14.0, 1.05, ch["title"], 52.0, WHITE, True, line=1.10)
     text(s, 1.12, 3.62, 14.0, 0.75, ch.get("subtitle", ""), 28.0, SKY, True)
     box(s, 1.12, 4.92, 8.2, 0.035, fill="334155")
-    text(s, 1.12, 5.22, 13.6, 1.00,
+    text(s, 1.12, 5.16, 13.6, 1.10,
          ch.get("agenda_note") or ("Oracle Database %s ｜ %s" % (ch.get("en", ""), ch.get("subtitle", ""))),
-         18.0, "CBD5E1", line=1.45)
+         BODY_PT, "CBD5E1", line=1.35)
     chips = [a[0] for a in ch.get("agenda", [])][:4]
     cw, gap = 3.31, 0.36
     for i, name in enumerate(chips):
         x = 1.12 + i * (cw + gap)
         box(s, x, 7.30, cw, 0.72, fill=TERM_H, radius=0.16)
-        text(s, x + 0.1, 7.30, cw - 0.2, 0.72, name, 16.0, WHITE, True,
+        text(s, x + 0.1, 7.30, cw - 0.2, 0.72, name, BODY_PT, WHITE, True,
              align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     simple_note(s, ch.get("note_why", ""))
 
@@ -358,9 +352,9 @@ def outline(prs, ch, page_no, total):
     for i, (name, desc) in enumerate(ch.get("agenda", [])[:4]):
         h = 1.28
         card(s, LEFT, y, CW, h, TOPIC_COLORS[i % 4],
-             "%02d  %s" % (i + 1, name), desc, lsize=20.0, dsize=15.5, pad=0.30)
+             "%02d  %s" % (i + 1, name), desc, lsize=BODY_PT, dsize=BODY_PT, pad=0.30)
         text(s, RIGHT - 1.55, y + 0.16, 1.3, 0.32, "P%d–P%d" % (3 + i * 3, 5 + i * 3),
-             13.0, MUTED, align=PP_ALIGN.RIGHT)
+             BODY_PT - 4, MUTED, align=PP_ALIGN.RIGHT)
         y += h + 0.20
     simple_note(s, ch.get("agenda_note", ""))
 
@@ -378,9 +372,9 @@ def concept(prs, ch, ti, page_no, total):
     h = (bot - top - gap * (n - 1)) / n
     for i, (lead, desc) in enumerate(items):
         card(s, LEFT, top + i * (h + gap), 10.30, h, color, lead, desc,
-             lsize=BODY_PT, dsize=max(14.0, BODY_PT - 3))
+             lsize=BODY_PT, dsize=BODY_PT)
     dark_panel(s, 11.30, top, RIGHT - 11.30, bot - top, "這一頁的重點",
-               t["concept"].get("note", ""), color, hsize=17.0, bsize=15.0)
+               t["concept"].get("note", ""), color)
     put_notes(s, topic_spec(t, "concept"), ch.get("chap_label", ""), t.get("src", ""))
 
 
@@ -399,7 +393,7 @@ def code_page(prs, ch, ti, page_no, total):
     if c.get("warning"):
         body.append("⚠ " + c["warning"])
     dark_panel(s, 11.30, BODY_TOP, RIGHT - 11.30, BODY_BOT - BODY_TOP,
-               "判讀重點", "\n\n".join(body), color, hsize=17.0, bsize=14.5)
+               "判讀重點", "\n\n".join(body), color)
     put_notes(s, topic_spec(t, "code"), ch.get("chap_label", ""), t.get("src", ""))
 
 
@@ -411,15 +405,26 @@ def check_page(prs, ch, ti, page_no, total):
     chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
            c.get("title", t["title"]), "", page_no, total, ch.get("title", ""))
 
-    terminal(s, LEFT, BODY_TOP, 9.55, BODY_BOT - BODY_TOP, "怎麼檢查", c["commands"])
+    total_h = BODY_BOT - BODY_TOP
+    pit_h = 1.55
+    term_h = total_h - pit_h - 0.12
+    terminal(s, LEFT, BODY_TOP, 9.55, term_h, "怎麼檢查", c["commands"])
+
+    # 常見錯誤移到左側程式碼面板下方（讓右欄 4 張卡可以撐滿）
+    py = BODY_TOP + term_h + 0.12
+    box(s, LEFT, py, 9.55, pit_h, fill=DARK, radius=0.06)
+    ptb = slide_box(s, LEFT + 0.26, py + 0.12, 9.55 - 0.52, pit_h - 0.24)
+    ptf = ptb.text_frame
+    para(ptf, "常見錯誤", BODY_PT, "FCA5A5", True, first=True, line=1.15)
+    for p_text in c.get("pitfalls", [])[:3]:
+        para(ptf, "× " + p_text, BODY_PT, "CBD5E1", line=1.18, space=2)
 
     x = 10.55
     w = RIGHT - x
     y = BODY_TOP
     conds = c["conds"][:4]
-    pit_h = 1.30
     gap = 0.10
-    ch_h = (BODY_BOT - BODY_TOP - pit_h - 0.16 - gap * 3) / 4.0
+    ch_h = (total_h - gap * 3) / 4.0
     for i, (label, expect) in enumerate(conds):
         cy = y + i * (ch_h + gap)
         box(s, x, cy, w, ch_h, fill=WHITE, radius=0.10)
@@ -427,24 +432,9 @@ def check_page(prs, ch, ti, page_no, total):
         tb = slide_box(s, x + 0.24, cy + 0.08, w - 0.46, ch_h - 0.16)
         tf = tb.text_frame
         tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-        # 依卡片高度自動調整說明字級，避免文字被裁掉
-        esize = BODY_PT
-        while esize > 11.0:
-            lines_needed = wrap_lines(expect, w - 0.46, esize) + 1   # 保守估計
-            need_h = (BODY_PT * 1.18 + lines_needed * esize * 1.20 + 2) / 72.0 + 0.10
-            if need_h <= ch_h:
-                break
-            esize -= 0.5
-        para(tf, label, BODY_PT, INK, True, first=True, line=1.18)
-        para(tf, expect, esize, BODY, line=1.20, space=2)
+        para(tf, label, BODY_PT, INK, True, first=True, line=1.16)
+        para(tf, expect, BODY_PT, BODY, line=1.18, space=2)
 
-    py = BODY_BOT - pit_h
-    box(s, x, py, w, pit_h, fill=DARK, radius=0.07)
-    tb = slide_box(s, x + 0.24, py + 0.12, w - 0.48, pit_h - 0.24)
-    tf = tb.text_frame
-    para(tf, "常見錯誤", 14.0, "FCA5A5", True, first=True, line=1.20)
-    for p_text in c.get("pitfalls", [])[:3]:
-        para(tf, "× " + p_text, max(14.0, BODY_PT - 4), "CBD5E1", line=1.24, space=3)
     put_notes(s, topic_spec(t, "check"), ch.get("chap_label", ""), t.get("src", ""))
 
 
@@ -515,9 +505,9 @@ def summary(prs, ch, page_no, total):
     for i, (lead, desc) in enumerate(items):
         r, c = i // cols, i % cols
         card(s, LEFT + c * (gw + 0.28), BODY_TOP + r * (gh + 0.13), gw, gh,
-             TOPIC_COLORS[i % 4], lead, desc, lsize=17.0, dsize=14.0, pad=0.26)
+             TOPIC_COLORS[i % 4], lead, desc, lsize=BODY_PT, dsize=BODY_PT, pad=0.26)
     if sm.get("note"):
-        text(s, LEFT, 8.00, CW, 0.34, sm["note"], 13.0, MUTED, line=1.30)
+        text(s, LEFT, 7.98, CW, 0.40, sm["note"], BODY_PT, MUTED, line=1.25)
     simple_note(s, sm.get("note", ""))
 
 
@@ -525,13 +515,13 @@ def refs_page(prs, ch, page_no, total):
     s = new_slide(prs)
     chrome(s, "資料來源", ACCENT, "官方參考資料與版本說明", "", page_no, total, ch.get("title", ""))
     note = ch.get("refs_note") or "以 Oracle Database 19c 官方文件為準；頁碼對應原始教材 PDF。"
-    text(s, LEFT, BODY_TOP, CW, 0.62, note, 15.0, BODY, line=1.40)
+    text(s, LEFT, BODY_TOP, CW, 0.70, note, BODY_PT, BODY, line=1.30)
     refs = ch.get("refs", [])[:6]
     card_h = 0.34 + len(refs) * 0.52
     box(s, LEFT, BODY_TOP + 0.72, CW, card_h, fill=WHITE, radius=0.06)
     y = BODY_TOP + 0.92
     for i, r in enumerate(refs):
-        text(s, LEFT + 0.30, y, CW - 0.6, 0.34, "%d.  %s" % (i + 1, r), 13.5, INK)
+        text(s, LEFT + 0.30, y, CW - 0.6, 0.42, "%d.  %s" % (i + 1, r), BODY_PT, INK, line=1.20)
         y += 0.52
     simple_note(s, ch.get("refs_note", ""))
 
