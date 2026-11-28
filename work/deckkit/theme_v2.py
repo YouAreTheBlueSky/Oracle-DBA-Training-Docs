@@ -201,7 +201,19 @@ def dark_panel(slide, x, y, w, h, heading, body, accent=ACCENT, hsize=17.0,
          "CBD5E1", line=1.42)
 
 
-def terminal(slide, x, y, w, h, label, lines, size=14.5, dots=True):
+def terminal(slide, x, y, w, h, label, lines, size=None, dots=True):
+    """終端機區塊。字級預設由 18pt 起，依寬度與高度自動縮到放得下。"""
+    inner_w = (w - 0.4) * 72.0
+    # 先插入語句間空行（不加高度上限），再依可用空間縮字級
+    lines = spread_lines(lines)
+    if size is None:
+        best = 18.0
+        longest = max((text_w_pt(l, 1.0, True) for l in lines), default=0)
+        avail = (h - 0.78) * 72.0
+        while best > 12.0 and (longest * best > inner_w * 0.98
+                               or len(lines) * best * 1.05 > avail):
+            best -= 0.5
+        size = best
     box(slide, x, y, w, h, fill=TERM, radius=0.045)
     box(slide, x, y, w, 0.44, fill=TERM_H)
     tx = x + 0.22
@@ -209,16 +221,24 @@ def terminal(slide, x, y, w, h, label, lines, size=14.5, dots=True):
         for i, c in enumerate(("FF5F57", "FEBC2E", "28C840")):
             d = box(slide, tx + i * 0.17, y + 0.16, 0.11, 0.11, fill=c, radius=0.5)
         tx += 0.62
-    text(slide, tx + 0.06, y + 0.07, w - (tx - x) - 0.25, 0.30, label, 13.0, "CBD5E1", True)
-    tb = slide.shapes.add_textbox(Inches(x + 0.20), Inches(y + 0.60),
-                                  Inches(w - 0.4), Inches(h - 0.75))
+    lab = 17.0 if size >= 15 else 15.5
+    ltb = slide.shapes.add_textbox(Inches(tx + 0.06), Inches(y + 0.05),
+                                   Inches(w - (tx - x) - 0.25), Inches(0.34))
+    ltf = ltb.text_frame
+    ltf.word_wrap = False
+    ltf.margin_left = 0; ltf.margin_right = 0
+    ltf.margin_top = 0; ltf.margin_bottom = 0
+    lp = ltf.paragraphs[0]
+    add_runs(lp, label, lab, "E2E8F0", True)
+    tb = slide.shapes.add_textbox(Inches(x + 0.20), Inches(y + 0.62),
+                                  Inches(w - 0.4), Inches(h - 0.78))
     tf = tb.text_frame
     tf.word_wrap = False
     tf.margin_left = 0; tf.margin_right = 0; tf.margin_top = 0; tf.margin_bottom = 0
     lines = spread_statements(lines, size, h - 0.85)
     for i, ln in enumerate(lines):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
-        p.line_spacing = Pt(size * 1.38)
+        p.line_spacing = Pt(size * 1.05)
         add_runs(p, ln if ln else " ", size, "E2E8F0", False, MONO)
 
 
@@ -228,6 +248,39 @@ STMT_START = ("SELECT", "WITH ", "INSERT", "UPDATE ", "DELETE ", "MERGE",
               "RESTORE ", "RECOVER ", "SHOW ", "RMAN>", "SQL>", "orapwd", "srvctl",
               "crsctl", "asmcmd", "sqlplus")
 
+
+
+def spread_lines(lines):
+    """在語句之間、新註解之前插入空行（純轉換，不做高度檢查）。"""
+    import re as _re
+
+    def is_start(t):
+        u = (t or "").strip().upper()
+        return any(u.startswith(k.upper()) for k in STMT_START)
+
+    def is_end(t):
+        u = (t or "").strip()
+        if _re.search(r";\s*(--.*)?$", u):
+            return True
+        return bool(_re.match(r"^(SHOW|EXIT|HOST|SET|SPOOL|DESC|DESCRIBE)\b", u, _re.I))
+
+    def is_comment(t):
+        return bool(_re.match(r"--(?!-)", (t or "").strip()))
+
+    out, last = [], None
+    for ln in lines:
+        fresh = bool((ln or "").strip())
+        gap = False
+        if fresh and is_start(ln) and last is not None and is_end(last):
+            gap = True
+        if fresh and is_comment(ln) and last is not None and not is_comment(last):
+            gap = True
+        if gap and (not out or (out[-1] or "").strip()):
+            out.append("")
+        out.append(ln)
+        if fresh:
+            last = ln
+    return out
 
 def spread_statements(lines, size, avail_in):
     """在「兩個 SELECT（或語句）緊鄰」之處插入空行；空間不足則不插。"""
@@ -336,7 +389,7 @@ def code_page(prs, ch, ti, page_no, total):
     chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
            c.get("title", t["title"]), "", page_no, total, ch.get("title", ""))
     terminal(s, LEFT, BODY_TOP, 10.30, BODY_BOT - BODY_TOP,
-             "$ sqlplus ／ 實作步驟", c["lines"], size=14.0)
+             "$ sqlplus ／ 實作步驟", c["lines"])
     body = []
     if c.get("takeaway"):
         body.append("◆ " + c["takeaway"])
@@ -355,14 +408,13 @@ def check_page(prs, ch, ti, page_no, total):
     chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
            c.get("title", t["title"]), "", page_no, total, ch.get("title", ""))
 
-    terminal(s, LEFT, BODY_TOP, 9.55, BODY_BOT - BODY_TOP, "怎麼檢查", c["commands"],
-             size=13.5)
+    terminal(s, LEFT, BODY_TOP, 9.55, BODY_BOT - BODY_TOP, "怎麼檢查", c["commands"])
 
     x = 10.55
     w = RIGHT - x
     y = BODY_TOP
     conds = c["conds"][:4]
-    pit_h = 1.42
+    pit_h = 1.30
     gap = 0.10
     ch_h = (BODY_BOT - BODY_TOP - pit_h - 0.16 - gap * 3) / 4.0
     for i, (label, expect) in enumerate(conds):
@@ -372,8 +424,16 @@ def check_page(prs, ch, ti, page_no, total):
         tb = slide_box(s, x + 0.24, cy + 0.08, w - 0.46, ch_h - 0.16)
         tf = tb.text_frame
         tf.vertical_anchor = MSO_ANCHOR.MIDDLE
-        para(tf, label, 15.0, INK, True, first=True, line=1.20)
-        para(tf, expect, 12.5, BODY, line=1.22, space=3)
+        # 依卡片高度自動調整說明字級，避免文字被裁掉
+        esize = 12.5
+        while esize > 11.0:
+            lines_needed = wrap_lines(expect, w - 0.46, esize) + 1   # 保守估計
+            need_h = (16.0 * 1.18 + lines_needed * esize * 1.20 + 2) / 72.0 + 0.10
+            if need_h <= ch_h:
+                break
+            esize -= 0.5
+        para(tf, label, 16.0, INK, True, first=True, line=1.18)
+        para(tf, expect, esize, BODY, line=1.20, space=2)
 
     py = BODY_BOT - pit_h
     box(s, x, py, w, pit_h, fill=DARK, radius=0.07)
