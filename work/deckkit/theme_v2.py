@@ -209,7 +209,7 @@ def terminal(slide, x, y, w, h, label, lines, size=14.5, dots=True):
         for i, c in enumerate(("FF5F57", "FEBC2E", "28C840")):
             d = box(slide, tx + i * 0.17, y + 0.16, 0.11, 0.11, fill=c, radius=0.5)
         tx += 0.62
-    text(slide, tx + 0.06, y + 0.07, w - (tx - x) - 0.25, 0.30, label, 13.0, "94A3B8")
+    text(slide, tx + 0.06, y + 0.07, w - (tx - x) - 0.25, 0.30, label, 13.0, "CBD5E1", True)
     tb = slide.shapes.add_textbox(Inches(x + 0.20), Inches(y + 0.60),
                                   Inches(w - 0.4), Inches(h - 0.75))
     tf = tb.text_frame
