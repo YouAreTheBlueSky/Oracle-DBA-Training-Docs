@@ -1,16 +1,24 @@
 # -*- coding: utf-8 -*-
-"""把指定章節轉成 v2 版型。
+"""把指定章節轉成 v2 版型（含「不覆蓋手改檔」保護）。
 
-用法：python work/build_theme_v2.py ch02 ch03 ch04
-輸出：deliver_beginner/<檔名前綴>_v2.pptx
+用法：
+    python work/build_theme_v2.py ch11 ch12      # 有手改就拒絕
+    python work/build_theme_v2.py ch11 --force   # 強制覆蓋
+
+規則：先建到暫存檔，與現有檔案比對；若現有檔案與剛建好的不一致
+（代表你手改過），就停手並提示先跑 diff_pptx.py --theme v2 --apply。
 """
 import sys, os, importlib
 
 sys.path.insert(0, "work/deckkit")
 sys.path.insert(0, "work/content")
+sys.path.insert(0, "work")
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 from theme_v2 import build_v2
+import diff_pptx
+
+TMP = os.path.join("work", "proto", "_v2_build_tmp.pptx")
 
 # 模組 → (初階版章號, 輸出路徑)
 OUT = {
@@ -36,7 +44,10 @@ def apply_overrides(mod, sp):
             target["_note_replace" if mode == "replace" else "_note_pre"] = text
 
 
-def main(mods):
+def main(argv):
+    force = "--force" in argv
+    mods = [a for a in argv if not a.startswith("--")]
+    rc = 0
     for name in mods:
         mod = importlib.import_module(name)
         sp = mod.CHAPTER
@@ -44,9 +55,24 @@ def main(mods):
         sp["no"] = no
         sp["chap_label"] = "%02d" % no
         apply_overrides(mod, sp)
-        last = build_v2(sp, out)
+
+        os.makedirs(os.path.dirname(TMP), exist_ok=True)
+        build_v2(sp, TMP)
+
+        if os.path.exists(out) and not force:
+            changes, warns = diff_pptx.diff(diff_pptx.dump(TMP), diff_pptx.dump(out))
+            if changes:
+                print("拒絕覆蓋：%s 與模組重建結果不同（可能是你手改過）。" % os.path.basename(out))
+                print("  差異 %d 處，請先執行：" % len(changes))
+                print("    python work/diff_pptx.py %s \"%s\" --as %d --theme v2 --apply" % (name, out, no))
+                print("  或加 --force 強制覆蓋。")
+                rc = 1
+                continue
+
+        os.replace(TMP, out)
         print("%s → %s（第 %02d 章）" % (name, os.path.basename(out), no))
+    return rc
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:] or ["ch02", "ch03", "ch04"])
+    sys.exit(main(sys.argv[1:]))

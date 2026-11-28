@@ -20,6 +20,7 @@ sys.path.insert(0, HERE)
 
 from pptx import Presentation
 import build_chapter
+from base import strip_markup
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -125,7 +126,8 @@ def diff(a, b):
                 ra2, _pre = strip_prefix(ra)
                 rb2, _pre2 = strip_prefix(rb)
                 ta, tb = plain(ra2), plain(rb2)
-                if ta != tb:
+                # 你在 PPTX 直接打的 **粗體**／__底線__ 標記，比對時視為同一段文字
+                if strip_markup(ta) != strip_markup(tb):
                     changes.append({"slide": n, "shape": si, "para": pi,
                                     "old": ta, "new": tb, "kind": "text"})
                     continue
@@ -186,7 +188,19 @@ def main():
     os.makedirs(os.path.join(HERE, "proto"), exist_ok=True)
     fresh = os.path.join(HERE, "proto", "_diff_fresh.pptx")
 
-    build_chapter.build(mod, fresh, force=True)
+    use_v2 = "--theme" in sys.argv and sys.argv[sys.argv.index("--theme") + 1] == "v2"
+    if use_v2:
+        import theme_v2
+        import build_theme_v2
+        mod_obj0 = importlib.import_module(mod)
+        spec0 = mod_obj0.CHAPTER
+        if as_no is not None:
+            spec0["no"] = as_no
+            spec0["chap_label"] = "%02d" % as_no
+        build_theme_v2.apply_overrides(mod_obj0, spec0)
+        theme_v2.build_v2(spec0, fresh)
+    else:
+        build_chapter.build(mod, fresh, force=True)
     a, b = dump(fresh), dump(edited)
     changes, warns = diff(a, b)
 
@@ -223,7 +237,18 @@ def main():
     if as_no is not None:
         sp2["no"] = as_no
         sp2["chap_label"] = f"{as_no:02d}"
-    _, warns_build = build_chapter.build(mod, fresh, force=True)
+    if use_v2:
+        import theme_v2
+        import build_theme_v2
+        spec2 = mod_obj.CHAPTER
+        if as_no is not None:
+            spec2["no"] = as_no
+            spec2["chap_label"] = "%02d" % as_no
+        build_theme_v2.apply_overrides(mod_obj, spec2)
+        theme_v2.build_v2(spec2, fresh)
+        warns_build = []
+    else:
+        _, warns_build = build_chapter.build(mod, fresh, force=True)
     a2 = dump(fresh)
     changes2, warns2 = diff(a2, b)
     if not changes2 and not warns2:
