@@ -16,7 +16,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 import diff_pptx
 import snap_build
 
-MODS = {"01": "snap01", "06": "snap06", "07": "snap07", "08": "snap08"}
+MODS = {"01": "snap01", "02": "snap02", "06": "snap06", "07": "snap07", "08": "snap08"}
 
 
 def strip_markup(t):
@@ -42,7 +42,7 @@ def main():
     out = os.path.join(ROOT, mod.OUT)
     spec_path = os.path.join(ROOT, mod.SPEC)
 
-    tmp = os.path.join(HERE, "work", "proto", "_spec_cmp.pptx")
+    tmp = os.path.join(os.path.dirname(HERE), "work", "proto", "_spec_cmp.pptx")
     os.makedirs(os.path.dirname(tmp), exist_ok=True)
     snap_build.build(mod, tmp, force=True)
 

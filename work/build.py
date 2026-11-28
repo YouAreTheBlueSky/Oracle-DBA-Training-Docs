@@ -28,7 +28,7 @@ import importlib
 # 初階章號 → ("theme", 模組名) 或 ("json", snap 模組名)
 CHAPTERS = {
     "01": ("json", "snap01"),
-    "02": ("theme", "ch02"),
+    "02": ("json", "snap02"),
     "03": ("theme", "ch03"),
     "04": ("theme", "ch04"),
     "05": ("theme", "ch05"),
