@@ -304,7 +304,7 @@ def check_page(prs, ch, ti, page_no, total):
     c = t["check"]
     s = new_slide(prs)
     chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
-           c.get("title", t["title"]), "", page_no, total)
+           c.get("title", t["title"]), "", page_no, total, ch.get("title", ""))
 
     terminal(s, LEFT, BODY_TOP, 9.55, BODY_BOT - BODY_TOP, "怎麼檢查", c["commands"],
              size=13.5)
@@ -345,7 +345,7 @@ def table_page(prs, ch, ti, page_no, total):
     tb = t["table"]
     s = new_slide(prs)
     chrome(s, "T%d ｜ %s" % (ti + 1, t.get("section", "")), color,
-           t["title"], "", page_no, total)
+           t["title"], "", page_no, total, ch.get("title", ""))
 
     hdr = tb["header"]
     rows = tb["rows"]
