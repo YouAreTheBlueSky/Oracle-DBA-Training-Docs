@@ -11,7 +11,7 @@ from base import (C, ZH, MONO, LEFT, WIDTH, TITLE_TOP, BODY_TOP, BODY_BOTTOM,
 
 
 PIT_BASE = 14.0    # 常見錯誤項目字級（原 13）
-PIT_HEAD = 14.5    # 常見錯誤標題字級（原 13.5）
+PIT_HEAD = 16.5    # 常見錯誤標題字級（與其他小標一致）
 
 
 class Chapter:
@@ -235,7 +235,7 @@ class Chapter:
         panel_h = 0.20 + len(lines) * lh + 0.18
 
         lb = textbox(s, 0.85, 1.82, 6.0, 0.32)
-        para(lb.text_frame, "怎麼檢查", size=14.5 * k, color=C["teal"], bold=True, first=True)
+        para(lb.text_frame, "怎麼檢查", size=16.5 * k, color=C["teal"], bold=True, first=True)
 
         panel_top = 2.16
         rect(s, LEFT, panel_top, WIDTH, panel_h, fill=C["panel"])
@@ -291,7 +291,7 @@ class Chapter:
             pk = float(c.get("style", {}).get("pitfall_scale", 1.0))
 
             def panel_need(scale):
-                n = 0.55 * k * scale
+                n = 0.62 * k * scale
                 for pt in pits:
                     n += (wrap_lines(pt, inner, PIT_BASE * k * scale)
                           * PIT_BASE * k * scale * LINE_BODY / 72.0 + 0.10 * k * scale)
@@ -308,8 +308,8 @@ class Chapter:
             hb = textbox(s, px + 0.24, conds_top + 0.14, pw - 0.48, 0.32 * k * pk)
             para(hb.text_frame, "常見錯誤", size=PIT_HEAD * k * pk, color=C["warn"],
                  bold=True, first=True)
-            pb = textbox(s, px + 0.24, conds_top + 0.52 * k * pk, pw - 0.48,
-                         ph - 0.62 * k * pk)
+            pb = textbox(s, px + 0.24, conds_top + 0.58 * k * pk, pw - 0.48,
+                         ph - 0.68 * k * pk)
             tf2 = pb.text_frame
             for j, ptext in enumerate(pits):
                 p = tf2.paragraphs[0] if j == 0 else tf2.add_paragraph()

@@ -267,7 +267,7 @@ CHAPTER = {
                 "conds": [
                     ("limit", "非 UNLIMITED，且 IDLE_TIME 有具體值"),
                     ("value", "TRUE；FALSE 時 profile 只記錄、不真的中斷"),
-                    ("稽核政策", "查得到 policy 即已啟用；success／failure : YES: 要記錄 | NO: 不要紀錄"),
+                    ("稽核政策", "查得到 policy 即已啟用；success=記錄、failure=不記錄"),
                     ("kill session", "查不到或 status＝KILLED；仍 ACTIVE 就是沒斷"),
                 ],
                 "pitfalls": [
